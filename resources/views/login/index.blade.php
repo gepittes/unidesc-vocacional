@@ -25,12 +25,12 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent ">
     <div class="container">
-        {{--<div class="dropdown button-dropdown">--}}
-            {{--<a href="#" class="dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">--}}
-                {{--<span class="button-bar"></span>--}}
-                {{--<span class="button-bar"></span>--}}
-                {{--<span class="button-bar"></span>--}}
-            {{--</a>--}}
+        <div class="dropdown button-dropdown">
+            <a href="#" class="dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">
+                <span class="button-bar"></span>
+                <span class="button-bar"></span>
+                <span class="button-bar"></span>
+            </a>
             {{--<div class="dropdown-menu" aria-labelledby="navbarDropdown">--}}
                 {{--<a class="dropdown-header">Dropdown header</a>--}}
                 {{--<a class="dropdown-item" href="#">Action</a>--}}
@@ -41,17 +41,17 @@
                 {{--<div class="dropdown-divider"></div>--}}
                 {{--<a class="dropdown-item" href="#">One more separated link</a>--}}
             {{--</div>--}}
-        {{--</div>--}}
-        {{--<div class="navbar-translate">--}}
-            {{--<a class="navbar-brand" href="https://demos.creative-tim.com/now-ui-kit/index.html" rel="tooltip" title="Designed by Invision. Coded by Creative Tim" data-placement="bottom" target="_blank">--}}
-                {{--Now Ui Kit--}}
-            {{--</a>--}}
-            {{--<button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">--}}
-                {{--<span class="navbar-toggler-bar top-bar"></span>--}}
-                {{--<span class="navbar-toggler-bar middle-bar"></span>--}}
-                {{--<span class="navbar-toggler-bar bottom-bar"></span>--}}
-            {{--</button>--}}
-        {{--</div>--}}
+        </div>
+        <div class="navbar-translate">
+            <a class="navbar-brand" href="http://www.unidesc.edu.br/" rel="tooltip"  data-placement="bottom" target="_blank">
+                UNIDESC
+            </a>
+            <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-bar top-bar"></span>
+                <span class="navbar-toggler-bar middle-bar"></span>
+                <span class="navbar-toggler-bar bottom-bar"></span>
+            </button>
+        </div>
         <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="../assets/img/blurred-image-1.jpg">
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -87,11 +87,7 @@
 
                     <form class="form" method="POST" action="{{route('login')}}">
                         @csrf
-                        <div class="card-header text-center">
-                            <div class="logo-container">
-                                <img src="{{url('templeteAssets/assets/img/now-logo.png')}}" alt="">
-                            </div>
-                        </div>
+                                <img src="{{url('templeteAssets/assets/img/teste-vocacional-logo.png')}}" alt="">
                         <div class="card-body">
                             {{--EMAIL--}}
                             <div class="input-group no-border input-lg">
