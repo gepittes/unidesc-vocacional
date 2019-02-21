@@ -14,7 +14,8 @@
         </div>
         <div class="container">
             <div class="content-center brand">
-                <img src="{{url('templeteAssets/assets/img/teste-vocacional-logo.png')}}" alt="">
+                {{--TODO editar logo com a logo da feira de proffisoes--}}
+                <img src="{{url('templeteAssets/assets/img/teste-vocacional-logo-feira.png')}}" alt="">
                 <h3>O que você deve saber sobre o teste vocacional!</h3>
                 <div class="content">
                     <p class="text-justify">
