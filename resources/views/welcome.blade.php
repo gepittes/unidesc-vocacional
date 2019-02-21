@@ -10,7 +10,7 @@
 
 <div class="wrapper">
     <div class="page-header clear-filter" filter-color="orange">
-        <div class="page-header-image" data-parallax="true" style="background-image:url({{url('/templeteAssets/assets/img/header.jpg')}});">
+        <div class="page-header-image" data-parallax="true" style="background-image:url({{url('/templeteAssets/assets/img/job-bg.jpg')}});">
         </div>
         <div class="container">
             <div class="content-center brand">
@@ -18,11 +18,11 @@
                 <h3>O que você deve saber sobre o teste vocacional!</h3>
                 <div class="content">
                     <p class="text-justify">
-                        O teste vocacional não é exato, ele é um indicativo, uma sugestão realizada com base nas suas respostas aqui apresentadas.
+                        <strong>O teste vocacional não é exato, ele é um indicativo, uma sugestão realizada com base nas suas respostas aqui apresentadas.
                         As questões são desenvolvidas e testadas para montar um perfil que se aproxima do seu e assim sugerir algumas carreiras.
                         O objetivo é ajudá-lo a descobrir seu caminho e sugerir opções para você avaliar. Para aproveitar melhor o teste, responda com sinceridade.
                         Ainda que você se identifique com mais de uma das alternativas, assinale apenas uma opção para cada questão. Portanto reflita
-                        sobre a que mais lhe diz respeito.
+                            sobre a que mais lhe diz respeito.</strong>
                     </p>
                 </div>
                 <div class="content mt-5">
@@ -80,7 +80,7 @@
                                     As linguagens mais solicitadas nas empresas são <strong>ASP, .NET, JAVA, PHP e Python.</strong>
                                     Assim como tecnologias como <span class="font-italic font-weight-bold">HTML 5, CSS 3 e JS.</span></p>
                                 <p class="card-text font-weight-normal text-justify" style="font-size:14px">
-                                    <strong>Conhecimento em banco de dados</strong> também é fundamental para ingressar em uma empresa com foco em ambientes web.
+                                    <strong>Conhecimento em banco de dados</strong> também é fundamental para ingressar em uma empresa com foco em ambientes web.<br>
                                     <strong>A linguagem SQL</strong> é um pré-requisito para a grande maioria das vagas disponíveis no mercado </p>
                             </div>
                         </div>
