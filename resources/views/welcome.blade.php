@@ -109,7 +109,7 @@
         </div>
 </div>
 
-<div class="container topo" style="">
+<div class="topo" style="">
     <a href="#topo" class="scroll"><button class="btn btn-neutral btn-icon btn-round"><i class="fas fa-arrow-circle-up"></i></button></a>
 </div>
 
