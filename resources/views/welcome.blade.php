@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
     @component('layouts.head', ['title' => $title])
     @endcomponent
-</head>
 
-<body class="index-page sidebar-collapse">
+<body class="index-page sidebar-collapse" id="topo">
 
 <div class="wrapper">
     <div class="page-header clear-filter" filter-color="orange">
-        <div class="page-header-image" data-parallax="true" style="background-image:url({{url('/templeteAssets/assets/img/job-bg.jpg')}});">
+        <div class="page-header-image" data-parallax="true"
+             style="background-image:url({{url('/templeteAssets/assets/img/job-bg.jpg')}});">
         </div>
         <div class="container">
             <div class="content-center brand">
-                {{--TODO editar logo com a logo da feira de proffisoes--}}
                 <img src="{{url('templeteAssets/assets/img/teste-vocacional-logo-feira.png')}}" alt="">
                 <h3>O que você deve saber sobre o teste vocacional!</h3>
                 <div class="content">
@@ -29,13 +27,18 @@
                 <div class="content mt-5">
                     <a href="#"><button type="button" class="btn btn-success font-weight-bold">REALIZAR TESTE!</button></a>
                 </div>
+                <div class="content mt-5">
+                    <a href="#artigo-ti" class="scroll"><span class="font-italic" style="color: white">Mais informações</span>
+                        <i class="fas fa-arrow-down"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 
         <div class="section section-basic" id="basic-elements">
             <div class="container">
-                <h3 class="title">Área da TI</h3><hr>
+                <h3 class="title" id="artigo-ti">Área da TI</h3><hr>
                 <div class="row">
                     {{--ANALISTA CARD--}}
                     <div class="col">
@@ -105,6 +108,11 @@
             </div>
         </div>
 </div>
+
+<div class="container topo" style="">
+    <a href="#topo" class="scroll"><button class="btn btn-neutral btn-icon btn-round"><i class="fas fa-arrow-circle-up"></i></button></a>
+</div>
+
 <footer class="footer">
     <div class="container">
         <div class="copyright" id="copyright">
