@@ -17,6 +17,19 @@
     {{--Animate Scroll--}}
     <script src="{{'js/jquery.js'}}"></script>
     <script>
+        {{--TODO identificar por secao e ativar botao--}}
+        function showbotaoTopo() {
+            if (document.getElementById("botaoTopo").style.display === "none") {
+                document.getElementById("botaoTopo").style.display = "block";
+            }
+        }
+        function hiddenbotaoTopo() {
+            if (document.getElementById("botaoTopo").style.display === "block") {
+                document.getElementById("botaoTopo").style.display = "none";
+            }
+        }
+    </script>
+    <script>
         jQuery(document).ready(function($) {
             $(".scroll").click(function(event){
                 event.preventDefault();

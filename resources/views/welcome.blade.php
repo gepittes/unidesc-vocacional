@@ -28,7 +28,7 @@
                     <a href="#"><button type="button" class="btn btn-success font-weight-bold">REALIZAR TESTE!</button></a>
                 </div>
                 <div class="content mt-5">
-                    <a href="#artigo-ti" class="scroll"><span class="font-italic" style="color: white">Mais informações</span>
+                    <a href="#artigo-ti" class="scroll" onclick="showbotaoTopo()"><span class="font-italic" style="color: white">Mais informações</span>
                         <i class="fas fa-arrow-down"></i>
                     </a>
                 </div>
@@ -109,8 +109,8 @@
         </div>
 </div>
 
-<div class="topo" style="">
-    <a href="#topo" class="scroll"><button class="btn btn-neutral btn-icon btn-round"><i class="fas fa-arrow-circle-up"></i></button></a>
+<div class="topo" id="botaoTopo" style="display: none">
+    <a href="#topo" class="scroll" onclick="hiddenbotaoTopo()"><button class="btn btn-neutral btn-icon btn-round"><i class="fas fa-arrow-circle-up"></i></button></a>
 </div>
 
 <footer class="footer">
