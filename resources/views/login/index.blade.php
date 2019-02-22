@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
     @component('layouts.head', ['title' => $title])
     @endcomponent
-</head>
+
 
 <body class="login-page sidebar-collapse">
 
@@ -43,18 +42,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{url('/')}}">Unidesc Vocacional</a>
                 </li>
-                {{--<li class="nav-item">--}}
-                    {{--<a class="nav-link" href="https://github.com/creativetimofficial/now-ui-kit/issues">Have an issue?</a>--}}
-                {{--</li>--}}
                 <li class="nav-item">
                     <a class="nav-link" rel="tooltip"  data-placement="bottom" href="https://www.facebook.com/unidesc/" target="_blank">
-                        <i class="fab fa-facebook-square"></i>
+                        <i class="fab fa-facebook-square" style="font-size: 15px"></i>
                         <p class="d-lg-none d-xl-none">Facebook</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" rel="tooltip"  data-placement="bottom" href="https://www.instagram.com/unidesc/" target="_blank">
-                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-instagram" style="font-size: 15px"></i>
                         <p class="d-lg-none d-xl-none">Instagram</p>
                     </a>
                 </li>

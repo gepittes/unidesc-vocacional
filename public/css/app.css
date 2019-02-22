@@ -10659,14 +10659,3 @@ a.text-dark:focus {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
-
-.topo{
-  display: block;
-  border-radius: 15px;
-  position: fixed;
-  float: bottom;
-  bottom: 15px;
-  left: 300px;
-  /*right: 1000px;*/
-  /*z-index: 100;*/
-}

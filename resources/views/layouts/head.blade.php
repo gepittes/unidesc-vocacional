@@ -11,7 +11,7 @@
     {{-- ICONS Font Awesonme --}}
     <link rel="stylesheet" href="{{'icons/css/all.min.css'}}">
     {{-- CSS Files --}}
-    <link rel="stylesheet" href="{{url('css/app.css')}}">
+    <link rel="stylesheet" href="{{url('css/modification.css')}}">
     <link href="{{url('templeteAssets/assets/css/bootstrap.min.css')}}" rel="stylesheet" />
     <link href="{{url('templeteAssets/assets/css/now-ui-kit.css?v=1.2.0')}}" rel="stylesheet" />
     {{--Animate Scroll--}}

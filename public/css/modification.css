@@ -1,0 +1,10 @@
+.topo{
+    display: block;
+    border-radius: 15px;
+    position: fixed;
+    float: bottom;
+    bottom: 15px;
+    left: 300px;
+    /*right: 1000px;*/
+    /*z-index: 100;*/
+}
