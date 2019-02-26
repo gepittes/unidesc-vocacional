@@ -7,15 +7,15 @@
     </title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     {{-- FONTS --}}
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="{{url('/fonts/fonts.css')}}">
     {{-- ICONS Font Awesonme --}}
-    <link rel="stylesheet" href="{{'icons/css/all.min.css'}}">
+    <link rel="stylesheet" href="{{'/icons/css/all.min.css'}}">
     {{-- CSS Files --}}
     <link rel="stylesheet" href="{{url('css/modification.css')}}">
-    <link href="{{url('templeteAssets/assets/css/bootstrap.min.css')}}" rel="stylesheet" />
-    <link href="{{url('templeteAssets/assets/css/now-ui-kit.css?v=1.2.0')}}" rel="stylesheet" />
+    <link href="{{url('/templeteAssets/assets/css/bootstrap.min.css')}}" rel="stylesheet" />
+    <link href="{{url('/templeteAssets/assets/css/now-ui-kit.css?v=1.2.0')}}" rel="stylesheet" />
     {{--Animate Scroll--}}
-    <script src="{{'js/jquery.js'}}"></script>
+    <script src="{{'/js/jquery.js'}}"></script>
     <script>
         {{--TODO identificar por secao e ativar botao--}}
         function showbotaoTopo() {
