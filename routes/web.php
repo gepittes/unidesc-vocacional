@@ -10,3 +10,4 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/candidato/cadastro', 'CandidatoController@create')->name('cadastroCandidato');
+Route::post('/candidato/store', 'CandidatoController@store')->name('store.cadastro');

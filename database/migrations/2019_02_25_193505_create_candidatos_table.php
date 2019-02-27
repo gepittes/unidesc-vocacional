@@ -16,10 +16,10 @@ class CreateCandidatosTable extends Migration
         Schema::create('candidatos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome');
-            $table->integer('telefone');
+            $table->string('telefone');
             $table->string('email');
             $table->string('cidade');
-            $table->integer('serie');
+            $table->string('serie');
             $table->softDeletes();
             $table->timestamps();
         });

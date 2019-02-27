@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 <hr>
-                <form>
+                <form action="{{route('store.cadastro')}}" METHOD="POST">
                         @csrf
                         <div class="form-row">
                             <div class="form-group col">
@@ -79,7 +79,6 @@
                 </div>
             </div>
         </div>
-    </div>
 
 
 

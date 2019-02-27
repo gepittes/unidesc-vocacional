@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cidade;
+use App\Models\Candidato;
 use Illuminate\Http\Request;
 
 class CandidatoController extends Controller
@@ -39,6 +40,18 @@ class CandidatoController extends Controller
     public function store(Request $request)
     {
         //ARMAZENA CADASTRO
+        $candidato = new Candidato();
+        if (isset($candidato)){
+            $candidato->nome = $request->input('nome');
+            $candidato->telefone = $request->input('telefone');
+            $candidato->email = $request->input('email');
+            $candidato->cidade = $request->input('cidade');
+            $candidato->serie = $request->input('serie');
+            $candidato->save();
+            return redirect('/');
+        }else{
+            return redirect('/');
+        }
     }
 
     /**
