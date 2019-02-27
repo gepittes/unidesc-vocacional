@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cidade;
 use Illuminate\Http\Request;
 
 class CandidatoController extends Controller
@@ -25,7 +26,8 @@ class CandidatoController extends Controller
     {
         //RETORNA FORM PARA CADASTRO
         $title = "Teste Vocacional | Cadastro";
-        return view('candidato.cadastroCandidato', compact('title'));
+        $cidades = Cidade::all();
+        return view('candidato.cadastroCandidato', compact('title', 'cidades'));
     }
 
     /**

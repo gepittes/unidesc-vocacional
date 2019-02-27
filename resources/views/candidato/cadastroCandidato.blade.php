@@ -4,36 +4,72 @@
     @component('layouts.head', ['title' => $title])
     @endcomponent
 
-<body class="index-page sidebar-collapse" id="topo">
+<body class="index-page sidebar-collapse">
+
+<header class="alinhar">
+        <img class="bg-form" src="{{asset("/templeteAssets/assets/img/capa-teste.jpg")}}" alt="">
+</header>
 
 <div class="wrapper">
         <div class="section section-basic" id="basic-elements">
             <div class="container">
-                <h3 class="title" id="artigo-ti">Cadastre-se abaixo</h3><hr>
-                    <form>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="d-flex flex-row">
+                            <span class="title h3">Cadastre-se abaixo</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="d-flex flex-row-reverse" style="margin-top: 5%">
+                            <a href="{{route('home')}}"><button type="button" class="btn btn-info"><strong>Inicio</strong></button></a>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <form>
                         @csrf
                         <div class="form-row">
                             <div class="form-group col">
-                                <label for="exampleFormControlInput1">Email address</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                <label for="nome">Nome Completo</label>
+                                <input type="text" class="form-control" id="nome" name="nome" placeholder="Insira seu nome">
                             </div>
                             <div class="form-group col">
-                                <label for="exampleFormControlInput1">Email address</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                <label for="telefone">Telefone Celular</label>
+                                <input type="number" class="form-control" id="telefone" name="telefone" placeholder="(DD) 00000-0000">{{--todo auto formatar campo--}}
                             </div>
                             <div class="form-group col">
-                                <label for="exampleFormControlInput1">Email address</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="nome@gmail.com">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col">
-                                <label for="exampleFormControlInput1">Email address</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                <label for="cidade">Cidade</label>
+                                <select class="form-control" id="cidade" name="cidade">
+                                    <option selected>Selecionar</option>
+                                    @foreach($cidades as $cidade)
+                                        <option value="{{$cidade->nome}}">{{$cidade->nome}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-group col">
-                                <label for="exampleFormControlInput1">Email address</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                <label for="serie">Serie</label>
+                                <select class="form-control" id="serie" name="serie">
+                                        <option value="" selected="selected">Selecionar</option>
+                                        <optgroup label="Ensino Fundamental">
+                                            <option value="6">6º</option>
+                                            <option value="7">7º</option>
+                                            <option value="8">8º</option>
+                                            <option value="9">9º</option>
+                                        </optgroup>
+                                        <optgroup label="Ensino Medio">
+                                            <option value="1">1º</option>
+                                            <option value="2">2º</option>
+                                            <option value="3">3º</option>
+                                            <option value="concluido">Concluído</option>
+                                        </optgroup>
+                                </select>
                             </div>
                             <div class="form-group mt-3">
                                 <button type="submit" class="btn btn-primary">Enviar</button>
@@ -46,9 +82,6 @@
     </div>
 
 
-<div class="topo" id="botaoTopo" style="display: none">
-    <a href="#topo" class="scroll" onclick="hiddenbotaoTopo()"><button class="btn btn-neutral btn-icon btn-round"><i class="fas fa-arrow-circle-up"></i></button></a>
-</div>
 
 <footer class="footer">
     <div class="container">
