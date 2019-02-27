@@ -13,7 +13,7 @@ class CreateEFundamentalsTable extends Migration
      */
     public function up()
     {
-        Schema::create('e_fundamental', function (Blueprint $table) {
+        Schema::create('e_fundamentals', function (Blueprint $table) {
             $table->increments('id');
             $table->string('serie');
             $table->timestamps();

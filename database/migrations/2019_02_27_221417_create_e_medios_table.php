@@ -13,7 +13,7 @@ class CreateEMediosTable extends Migration
      */
     public function up()
     {
-        Schema::create('e_medio', function (Blueprint $table) {
+        Schema::create('e_medios', function (Blueprint $table) {
             $table->increments('id');
             $table->string('serie');
             $table->timestamps();
