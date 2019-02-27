@@ -25,8 +25,8 @@
                             <a href="{{route('home')}}"><button type="button" class="btn btn-info"><strong>Inicio</strong></button></a>
                         </div>
                     </div>
-                </div>
-                <hr>
+                </div><hr>
+
                 <form action="{{route('store.cadastro')}}" METHOD="POST">
                         @csrf
                         <div class="form-row">
@@ -75,12 +75,10 @@
                                 <button type="submit" class="btn btn-primary">Enviar</button>
                             </div>
                         </div>
-                    </form>
-                </div>
-            </div>
+                </form>
         </div>
-
-
+    </div>
+</div>
 
 <footer class="footer">
     <div class="container">
