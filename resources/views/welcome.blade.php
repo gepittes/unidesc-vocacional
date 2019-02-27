@@ -7,7 +7,7 @@
 <body class="index-page sidebar-collapse" id="topo">
 
 <div class="wrapper">
-    <div class="page-header clear-filter" filter-color="orange">
+    <div class="page-header clear-filter" filter-color="blue">
         <div class="page-header-image" data-parallax="true"
              style="background-image:url({{url('/templeteAssets/assets/img/job-bg.jpg')}});">
         </div>

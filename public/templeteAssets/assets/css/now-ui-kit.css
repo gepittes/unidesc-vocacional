@@ -5962,13 +5962,13 @@ img {
 .clear-filter[filter-color="blue"] {
   background: rgba(44, 44, 44, 0.2);
   /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(90deg, rgba(44, 44, 44, 0.2), rgba(211, 234, 255, 0.31));
+  background: -webkit-linear-gradient(90deg, rgba(44, 44, 44, 0.2), rgba(0, 163, 206, 0.81));
   /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(90deg, rgba(44, 44, 44, 0.2), rgba(211, 234, 255, 0.31));
+  background: -o-linear-gradient(90deg, rgba(44, 44, 44, 0.2), rgba(0, 163, 206, 0.81));
   /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(90deg, rgba(44, 44, 44, 0.2), rgba(211, 234, 255, 0.31));
+  background: -moz-linear-gradient(90deg, rgba(44, 44, 44, 0.2), rgba(0, 163, 206, 0.81));
   /* For Firefox 3.6 to 15 */
-  background: linear-gradient(0deg, rgba(44, 44, 44, 0.2), rgba(211, 234, 255, 0.31));
+  background: linear-gradient(0deg, rgba(44, 44, 44, 0.2), rgba(0, 163, 206, 0.8));
   /* Standard syntax */
 }
 .section-story-overview {
