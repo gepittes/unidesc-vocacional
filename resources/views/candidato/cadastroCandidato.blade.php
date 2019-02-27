@@ -11,7 +11,7 @@
 </header>
 
 <div class="wrapper">
-        <div class="section section-basic" id="basic-elements">
+        <div class="section-form">
             <div class="container">
 
                 <div class="row">
