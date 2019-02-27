@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cidade;
+use App\Http\Requests\CandidatoFormRequest;
 use App\Models\Candidato;
 use Illuminate\Http\Request;
 
@@ -37,7 +38,7 @@ class CandidatoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CandidatoFormRequest $request)
     {
         //ARMAZENA CADASTRO
         $candidato = new Candidato();
