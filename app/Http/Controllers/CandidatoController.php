@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Cidade;
 use App\Http\Requests\CandidatoFormRequest;
 use App\Models\Candidato;
+use App\Models\EFundamental;
+use App\Models\EMedio;
 use Illuminate\Http\Request;
 
 class CandidatoController extends Controller
@@ -29,7 +31,9 @@ class CandidatoController extends Controller
         //RETORNA FORM PARA CADASTRO
         $title = "Teste Vocacional | Cadastro";
         $cidades = Cidade::all();
-        return view('candidato.cadastroCandidato', compact('title', 'cidades'));
+        $seriesFundamental = EFundamental::all();
+        $seriesMedio= EMedio::all();
+        return view('candidato.cadastroCandidato', compact('title', 'cidades', 'seriesFundamental', 'seriesMedio'));
     }
 
     /**

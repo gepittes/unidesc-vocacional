@@ -77,18 +77,39 @@
                             <div class="form-group col">
                                 <label for="serie">Serie</label>
                                 <select class="form-control" id="serie" name="serie">
-                                        <option value="" selected="selected">Selecionar</option>
+
+                                    @if(old('serie'))
+                                    @else
+                                        <option value="" selected>Selecionar</option>
+                                    @endif
                                         <optgroup label="Ensino Fundamental">
-                                            <option value="6">6º</option>
-                                            <option value="7">7º</option>
-                                            <option value="8">8º</option>
-                                            <option value="9">9º</option>
+
+                                            @foreach($seriesFundamental as $ano)
+                                                @if($ano->serie == old('serie'))
+                                                    <option value="{{old('serie')}}" selected>{{old('serie')}}º</option>
+                                                @else
+                                                    <option value="{{$ano->serie}}">{{$ano->serie}}º</option>
+                                                @endif
+                                            @endforeach
+
                                         </optgroup>
+
                                         <optgroup label="Ensino Medio">
-                                            <option value="1">1º</option>
-                                            <option value="2">2º</option>
-                                            <option value="3">3º</option>
-                                            <option value="concluido">Concluído</option>
+
+                                            @foreach($seriesMedio as $ano)
+                                                {{-- RECUPERACAO FORM --}}
+                                                @if($ano->serie == old('serie'))
+                                                    <option value="{{old('serie')}}" selected>{{old('serie') == "concluido" ? 'Concluido' : $ano->serie."º"}}</option>
+                                                @else
+                                                    {{--  EXIBICAO  --}}
+                                                    @if($ano->serie == 'concluido')
+                                                        <option value="{{$ano->serie}}">Concluido</option>
+                                                     @else
+                                                        <option value="{{$ano->serie}}">{{$ano->serie}}º</option>
+                                                     @endif
+                                                @endif
+                                            @endforeach
+
                                         </optgroup>
                                 </select>
                                 @if($errors->has('serie'))
