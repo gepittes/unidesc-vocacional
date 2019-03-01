@@ -116,6 +116,8 @@
                                     <span class="badge badge-danger space-error-bg">{{ $errors->first('serie') }}</span>
                                 @endif
                             </div>
+                            {{--IP Adress--}}
+                            <input value="{{$_SERVER['REMOTE_ADDR']}}" name="visitor" type="hidden">
                             <div class="form-group mt-3">
                                 <button type="submit" class="btn btn-primary">Enviar</button>
                             </div>

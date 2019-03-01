@@ -20,6 +20,8 @@ class CreateCandidatosTable extends Migration
             $table->string('email');
             $table->string('cidade');
             $table->string('serie');
+            $table->longText('resultado_curso')->nullable();
+            $table->ipAddress('visitor')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

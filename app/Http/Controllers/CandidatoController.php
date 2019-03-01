@@ -52,6 +52,7 @@ class CandidatoController extends Controller
             $candidato->email = $request->input('email');
             $candidato->cidade = $request->input('cidade');
             $candidato->serie = $request->input('serie');
+            $candidato->visitor = $request->input('visitor');
             $candidato->save();
             return redirect('/');
         }else{
