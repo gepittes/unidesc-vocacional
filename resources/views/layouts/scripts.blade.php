@@ -12,3 +12,5 @@
 <script src="{{url('/templeteAssets/assets/js/now-ui-kit.js?v=1.2.0')}}" type="text/javascript"></script>
 {{-- Font Awesome --}}
 <script src="{{url('/icons/js/all.min.js')}}"></script>
+{{--Jquery Mask--}}
+<script src="{{url('/js/jquery.mask.js')}}"></script>

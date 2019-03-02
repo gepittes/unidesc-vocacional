@@ -29,6 +29,7 @@
 
                 <form action="{{route('store.cadastro')}}" METHOD="POST">
                         @csrf
+                        {{--NOME COMPLETO--}}
                         <div class="form-row">
                             <div class="form-group col">
                                 <label for="nome">Nome Completo</label>
@@ -37,13 +38,15 @@
                                     <span class="badge badge-danger space-error-bg">{{ $errors->first('nome') }}</span>
                                 @endif
                             </div>
+                            {{--TELEFONE--}}
                             <div class="form-group col">
                                 <label for="telefone">Telefone Celular</label>
-                                <input type="number" class="form-control" id="telefone" name="telefone" placeholder="(DD) 00000-0000" value="{{old('telefone')}}">{{--todo auto formatar campo--}}
+                                <input type="text" class="form-control phone_with_ddd" id="telefone" name="telefone" placeholder="(DD) 00000-0000" value="{{old('telefone')}}">{{--todo auto formatar campo--}}
                                 @if($errors->has('telefone'))
                                     <span class="badge badge-danger space-error-bg">{{ $errors->first('telefone') }}</span>
                                 @endif
                             </div>
+                            {{--EMAIL--}}
                             <div class="form-group col">
                                 <label for="email">Email</label>
                                 <input type="email" class="form-control" id="email" name="email" placeholder="nome@gmail.com" value="{{old('email')}}">
@@ -52,6 +55,7 @@
                                 @endif
                             </div>
                         </div>
+                        {{--CIDADE--}}
                         <div class="form-row">
                             <div class="form-group col">
                                 <label for="cidade">Cidade</label>
@@ -74,6 +78,7 @@
                                     <span class="badge badge-danger space-error-bg">{{ $errors->first('cidade') }}</span>
                                 @endif
                             </div>
+                            {{--SERIE--}}
                             <div class="form-group col">
                                 <label for="serie">Serie</label>
                                 <select class="form-control" id="serie" name="serie">
@@ -83,7 +88,6 @@
                                         <option value="" selected>Selecionar</option>
                                     @endif
                                         <optgroup label="Ensino Fundamental">
-
                                             @foreach($seriesFundamental as $ano)
                                                 @if($ano->serie == old('serie'))
                                                     <option value="{{old('serie')}}" selected>{{old('serie')}}º</option>
@@ -91,11 +95,9 @@
                                                     <option value="{{$ano->serie}}">{{$ano->serie}}º</option>
                                                 @endif
                                             @endforeach
-
                                         </optgroup>
 
                                         <optgroup label="Ensino Medio">
-
                                             @foreach($seriesMedio as $ano)
                                                 {{-- RECUPERACAO FORM --}}
                                                 @if($ano->serie == old('serie'))
@@ -109,7 +111,6 @@
                                                      @endif
                                                 @endif
                                             @endforeach
-
                                         </optgroup>
                                 </select>
                                 @if($errors->has('serie'))
