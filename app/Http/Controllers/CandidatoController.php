@@ -8,6 +8,7 @@ use App\Models\Candidato;
 use App\Models\EFundamental;
 use App\Models\EMedio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CandidatoController extends Controller
 {
@@ -103,5 +104,15 @@ class CandidatoController extends Controller
     public function destroy($id)
     {
         //NAO SERA USADO
+    }
+
+    public function startTeste(){
+
+        $title = 'Teste Vocacional | Teste';
+        return view('candidato.iniciarTeste', compact('title'));
+    }
+
+    public function storeQuest(Request $request){
+        return dd($request);
     }
 }
