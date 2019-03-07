@@ -409,39 +409,39 @@
 
 <script>
     $cont = 0;
-    //Monta Enunciado e Troca botao para submit
-    function upEnum() {
-        $enum = $.getJSON('/api/quest/enum', function(data){
-            if($cont !== 15){
-                document.getElementById("title").innerHTML = $enum.responseJSON[$cont].enunciado_questao;
-                $cont+=1;
-                proximaQuestao();
-            }
-            if($cont === 15){
-                document.getElementById("Bnext").style="display: none";
-                document.getElementById("Benviar").style="display: flex";
-            }
-        });
+    $enum = $.getJSON('/api/quest/enum', function(data){}); // Resgata Enunciados de cada questao
+
+    function upEnum() { // Monta Enunciado
+        if($cont !== 15){
+            document.getElementById("title").innerHTML = $enum.responseJSON[$cont].enunciado_questao;
+            $cont+=1;
+            proximaQuestao();
+        }
+        if($cont === 15){ // Monta botao Submit
+            document.getElementById("Bnext").style="display: none";
+            document.getElementById("Benviar").style="display: flex";
+        }
     }
-    $a = 0; $b = 1; $c = 2; $d = 3; $e = 4; $f = 5;
-    $point= 1;
+
+    $a = 0; $b = 1; $c = 2; $d = 3; $e = 4; $f = 5; $point= 1;
+    $op = $.getJSON('/api/quest/op', function(data){}); // Resgata Enunciados das Opcoes
 
     function proximaQuestao() { //Abre a div para cada questao
         if ($cont === 1){
             document.getElementById("Q"+$cont).style="display: block";
-        } else {
+        }
+        if($cont !== 1) {
             document.getElementById("Q"+$cont).style="display: block";
             document.getElementById("Q"+($cont-1)).style="display: none";
         }
 
-        $op = $.getJSON('/api/quest/op', function(data){ //Monta as opcoes de cada questao
-            document.getElementById("A"+$point).innerHTML= $op.responseJSON[$a].opcao_enunciado; $a+=6;
-            document.getElementById("B"+$point).innerHTML= $op.responseJSON[$b].opcao_enunciado; $b+=6;
-            document.getElementById("C"+$point).innerHTML= $op.responseJSON[$c].opcao_enunciado; $c+=6;
-            document.getElementById("D"+$point).innerHTML= $op.responseJSON[$d].opcao_enunciado; $d+=6;
-            document.getElementById("E"+$point).innerHTML= $op.responseJSON[$e].opcao_enunciado; $e+=6;
-            document.getElementById("F"+$point).innerHTML= $op.responseJSON[$f].opcao_enunciado; $f+=6;
-            $point+=1;
-        })
+        //Monta as opcoes de cada questao
+        document.getElementById("A"+$point).innerHTML= $op.responseJSON[$a].opcao_enunciado; $a+=6;
+        document.getElementById("B"+$point).innerHTML= $op.responseJSON[$b].opcao_enunciado; $b+=6;
+        document.getElementById("C"+$point).innerHTML= $op.responseJSON[$c].opcao_enunciado; $c+=6;
+        document.getElementById("D"+$point).innerHTML= $op.responseJSON[$d].opcao_enunciado; $d+=6;
+        document.getElementById("E"+$point).innerHTML= $op.responseJSON[$e].opcao_enunciado; $e+=6;
+        document.getElementById("F"+$point).innerHTML= $op.responseJSON[$f].opcao_enunciado; $f+=6;
+        $point+=1;
     }
 </script>
