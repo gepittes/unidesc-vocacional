@@ -27,7 +27,7 @@
                     </div>
                 </div><hr>
 
-                <form action="{{route('store.cadastro')}}" METHOD="POST">
+                <form action="{{route('recebeForm')}}" METHOD="POST">
                         @csrf
                         {{--NOME COMPLETO--}}
                         <div class="form-row">

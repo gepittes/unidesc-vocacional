@@ -10,7 +10,6 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/candidato/cadastro', 'CandidatoController@create')->name('cadastroCandidato');
-Route::post('/candidato/store', 'CandidatoController@store')->name('store.cadastro');
+Route::post('/candidato/cadastro', 'CandidatoController@recebeDadosFormCand')->name('recebeForm');
 
-Route::get('/teste', 'CandidatoController@startTeste');
-Route::get('/teste/quest', 'CandidatoController@storeQuest')->name('store.quest');
+Route::post('/teste/questoes', 'CandidatoController@recebeQuestDadosCand')->name('recebeQuestDadosCand');

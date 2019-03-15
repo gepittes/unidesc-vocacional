@@ -7,6 +7,7 @@ use App\Http\Requests\CandidatoFormRequest;
 use App\Models\Candidato;
 use App\Models\EFundamental;
 use App\Models\EMedio;
+use App\Models\ResultadoCand;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -37,6 +38,100 @@ class CandidatoController extends Controller
         return view('candidato.cadastroCandidato', compact('title', 'cidades', 'seriesFundamental', 'seriesMedio'));
     }
 
+    public function recebeDadosFormCand(CandidatoFormRequest $dadosCand){
+        //RECEBE DADOS CANDIDATO E VALIDA
+        if (isset($dadosCand)){
+            //RETORNA VIEW PARA PREENCHER QUESTOES
+            $title = 'Teste Vocacional | Teste';
+            return view('candidato.iniciarTeste', compact('title', 'dadosCand'));
+        }
+    }
+
+    public function recebeQuestDadosCand(Request $request){
+        //RECEBE GABARITO E DADOS DO CANDIDATO
+        $gabaritoCand = $request->except('_token', 'nome', 'telefone', 'email','serie', 'visitor');
+        $dadosCand = $request->only( 'nome', 'telefone', 'email','serie', 'visitor');
+
+        //Esse resultado esta em Array (Facilita na listagem na view)
+        $resultadoCursosCand = $this->resultadoCand($gabaritoCand); //ENVIA GABARITO PARA VALIDACAO
+
+
+        //aqui vem a funcao que armazena e depois chama a view com o resultado
+        //todo implementar funcao para juntar arrays para ResutadoFinalCand e enviar para a funcao store
+        //
+        //return route(rota para view com o resultado final)
+
+
+        return dd($dadosCand, $gabaritoCand, $resultadoCursosCand);
+    }
+
+    public function resultadoCand($gabaritorCand){
+        //FAZ A CONTAGEM DE PONTOS POR CATEGORIA
+        $a = 0; $b = 0; $c = 0; $d = 0; $e = 0; $f = 0;
+
+        for ($i = 1; $i <= 15; $i++){
+            switch ($gabaritorCand[$i]){
+                case "A":
+                    $a++;
+                    break;
+                case "B";
+                    $b++;
+                    break;
+                case "C";
+                    $c++;
+                    break;
+                case "D":
+                    $d++;
+                    break;
+                case "E";
+                    $e++;
+                    break;
+                case "F";
+                    $f++;
+                    break;
+            }
+        }
+
+        $resultadoCursosCand = $this->validaCategoriaResultado($a, $b, $c, $d, $e, $f);
+        return $resultadoCursosCand;
+    }
+
+    public function validaCategoriaResultado($a, $b, $c, $d, $e, $f){
+        //VERIFICAR QUAL CATEGORIA IRA SE ADEQUAR (Maior pontuacao na Categoria)
+        $cat = "";
+
+            if ($a > $b and $c and $d and $e and $f){
+                $cat = "A";
+            }elseif ($b > $c and $d and $e and $f){
+                $cat = "B";
+            }elseif ($c > $d and $e and $f){
+                $cat = "C";
+            }elseif ($d > $e and $f){
+                $cat = "D";
+            }elseif ($e > $f){
+                $cat = "E";
+            }else{
+                $cat = "F";
+            }
+
+            $res = new ResultadoCand();
+            $resultadoCursosCand = $res->resultadoCursos($cat); //CHAMA MODEL PARA QUERY NO BANCO
+
+            $resultadoCursosCand = $this->arrayToStringResultado($resultadoCursosCand);
+            return $resultadoCursosCand;
+    }
+
+
+    public function arrayToStringResultado($resultadoQuery){
+        // FAZ CONCATENACAO EM UM STRING PARA ARMEZENA RESULTADO NO BANCO
+        $stringResCursosDB = "";
+        foreach ($resultadoQuery as $curso){
+            $stringResCursosDB .= $curso->curso_descricao." - " ;
+        }
+        return $stringResCursosDB;
+    }
+
+
     /**
      * Store a newly created resource in storage.
      *
@@ -61,58 +156,5 @@ class CandidatoController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //EXIBI RESULTADO FINAL
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //NAO SERA USADO
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //NAO SERA USADO
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //NAO SERA USADO
-    }
-
-    public function startTeste(){
-
-        $title = 'Teste Vocacional | Teste';
-        return view('candidato.iniciarTeste', compact('title'));
-    }
-
-    public function storeQuest(Request $request){
-        return dd($request);
-    }
 }

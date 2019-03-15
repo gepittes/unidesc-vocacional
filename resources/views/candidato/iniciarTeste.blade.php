@@ -25,7 +25,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
 
-                @component('layouts.questaos')
+                @component('layouts.questaos', ['dadosCand' => $dadosCand])
                 @endcomponent
 
         </div>

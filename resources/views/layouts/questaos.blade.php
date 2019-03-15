@@ -1,4 +1,4 @@
-<form action="{{route('store.quest')}}">
+<form action="{{route('recebeQuestDadosCand')}}" method="POST">
     @csrf
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -397,6 +397,13 @@
                     <span class="form-check-sign" id="F15"></span></label>
             </div>
         </div>
+
+        {{--DADOS CANDIDATO--}}
+        <input value="{{$dadosCand->nome}}" name="nome" type="hidden">
+        <input value="{{$dadosCand->telefone}}" name="telefone" type="hidden">
+        <input value="{{$dadosCand->email}}" name="email" type="hidden">
+        <input value="{{$dadosCand->serie}}" name="serie" type="hidden">
+        <input value="{{$dadosCand->visitor}}" name="visitor" type="hidden">
 
     </div>
     <div class="modal-footer">
