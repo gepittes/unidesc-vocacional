@@ -103,13 +103,13 @@ class CandidatoController extends Controller
 //        $debug = ["A" => $a, "B" => $b, "C" => $c, "D" => $d, "E" => $e, "F" => $f];
 //        dd($debug);
 
-            if ($a > $b){
+            if ($a > $b and $a > $c and $a > $d and $a > $e and $a > $f){
                 $cat = "A";
-            }elseif ($b > $c){
+            }elseif ($b > $c and $b > $d and $b > $e and $b > $f){
                 $cat = "B";
-            }elseif ($c > $d){
+            }elseif ($c > $d and $c > $e and $c > $f){
                 $cat = "C";
-            }elseif ($d > $e){
+            }elseif ($d > $e and $d > $f){
                 $cat = "D";
             }elseif ($e > $f){
                 $cat = "E";
