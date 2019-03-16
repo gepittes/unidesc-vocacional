@@ -38,7 +38,8 @@ class CandidatoController extends Controller
         return view('candidato.cadastroCandidato', compact('title', 'cidades', 'seriesFundamental', 'seriesMedio'));
     }
 
-    public function recebeDadosFormCand(CandidatoFormRequest $dadosCand){
+    public function recebeDadosFormCand(CandidatoFormRequest $dadosCand)
+    {
         //RECEBE DADOS CANDIDATO E VALIDA
         if (isset($dadosCand)){
             //RETORNA VIEW PARA PREENCHER QUESTOES
@@ -47,7 +48,8 @@ class CandidatoController extends Controller
         }
     }
 
-    public function recebeQuestDadosCand(Request $request){
+    public function recebeQuestDadosCand(Request $request)
+    {
         //RECEBE GABARITO E DADOS DO CANDIDATO
         $gabaritoCand = $request->except('_token', 'nome', 'telefone', 'email','serie', 'visitor');
         $dadosCand = $request->only( 'nome', 'telefone', 'email','serie', 'visitor');
@@ -65,7 +67,8 @@ class CandidatoController extends Controller
         return dd($dadosCand, $gabaritoCand, $resultadoCursosCand);
     }
 
-    public function resultadoCand($gabaritorCand){
+    public function resultadoCand($gabaritorCand)
+    {
         //FAZ A CONTAGEM DE PONTOS POR CATEGORIA
         $a = 0; $b = 0; $c = 0; $d = 0; $e = 0; $f = 0;
 
@@ -96,7 +99,8 @@ class CandidatoController extends Controller
         return $resultadoCursosCand;
     }
 
-    public function validaCategoriaResultado($a, $b, $c, $d, $e, $f){
+    public function validaCategoriaResultado($a, $b, $c, $d, $e, $f)
+    {
         //VERIFICAR QUAL CATEGORIA IRA SE ADEQUAR (Maior pontuacao na Categoria)
         $cat = "";
 
@@ -125,7 +129,8 @@ class CandidatoController extends Controller
     }
 
 
-    public function arrayToStringResultado($resultadoQuery){
+    public function arrayToStringResultado($resultadoQuery)
+    {
         // FAZ CONCATENACAO EM UM STRING PARA ARMEZENA RESULTADO NO BANCO
         $stringResCursosDB = "";
         foreach ($resultadoQuery as $curso){
@@ -158,6 +163,4 @@ class CandidatoController extends Controller
             return redirect('/');
         }
     }
-
-
 }
