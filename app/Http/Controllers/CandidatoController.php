@@ -13,21 +13,13 @@ use Illuminate\Support\Facades\DB;
 
 class CandidatoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         //RETORNA FORM PARA CADASTRO
@@ -52,19 +44,35 @@ class CandidatoController extends Controller
     {
         //RECEBE GABARITO E DADOS DO CANDIDATO
         $gabaritoCand = $request->except('_token', 'nome', 'telefone', 'email','serie', 'visitor');
-        $dadosCand = $request->only( 'nome', 'telefone', 'email','serie', 'visitor');
+        $dadosCand = $request->only( 'nome', 'telefone', 'email', 'cidade', 'serie', 'visitor');
 
-        //Esse resultado esta em Array (Facilita na listagem na view)
-        $resultadoCursosCand = $this->resultadoCand($gabaritoCand); //ENVIA GABARITO PARA VALIDACAO
+        //ENVIA GABARITO PARA VALIDACAO
+        $resultadoCursosCand = $this->resultadoCand($gabaritoCand); //Esse resultado esta em Array (Facilita na listagem na view)
 
+        $cursosCandString = $this->arrayToStringResultado($resultadoCursosCand); //Os cursos do candidado em String
 
-        //aqui vem a funcao que armazena e depois chama a view com o resultado
-        //todo implementar funcao para juntar arrays para ResutadoFinalCand e enviar para a funcao store
-        //
-        //return route(rota para view com o resultado final)
+        $dadosCandDB = $this->agruparRegistro($dadosCand, $cursosCandString); //Dados em Objeto final
 
+        $this->storeCand($dadosCandDB);
 
-        return dd($dadosCand, $gabaritoCand, $resultadoCursosCand);
+        $title = "Teste Vocacional | Resultado";
+        return view('candidato.resultado', compact('title', 'resultadoCursosCand', 'dadosCandDB'));
+    }
+
+    public function storeCand($dadosCandDB)
+    {
+        // MODEL PARA FAZER O INSERT
+        $cad  = new Candidato();
+        $cad->storeCand($dadosCandDB);
+    }
+
+    public function agruparRegistro($dadosCand, $cursosCand)
+    {
+        //AGRUPA REGISTRO DO CANTIDADO TUDO EM UM ARRAY
+        $dadosCand += ["resultado_curso" => $cursosCand];
+        $dadosCand = (object)$dadosCand; //Passa de array para Objeto
+
+        return $dadosCand;
     }
 
     public function resultadoCand($gabaritorCand)
@@ -104,9 +112,6 @@ class CandidatoController extends Controller
         //VERIFICAR QUAL CATEGORIA IRA SE ADEQUAR (Maior pontuacao na Categoria)
         $cat = "";
 
-//        $debug = ["A" => $a, "B" => $b, "C" => $c, "D" => $d, "E" => $e, "F" => $f];
-//        dd($debug);
-
             if ($a > $b and $a > $c and $a > $d and $a > $e and $a > $f){
                 $cat = "A";
             }elseif ($b > $c and $b > $d and $b > $e and $b > $f){
@@ -121,46 +126,21 @@ class CandidatoController extends Controller
                 $cat = "F";
             }
 
+            //CHAMA MODEL PARA QUERY NO BANCO
             $res = new ResultadoCand();
-            $resultadoCursosCand = $res->resultadoCursos($cat); //CHAMA MODEL PARA QUERY NO BANCO
+            $resultadoCursosCand = $res->resultadoCursos($cat);
 
-            $resultadoCursosCand = $this->arrayToStringResultado($resultadoCursosCand);
             return $resultadoCursosCand;
     }
 
 
     public function arrayToStringResultado($resultadoQuery)
     {
-        // FAZ CONCATENACAO EM UM STRING PARA ARMEZENA RESULTADO NO BANCO
+        // FAZ CONCATENACAO EM UM STRING PARA ARMEZENAR RESULTADO NO BANCO (formato em String)
         $stringResCursosDB = "";
         foreach ($resultadoQuery as $curso){
             $stringResCursosDB .= $curso->curso_descricao." - " ;
         }
         return $stringResCursosDB;
-    }
-
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(CandidatoFormRequest $request)
-    {
-        //ARMAZENA CADASTRO
-        $candidato = new Candidato();
-        if (isset($candidato)){
-            $candidato->nome = $request->input('nome');
-            $candidato->telefone = $request->input('telefone');
-            $candidato->email = $request->input('email');
-            $candidato->cidade = $request->input('cidade');
-            $candidato->serie = $request->input('serie');
-            $candidato->visitor = $request->input('visitor');
-            $candidato->save();
-            return redirect('/');
-        }else{
-            return redirect('/');
-        }
     }
 }
