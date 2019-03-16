@@ -41,6 +41,7 @@
         <input value="{{$dadosCand->nome}}" name="nome" type="hidden">
         <input value="{{$dadosCand->telefone}}" name="telefone" type="hidden">
         <input value="{{$dadosCand->email}}" name="email" type="hidden">
+        <input value="{{$dadosCand->cidade}}" name="cidade" type="hidden">
         <input value="{{$dadosCand->serie}}" name="serie" type="hidden">
         <input value="{{$dadosCand->visitor}}" name="visitor" type="hidden">
 
