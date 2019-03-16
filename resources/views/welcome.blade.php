@@ -113,18 +113,8 @@
     <a href="#topo" class="scroll" onclick="hiddenbotaoTopo()"><button class="btn btn-neutral btn-icon btn-round"><i class="fas fa-arrow-circle-up"></i></button></a>
 </div>
 
-<footer class="footer">
-    <div class="container">
-        <div class="copyright" id="copyright">
-            &copy;
-            <script>
-                document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
-            </script>, UNIDESC |
-            <a href="{{route('login')}}" target="_blank">Admin</a>. Coded by
-            <a href="https://www.unidesc.edu.br/graduacao/sistemas-de-informacao">Alunos cursos de TI</a>.
-        </div>
-    </div>
-</footer>
+@component('layouts.footer')
+@endcomponent
 
     @component('layouts.scripts')
     @endcomponent

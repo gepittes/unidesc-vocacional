@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+@extends('layouts.templete')
 
-    @component('layouts.head', ['title' => $title])
-    @endcomponent
-
-<body class="index-page sidebar-collapse">
-
-<header class="alinhar">
-        <img class="bg-form" src="{{asset("/templeteAssets/assets/img/capa-teste.jpg")}}" alt="">
-</header>
+@section('conteudo')
 
 <div class="wrapper">
         <div class="section-form">
@@ -128,22 +120,4 @@
     </div>
 </div>
 
-<footer class="footer">
-    <div class="container">
-        <div class="copyright" id="copyright">
-            &copy;
-            <script>
-                document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
-            </script>, UNIDESC |
-            <a href="{{route('login')}}" target="_blank">Admin</a>. Coded by
-            <a href="https://www.unidesc.edu.br/graduacao/sistemas-de-informacao">Alunos cursos de TI</a>.
-        </div>
-    </div>
-</footer>
-
-    @component('layouts.scripts')
-    @endcomponent
-
-</body>
-
-</html>
+@endsection

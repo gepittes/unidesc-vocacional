@@ -22,6 +22,16 @@
     align-items: center;
 }
 
+.title-resultado-sobre{
+    position: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.300em;
+}
+
 .bg-form{
     background-image: url("../templeteAssets/assets/img/capa-teste.jpg");
     background-repeat: no-repeat ;
