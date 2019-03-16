@@ -100,13 +100,16 @@ class CandidatoController extends Controller
         //VERIFICAR QUAL CATEGORIA IRA SE ADEQUAR (Maior pontuacao na Categoria)
         $cat = "";
 
-            if ($a > $b and $c and $d and $e and $f){
+//        $debug = ["A" => $a, "B" => $b, "C" => $c, "D" => $d, "E" => $e, "F" => $f];
+//        dd($debug);
+
+            if ($a > $b){
                 $cat = "A";
-            }elseif ($b > $c and $d and $e and $f){
+            }elseif ($b > $c){
                 $cat = "B";
-            }elseif ($c > $d and $e and $f){
+            }elseif ($c > $d){
                 $cat = "C";
-            }elseif ($d > $e and $f){
+            }elseif ($d > $e){
                 $cat = "D";
             }elseif ($e > $f){
                 $cat = "E";
