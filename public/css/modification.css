@@ -30,6 +30,7 @@
     align-items: center;
     font-weight: 700;
     font-size: 1.300em;
+    margin: 1%;
 }
 
 .bg-form{
@@ -47,4 +48,24 @@
 
 .center-modal-screen {
     margin-top: 5%;
+}
+
+.sobre-teste-desc{
+    font-size: 1.0em;
+}
+
+.desc-grupo{
+    font-size: 1.0em;
+}
+
+.text-green{
+    color: rgb(0, 205, 62);
+}
+
+.center-content{
+    position: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
