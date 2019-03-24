@@ -16,3 +16,5 @@ Route::post('/candidato/cadastro', 'CandidatoController@recebeDadosFormCand')->n
 Route::post('/candidato/teste', 'CandidatoController@recebeQuestDadosCand')->name('recebeQuestDadosCand');
 
 Route::get('/candidato/teste', 'CandidatoController@error')->name('errorPage');
+
+Route::get('/candidato/resultado', 'CandidatoController@resultadoFinal')->name('candidatoResultado');

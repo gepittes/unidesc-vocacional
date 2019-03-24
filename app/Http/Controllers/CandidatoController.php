@@ -29,19 +29,37 @@ class CandidatoController extends Controller
 
     public function recebeDadosFormCand(CandidatoFormRequest $dadosCand)
     {
+        // GUARDA DADOS DO CANDIDATO NA SESSION
+        $dadosCand->session()->put('dadosCand',[
+            'nome' => $dadosCand->nome,
+            'telefone' => $dadosCand->telefone,
+            'email' => $dadosCand->email,
+            'cidade' => $dadosCand->cidade,
+            'serie' => $dadosCand->serie,
+            'visitor' => $dadosCand->visitor,
+        ]);
+
+        // for Debug
+//        $dadosCand->session()->flush();
+//        $var = session('dadosCand');
+//        dd($dadosCand->session()->isStarted(), $dadosCand->session(), $var);
+
         //RECEBE DADOS CANDIDATO E VALIDA
         if (isset($dadosCand)){
             //RETORNA VIEW PARA PREENCHER QUESTOES
             $title = 'Teste Vocacional | Teste';
-            return view('candidato.iniciarTeste', compact('title', 'dadosCand'));
+            return view('candidato.iniciarTeste', compact('title'));
         }
     }
 
     public function recebeQuestDadosCand(Request $request)
     {
         //RECEBE GABARITO E DADOS DO CANDIDATO
-        $gabaritoCand = $request->except('_token', 'nome', 'telefone', 'email','serie', 'visitor');
-        $dadosCand = $request->only( 'nome', 'telefone', 'email', 'cidade', 'serie', 'visitor');
+        $gabaritoCand = $request->except('_token');
+        $dadosCand = session('dadosCand');
+
+        // for Debug
+//        dd($gabaritoCand, $dadosCand);
 
         //ENVIA GABARITO PARA VALIDACAO
         $resultadoCursosCand = $this->resultadoCand($gabaritoCand); //Esse resultado esta em Array (Facilita na listagem na view)
@@ -50,10 +68,34 @@ class CandidatoController extends Controller
 
         $dadosCandDB = $this->agruparRegistro($dadosCand, $cursosCandString); //Dados em Objeto final
 
-        $this->storeCand($dadosCandDB);
+        $this->storeCand($dadosCandDB); // Armazena Resultado no Banco
 
-        $title = "Teste Vocacional | Resultado";
-        return view('candidato.resultado', compact('title', 'resultadoCursosCand', 'dadosCandDB'));
+        $request->session()->put('resultadoCursosCand', [$resultadoCursosCand, $dadosCandDB]);
+        // for Debug
+//        $request->session()->flush();
+//        dd(session('resultadoCursosCand'));
+        return redirect(route('candidatoResultado'));
+    }
+
+    public function resultadoFinal()
+    {
+        $data = session('resultadoCursosCand'); // Pega dados da Sessao
+        $resultadoCursosCand = $data[0];
+        $dadosCandDB = $data[1];
+
+        // for Debug
+//        dd(session());
+
+        if (session()->has('dadosCand')){
+            $title = "Teste Vocacional | Resultado";
+            session()->flush(); // Limpar dados da Sessao
+            return view('candidato.resultado', compact('title', 'resultadoCursosCand', 'dadosCandDB'));
+        }else{
+            session()->flush();
+            return redirect(route('cadastroCandidato'));
+        }
+
+
     }
 
     public function storeCand($dadosCandDB)

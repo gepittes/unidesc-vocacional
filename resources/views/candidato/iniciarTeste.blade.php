@@ -16,7 +16,9 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
 
-                @component('layouts.questaos', ['dadosCand' => $dadosCand])
+{{--                {{dd(session('dadosCand'))}}--}}
+
+                @component('layouts.questaos')
                 @endcomponent
 
             </div>
