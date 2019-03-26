@@ -19,6 +19,9 @@ class CandidatoController extends Controller
 
     public function create()
     {
+        //Caso haja algum dado de um candidato anterior ele limpa os dados da sessao.
+        session()->forget('dadosCand');
+        session()->forget('resultadoCursosCand');
         //RETORNA FORM PARA CADASTRO
         $title = "Teste Vocacional | Cadastro";
         $cidades = Cidade::all();
@@ -70,6 +73,7 @@ class CandidatoController extends Controller
 
         $this->storeCand($dadosCandDB); // Armazena Resultado no Banco
 
+        // Envia para a sessao dados do Candidato e seus Cursos
         $request->session()->put('resultadoCursosCand', [$resultadoCursosCand, $dadosCandDB]);
         // for Debug
 //        $request->session()->flush();
@@ -88,14 +92,11 @@ class CandidatoController extends Controller
 
         if (session()->has('dadosCand')){
             $title = "Teste Vocacional | Resultado";
-            session()->flush(); // Limpar dados da Sessao
             return view('candidato.resultado', compact('title', 'resultadoCursosCand', 'dadosCandDB'));
         }else{
             session()->flush();
             return redirect(route('cadastroCandidato'));
         }
-
-
     }
 
     public function storeCand($dadosCandDB)

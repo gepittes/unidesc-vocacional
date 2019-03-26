@@ -1,5 +1,5 @@
 @extends('layouts.templete')
-
+{{--{{$title = 'teste'}}--}}
 @section('conteudo')
     <div class="wrapper">
         <div class="section-form">
@@ -24,6 +24,7 @@
                         <strong>Caracteristica: <span class="badge badge-info">Aqui vem!</span></strong>
                     </div>
                     <div class="col">
+                        {{--<strong>Cursos indicados a: <span class="badge badge-success">Name</span></strong>--}}
                         <strong>Cursos indicados a: <span class="badge badge-success">{{$dadosCandDB->nome}}</span></strong>
                     </div>
                 </div>
@@ -42,11 +43,16 @@
 
                 <hr>
                 <div class="center-content">
-                    @foreach($resultadoCursosCand as $curso )
+                    @foreach($resultadoCursosCand as $curso)
                         <p class="badge badge-primary ml-2">{{$curso->curso_descricao}}</p>
+                        {{--<p class="badge badge-primary ml-2">Name Curso</p>--}}
                     @endforeach
                 </div>
                 <hr>
+
+                <div class="center-content ml-3">
+                    <a href="{{route('home')}}" class="btn btn-info"><strong>Finalizar Teste!</strong></a>
+                </div>
 
             </div>
         </div>
