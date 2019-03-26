@@ -20,8 +20,8 @@ class CandidatoController extends Controller
     public function create()
     {
         //Caso haja algum dado de um candidato anterior ele limpa os dados da sessao.
-        session()->forget('dadosCand');
-        session()->forget('resultadoCursosCand');
+        session()->forget('resultadoCand');
+
         //RETORNA FORM PARA CADASTRO
         $title = "Teste Vocacional | Cadastro";
         $cidades = Cidade::all();
@@ -74,24 +74,29 @@ class CandidatoController extends Controller
         $this->storeCand($dadosCandDB); // Armazena Resultado no Banco
 
         // Envia para a sessao dados do Candidato e seus Cursos
-        $request->session()->put('resultadoCursosCand', [$resultadoCursosCand, $dadosCandDB]);
+        $request->session()->put('resultadoCand', [$resultadoCursosCand, $dadosCandDB]);
+
+        /*Uso apenas para reduzir a carga de dados levada na sessao apenas*/
+        session()->forget('dadosCand'); // Limpa resquicios de dados redundantes da sessao do Formulario
+
         // for Debug
 //        $request->session()->flush();
-//        dd(session('resultadoCursosCand'));
+//        dd(session('resultadoCand'));
         return redirect(route('candidatoResultado'));
     }
 
     public function resultadoFinal()
     {
-        $data = session('resultadoCursosCand'); // Pega dados da Sessao
+        $data = session('resultadoCand'); // Pega dados da Sessao
         $resultadoCursosCand = $data[0];
         $dadosCandDB = $data[1];
 
         // for Debug
-//        dd(session());
+//        dd(session()->has('resultadoCand'), session());
 
-        if (session()->has('dadosCand')){
+        if (session()->has('resultadoCand')){
             $title = "Teste Vocacional | Resultado";
+            session()->forget('resultadoCand');
             return view('candidato.resultado', compact('title', 'resultadoCursosCand', 'dadosCandDB'));
         }else{
             session()->flush();
