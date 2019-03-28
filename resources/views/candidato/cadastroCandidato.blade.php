@@ -1,4 +1,4 @@
-@extends('layouts.templete')
+@extends('layouts.template-teste')
 
 @section('conteudo')
 

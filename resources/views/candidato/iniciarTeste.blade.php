@@ -1,4 +1,4 @@
-@extends('layouts.templete')
+@extends('layouts.template-teste')
 
 @section('conteudo')
     <div class="wrapper">
@@ -16,10 +16,16 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
 
+                {{--COMPONENTE ISOLADO DAS QUESTOES--}}
                 @component('layouts.questaos')
                 @endcomponent
 
             </div>
         </div>
     </div>
+    {{--ABRE MODAL PARA INICIAR QUESTOES--}}
+    <script>
+
+    </script>
 @endsection
+

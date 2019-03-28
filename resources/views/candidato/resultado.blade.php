@@ -1,4 +1,4 @@
-@extends('layouts.templete')
+@extends('layouts.template-teste')
 {{--{{$title = 'teste'}}--}}
 @section('conteudo')
     <div class="wrapper">

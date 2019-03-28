@@ -14,12 +14,6 @@
         @component('layouts.scripts')
         @endcomponent
 
-        <script>
-            function startQuestoes() {
-                $('#questoes').modal('show');
-                upEnum();
-            }
-        </script>
     </body>
 
 </html>
