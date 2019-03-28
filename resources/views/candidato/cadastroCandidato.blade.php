@@ -33,7 +33,7 @@
                             {{--TELEFONE--}}
                             <div class="form-group col">
                                 <label for="telefone">Telefone Celular</label>
-                                <input type="text" class="form-control phone_with_ddd" id="telefone" name="telefone" placeholder="(DD) 00000-0000" value="{{old('telefone')}}">{{--todo auto formatar campo--}}
+                                <input type="text" class="form-control phone_with_ddd" id="telefone" name="telefone" placeholder="(DD) 00000-0000" value="{{old('telefone')}}">
                                 @if($errors->has('telefone'))
                                     <span class="badge badge-danger space-error-bg">{{ $errors->first('telefone') }}</span>
                                 @endif
