@@ -11,9 +11,8 @@
 
             @yield('conteudo')
 
-        @component('layouts.scripts')
-        @endcomponent
-
     </body>
+
+@include('layouts.scripts')
 
 </html>

@@ -139,8 +139,7 @@
     });
 </script>
 
-@component('layouts.scripts')
-@endcomponent
+@include('layouts.scripts')
 
 </body>
 
