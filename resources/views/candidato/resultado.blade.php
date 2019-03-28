@@ -58,6 +58,6 @@
         </div>
     </div>
 
-    @component('layouts.footer')
+    @component('components.footer')
     @endcomponent
 @endsection

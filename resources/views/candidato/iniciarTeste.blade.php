@@ -17,7 +17,7 @@
             <div class="modal-content">
 
                 {{--COMPONENTE ISOLADO DAS QUESTOES--}}
-                @component('layouts.questaos')
+                @component('components.questaos')
                 @endcomponent
 
             </div>

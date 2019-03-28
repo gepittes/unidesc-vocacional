@@ -114,7 +114,7 @@
 </div>
 
 
-@component('layouts.footer')
+@component('components.footer')
 @endcomponent
 
 {{--Animate Scroll and Back to Top--}}
