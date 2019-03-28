@@ -14,27 +14,6 @@
     <link rel="stylesheet" href="{{url('css/modification.css')}}">
     <link href="{{url('/templeteAssets/assets/css/bootstrap.min.css')}}" rel="stylesheet" />
     <link href="{{url('/templeteAssets/assets/css/now-ui-kit.css?v=1.2.0')}}" rel="stylesheet" />
-    {{--Animate Scroll--}}
+    {{--Jquery--}}
     <script src="{{url('/js/jquery.js')}}"></script>
-    <script>
-        {{--TODO identificar por secao e ativar botao--}}
-        function showbotaoTopo() {
-            if (document.getElementById("botaoTopo").style.display === "none") {
-                document.getElementById("botaoTopo").style.display = "block";
-            }
-        }
-        function hiddenbotaoTopo() {
-            if (document.getElementById("botaoTopo").style.display === "block") {
-                document.getElementById("botaoTopo").style.display = "none";
-            }
-        }
-    </script>
-    <script>
-        jQuery(document).ready(function($) {
-            $(".scroll").click(function(event){
-                event.preventDefault();
-                $('html,body').animate({scrollTop:$(this.hash).offset().top}, 1000);
-            });
-        });
-    </script>
 </head>

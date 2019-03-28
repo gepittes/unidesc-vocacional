@@ -28,7 +28,7 @@
                     <a href="{{route('cadastroCandidato')}}"><button type="button" class="btn btn-success font-weight-bold">REALIZAR TESTE!</button></a>
                 </div>
                 <div class="content mt-5">
-                    <a href="#artigo-ti" class="scroll" onclick="showbotaoTopo()"><span class="font-italic" style="color: white">Mais informações</span>
+                    <a href="#artigo-ti" class="scroll"><span class="font-italic" style="color: white">Mais informações</span>
                         <i class="fas fa-arrow-down"></i>
                     </a>
                 </div>
@@ -110,14 +110,37 @@
 </div>
 
 <div class="topo" id="botaoTopo" style="display: none">
-    <a href="#topo" class="scroll" onclick="hiddenbotaoTopo()"><button class="btn btn-neutral btn-icon btn-round"><i class="fas fa-arrow-circle-up"></i></button></a>
+    <a href="#topo" class="scroll"><button class="btn btn-neutral btn-icon btn-round"><i class="fas fa-arrow-circle-up"></i></button></a>
 </div>
+
 
 @component('layouts.footer')
 @endcomponent
 
-    @component('layouts.scripts')
-    @endcomponent
+{{--Animate Scroll and Back to Top--}}
+<script>
+    window.onscroll = function() {scrollFunction()};
+
+    {{--Ativar Botao--}}
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            $("#botaoTopo").fadeIn();
+        } else {
+            $("#botaoTopo").fadeOut();
+        }
+    }
+
+    {{--Animacao Scroll de rolagem na pagina--}}
+    jQuery(document).ready(function($) {
+        $(".scroll").click(function(event){
+            event.preventDefault();
+            $('html,body').animate({scrollTop:$(this.hash).offset().top}, 1000);
+        });
+    });
+</script>
+
+@component('layouts.scripts')
+@endcomponent
 
 </body>
 
