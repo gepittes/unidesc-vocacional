@@ -21,10 +21,9 @@
 
                 <div class="row mb-3">
                     <div class="col">
-                        <strong>Caracteristica: <span class="badge badge-info">Aqui vem!</span></strong>
+                        <strong>Caracteristica: <span class="badge badge-info">{{$caracteristicaCand->caracteristica}}</span></strong>
                     </div>
                     <div class="col">
-                        {{--<strong>Cursos indicados a: <span class="badge badge-success">Name</span></strong>--}}
                         <strong>Cursos indicados a: <span class="badge badge-success">{{$dadosCandDB->nome}}</span></strong>
                     </div>
                 </div>
@@ -35,7 +34,8 @@
                         <div class="card-body">
                             {{--todo chamar descricao do grupo do curso--}}
                             <p class="text-justify desc-grupo font-weight-normal">
-                                É intuitivo, sonhador, aberto a experiências e foge das convenções sociais. Possui percepção aguçada e interesse em atividades que envolvam imaginação, beleza, produção artística ou inovação. Gosta de se expressar através de meios como música, teatro, dança, desenho, poesia e canto. Valoriza o prazer e as emoções. Aprecia o contato interpessoal, quando está seguro de poder expressar-se livremente. É aberto a estímulos subjetivos e emocionais, capaz de perceber as reações das pessoas através de compreensão empática.
+                                {{--É intuitivo, sonhador, aberto a experiências e foge das convenções sociais. Possui percepção aguçada e interesse em atividades que envolvam imaginação, beleza, produção artística ou inovação. Gosta de se expressar através de meios como música, teatro, dança, desenho, poesia e canto. Valoriza o prazer e as emoções. Aprecia o contato interpessoal, quando está seguro de poder expressar-se livremente. É aberto a estímulos subjetivos e emocionais, capaz de perceber as reações das pessoas através de compreensão empática.--}}
+                                {{$caracteristicaCand->descricao}}
                             </p>
                         </div>
                     </div>

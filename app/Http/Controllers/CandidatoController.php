@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Cidade;
 use App\Http\Requests\CandidatoFormRequest;
 use App\Models\Candidato;
+use App\Models\CursoDescricao;
 use App\Models\EFundamental;
 use App\Models\EMedio;
 use App\Models\ResultadoCand;
@@ -73,8 +74,13 @@ class CandidatoController extends Controller
 
         $this->storeCand($dadosCandDB); // Armazena Resultado no Banco
 
+        $cat = session('grupoCand'); // Guardo a Categoria do Candidato
+
+        $caracteristicaCand = $this->caracteristicaCand($cat); // Retorna do banco a Caracteritica do candidato
+//        dd($caracteristicaCand);
+
         // Envia para a sessao dados do Candidato e seus Cursos
-        $request->session()->put('resultadoCand', [$resultadoCursosCand, $dadosCandDB]);
+        $request->session()->put('resultadoCand', [$resultadoCursosCand, $dadosCandDB, $caracteristicaCand]);
 
         /*Uso apenas para reduzir a carga de dados levada na sessao apenas*/
         session()->forget('dadosCand'); // Limpa resquicios de dados redundantes da sessao do Formulario
@@ -85,11 +91,25 @@ class CandidatoController extends Controller
         return redirect(route('candidatoResultado'));
     }
 
+    public function caracteristicaCand($cat)
+    {
+        $caracteristicaCand = new CursoDescricao();
+        $caracteristicaCand = $caracteristicaCand->descCand($cat);
+
+        return $caracteristicaCand;
+    }
+
     public function resultadoFinal()
     {
         $data = session('resultadoCand'); // Pega dados da Sessao
+//        dd($data);
+
         $resultadoCursosCand = $data[0];
         $dadosCandDB = $data[1];
+        $caracteristicaCand = $data[2][0];
+
+//        dd($resultadoCursosCand, $dadosCandDB, $caracteristicaCand);
+
 
         // for Debug
 //        dd(session()->has('resultadoCand'), session());
@@ -97,7 +117,7 @@ class CandidatoController extends Controller
         if (session()->has('resultadoCand')){
             $title = "Teste Vocacional | Resultado";
             session()->forget('resultadoCand');
-            return view('candidato.resultado', compact('title', 'resultadoCursosCand', 'dadosCandDB'));
+            return view('candidato.resultado', compact('title', 'resultadoCursosCand', 'dadosCandDB', 'caracteristicaCand'));
         }else{
             session()->flush();
             return redirect(route('cadastroCandidato'));
@@ -174,6 +194,10 @@ class CandidatoController extends Controller
             //CHAMA MODEL PARA QUERY NO BANCO
             $res = new ResultadoCand();
             $resultadoCursosCand = $res->resultadoCursos($cat);
+
+            //Guarda na Sessao o grupo do Candidato
+            session()->put('grupoCand', $cat);
+//            dd(session());
 
             return $resultadoCursosCand;
     }

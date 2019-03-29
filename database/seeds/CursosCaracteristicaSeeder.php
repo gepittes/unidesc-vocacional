@@ -41,7 +41,7 @@ class CursosCaracteristicaSeeder extends Seeder
             //GRUPO F
             ['id' => 6, 'caracteristica' => 'Empreendedor',
                 'descricao' => 'É um líder natural: enérgico, persuasivo, competitivo, corajoso e determinado. Gosta de situações novas e desafiadoras. Possui interesse em atividades administrativas e comerciais. Valoriza o sucesso, o poder e o status. Extrovertido, tem iniciativa e quer assumir a liderança.',
-                'grupo_letra' => 'E', 'created_at' => date("Y-m-d H:m:s"), 'updated_at' => date("Y-m-d H:m:s")
+                'grupo_letra' => 'F', 'created_at' => date("Y-m-d H:m:s"), 'updated_at' => date("Y-m-d H:m:s")
             ]
         ]);
     }
