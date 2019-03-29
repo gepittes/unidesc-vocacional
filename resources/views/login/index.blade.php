@@ -40,7 +40,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="../assets/img/blurred-image-1.jpg">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url('/')}}">Unidesc Vocacional</a>
+                    <a class="nav-link" href="{{route('home')}}">Unidesc Vocacional</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" rel="tooltip"  data-placement="bottom" href="https://www.facebook.com/unidesc/" target="_blank">
@@ -124,8 +124,6 @@
                     <script>
                         document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
                     </script>, UNIDESC
-                    {{--<a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by--}}
-                    {{--<a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.--}}
                 </div>
             </div>
         </footer>

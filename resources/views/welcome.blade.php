@@ -25,7 +25,7 @@
                     </p>
                 </div>
                 <div class="content mt-5">
-                    <a href="{{route('cadastroCandidato')}}"><button type="button" class="btn btn-success font-weight-bold">REALIZAR TESTE!</button></a>
+                    <a href="{{route('cadastro.candidato')}}"><button type="button" class="btn btn-success font-weight-bold">REALIZAR TESTE!</button></a>
                 </div>
                 <div class="content mt-5">
                     <a href="#artigo-ti" class="scroll"><span class="font-italic" style="color: white">Mais informações</span>

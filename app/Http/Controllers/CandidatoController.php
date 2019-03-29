@@ -88,7 +88,7 @@ class CandidatoController extends Controller
         // for Debug
 //        $request->session()->flush();
 //        dd(session('resultadoCand'));
-        return redirect(route('candidatoResultado'));
+        return redirect(route('candidato.resultado'));
     }
 
     public function caracteristicaCand($cat)
@@ -120,7 +120,7 @@ class CandidatoController extends Controller
             return view('candidato.resultado', compact('title', 'resultadoCursosCand', 'dadosCandDB', 'caracteristicaCand'));
         }else{
             session()->flush();
-            return redirect(route('cadastroCandidato'));
+            return redirect(route('cadastro.candidato'));
         }
     }
 

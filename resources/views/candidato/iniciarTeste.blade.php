@@ -23,9 +23,5 @@
             </div>
         </div>
     </div>
-    {{--ABRE MODAL PARA INICIAR QUESTOES--}}
-    <script>
-
-    </script>
 @endsection
 

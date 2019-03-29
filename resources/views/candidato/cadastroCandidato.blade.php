@@ -19,7 +19,7 @@
                     </div>
                 </div><hr>
 
-                <form action="{{route('recebeForm')}}" METHOD="POST">
+                <form action="{{route('recebe.form.cand')}}" METHOD="POST">
                         @csrf
                         {{--NOME COMPLETO--}}
                         <div class="form-row">
