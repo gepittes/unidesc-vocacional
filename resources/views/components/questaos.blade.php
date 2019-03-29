@@ -1,4 +1,4 @@
-<form action="{{route('recebe.questoess.cand')}}" method="POST">
+<form action="{{route('recebe.questoes.cand')}}" method="POST">
     @csrf
     <div class="modal-header">
     <h5 class="modal-title" id="title"></h5>
