@@ -1,4 +1,4 @@
-@extends('layouts.template-teste')
+@extends('layouts.template_teste')
 
 @section('conteudo')
 
@@ -13,7 +13,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="d-flex flex-row-reverse" style="margin-top: 5%">
+                        <div class="d-flex flex-row-reverse mt-lg-4">
                             <a href="{{route('home')}}"><button type="button" class="btn btn-info"><strong>Inicio</strong></button></a>
                         </div>
                     </div>
@@ -96,7 +96,7 @@
                                                     <option value="{{old('serie')}}" selected>{{old('serie') == "concluido" ? 'Concluido' : $ano->serie."º"}}</option>
                                                 @else
                                                     {{--  EXIBICAO  --}}
-                                                    @if($ano->serie == 'concluido')
+                                                     @if($ano->serie == 'concluido')
                                                         <option value="{{$ano->serie}}">Concluido</option>
                                                      @else
                                                         <option value="{{$ano->serie}}">{{$ano->serie}}º</option>

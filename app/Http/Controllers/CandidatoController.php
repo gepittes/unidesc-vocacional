@@ -28,7 +28,7 @@ class CandidatoController extends Controller
         $cidades = Cidade::all();
         $seriesFundamental = EFundamental::all();
         $seriesMedio= EMedio::all();
-        return view('candidato.cadastroCandidato', compact('title', 'cidades', 'seriesFundamental', 'seriesMedio'));
+        return view('candidato.cadastro_candidato', compact('title', 'cidades', 'seriesFundamental', 'seriesMedio'));
     }
 
     public function recebeDadosFormCand(CandidatoFormRequest $dadosCand)
@@ -52,7 +52,7 @@ class CandidatoController extends Controller
         if (isset($dadosCand)){
             //RETORNA VIEW PARA PREENCHER QUESTOES
             $title = 'Teste Vocacional | Teste';
-            return view('candidato.iniciarTeste', compact('title'));
+            return view('candidato.iniciar_teste', compact('title'));
         }
     }
 
@@ -117,7 +117,7 @@ class CandidatoController extends Controller
         if (session()->has('resultadoCand')){
             $title = "Teste Vocacional | Resultado";
             session()->forget('resultadoCand');
-            return view('candidato.resultado', compact('title', 'resultadoCursosCand', 'dadosCandDB', 'caracteristicaCand'));
+            return view('candidato.resultado_candidato', compact('title', 'resultadoCursosCand', 'dadosCandDB', 'caracteristicaCand'));
         }else{
             session()->flush();
             return redirect(route('cadastro.candidato'));
