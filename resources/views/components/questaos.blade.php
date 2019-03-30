@@ -38,12 +38,26 @@
     <div class="modal-footer">
         <span></span>
         <button type="submit" class="btn btn-success" style="display: none" id="Benviar">Enviar</button>
-        <button type="button" class="btn btn-primary" onclick="upEnum()" id="Bnext">Next</button>
+        <button type="button" class="btn btn-primary" id="Bnext">Próximo</button>
     </div>
 
 </form>
 
 <script>
+    $(document).ready(function(){
+
+        document.getElementById("Bnext").onclick = function() { // validar os radios
+            var radios = document.getElementsByName($cont);
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    console.log("Escolheu: " + radios[i].value);
+                    upEnum()
+                }else {
+                }
+            }
+        };
+    });
+
     {{--Abre o Modal das Questoes--}}
     function startQuestoes() {
         $('#questoes').modal('show');
