@@ -37,6 +37,7 @@
     </div>
     <div class="modal-footer">
         <span></span>
+        <div class="alertQ" role="alert" style="display: none" id="alert">Opa! escolha a opção para continuar</div>
         <button type="submit" class="btn btn-success" style="display: none" id="Benviar">Enviar</button>
         <button type="button" class="btn btn-primary" id="Bnext">Próximo</button>
     </div>
@@ -44,16 +45,24 @@
 </form>
 
 <script>
-    $(document).ready(function(){
 
-        document.getElementById("Bnext").onclick = function() { // validar os radios
+    {{-- Carreagar o javascripts --}}
+    $(document).ready(function(){
+        document.getElementById("Bnext").onclick = function() { // validar o radio
             var radios = document.getElementsByName($cont);
+            $aviso=1;
             for (var i = 0; i < radios.length; i++) {
-                if (radios[i].checked) {
-                    console.log("Escolheu: " + radios[i].value);
+                if (radios[i].checked) { // verificar se o radio  foi selecionado
                     upEnum()
-                }else {
+                    document.getElementById("alert").style="display: node";
                 }
+            }
+            $aviso ++;
+            if($aviso <= 1) {
+              document.getElementById("alert").style = "display: none";
+                $aviso=1;
+            }else {
+                document.getElementById("alert").style = "display: flex";
             }
         };
     });
@@ -99,5 +108,6 @@
         document.getElementById("E"+$point).innerHTML= $op.responseJSON[$e].opcao_enunciado; $e+=6;
         document.getElementById("F"+$point).innerHTML= $op.responseJSON[$f].opcao_enunciado; $f+=6;
         $point+=1;
+        $aviso = 0;
     }
 </script>

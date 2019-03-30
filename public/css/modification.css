@@ -107,3 +107,12 @@
     }
 }
 
+.alertQ {
+    position: relative;
+    padding: 0.5rem 1.25rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    width: 100%;
+    color: #ec1a2e;
+    background-color: #ffd550;
+}
