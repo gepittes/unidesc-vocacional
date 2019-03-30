@@ -58,10 +58,10 @@
                     </div>
                     {{--ANALISTA CARD DIREITA--}}
                     <div class="col">
-                        <div class="card ml-5 content-center mr-5" style="width: auto; margin-top: 6rem;">
+                        <div class="card content-center" style="width: auto; margin-top: 6rem;">
                             <div class="card-body">
                                 <blockquote class="blockquote blockquote-primary mb-0">
-                                    <p class="font-italic font-weight-normal" style="font-size: 15px;">
+                                    <p class="font-italic font-weight-normal ft-15">
                                         “Administrador de banco de dados; gerente de redes de médio e pequeno porte; projetista
                                         e engenheiro de programas; professor de informática,
                                         bem como o desenvolvimento de projetos pedagógicos; consultor de equipamentos...”</p>
@@ -78,7 +78,7 @@
                         <div class="card mt-2" style="width: auto;">
                             <img class="card-img-top" src="{{url('templeteAssets/assets/img/programador-card.jpg')}}" alt="Card image cap">
                             <div class="card-body">
-                                <p class="card-text font-weight-normal text-justify" style="font-size:14px">
+                                <p class="card-text font-weight-normal text-justify ft-14">
                                     Para trabalhar como programador web não basta conhecer uma linguagem de programação,
                                     é preciso ter domínio de outras ferramentas também.
                                     As linguagens mais solicitadas nas empresas são <strong>ASP, .NET, JAVA, PHP e Python.</strong>
@@ -91,7 +91,7 @@
                     </div>
                     {{--PROGRAMADOR CARD DIREITA--}}
                     <div class="col">
-                        <div class="card ml-5 content-center mr-5" style="width: auto; margin-top: 6rem;">
+                        <div class="card content-center" style="width: auto; margin-top: 6rem;">
                             <div class="card-body">
                                 <blockquote class="blockquote blockquote-primary mb-0">
                                     <p class="font-italic font-weight-normal" style="font-size: 15px;">

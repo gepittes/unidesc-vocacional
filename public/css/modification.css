@@ -69,3 +69,41 @@
     justify-content: center;
     align-items: center;
 }
+
+.ft-14{
+    font-size: 14px;
+}
+.ft-15{
+    font-size: 15px;
+}
+
+/*---------------RESONSIVE-----------------*/
+/*================IPHONE X=================*/
+
+/*VERTICAL*/
+@media (width: 375px) and (height: 812px){
+    .content-center{
+        margin-top: 50px;
+    }
+    .topo{
+        margin-bottom: 20px;
+    }
+    .card{
+        margin-top: 0 !important;
+    }
+}
+
+/*!*HORIZONTAL*!*/
+@media (width: 812px) and (height: 375px){
+    .content-center{
+        margin-top: 300px;
+    }
+    .page-header{
+        padding-bottom: 750px !important;
+    }
+    .topo{
+        margin-bottom: 20px;
+        left: 720px;
+    }
+}
+
