@@ -38,6 +38,7 @@
     <div class="modal-footer">
         <span></span>
         <div class="alertQ" role="alert" style="display: none" id="alert">Opa! escolha a opção para continuar</div>
+        <div class="alertQ qfim"  style="display: none"  id="msgfinal">Eba! Chegamos na última questão antes para liberar o botão para envio</div>
         <button type="submit" class="btn btn-success" style="display: none" id="Benviar">Enviar</button>
         <button type="button" class="btn btn-primary" id="Bnext">Próximo</button>
     </div>
@@ -67,6 +68,14 @@
         };
     });
 
+
+    $('input[name="15"]').change(function () {
+        $fim = $('input[name="15"]:checked').val();
+        if ($fim !== true) {
+            document.getElementById("Benviar").style="display: flex";
+        }
+
+    });
     {{--Abre o Modal das Questoes--}}
     function startQuestoes() {
         $('#questoes').modal('show');
@@ -84,7 +93,7 @@
         }
         if($cont === 15){ // Monta botao Submit
             document.getElementById("Bnext").style="display: none";
-            document.getElementById("Benviar").style="display: flex";
+            document.getElementById("msgfinal").style="display: flex";
         }
     }
 
