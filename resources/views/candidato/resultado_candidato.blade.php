@@ -24,7 +24,7 @@
                         <strong>Caracteristica: <span class="badge badge-info">{{$caracteristicaCand->caracteristica}}</span></strong>
                     </div>
                     <div class="col">
-                        <strong>Cursos indicados a: <span class="badge badge-success">{{$dadosCandDB->nome}}</span></strong>
+                        <strong>Cursos indicados a: <span class="badge badge-success">{{$dadosCand->nome}}</span></strong>
                     </div>
                 </div>
                 <hr>
@@ -32,9 +32,7 @@
                 <div class="center-content">
                     <div class="card" style="width: 60rem;">
                         <div class="card-body">
-                            {{--todo chamar descricao do grupo do curso--}}
                             <p class="text-justify desc-grupo font-weight-normal">
-                                {{--É intuitivo, sonhador, aberto a experiências e foge das convenções sociais. Possui percepção aguçada e interesse em atividades que envolvam imaginação, beleza, produção artística ou inovação. Gosta de se expressar através de meios como música, teatro, dança, desenho, poesia e canto. Valoriza o prazer e as emoções. Aprecia o contato interpessoal, quando está seguro de poder expressar-se livremente. É aberto a estímulos subjetivos e emocionais, capaz de perceber as reações das pessoas através de compreensão empática.--}}
                                 {{$caracteristicaCand->descricao}}
                             </p>
                         </div>
@@ -45,7 +43,6 @@
                 <div class="center-content">
                     @foreach($resultadoCursosCand as $curso)
                         <p class="badge badge-primary ml-2">{{$curso->curso_descricao}}</p>
-                        {{--<p class="badge badge-primary ml-2">Name Curso</p>--}}
                     @endforeach
                 </div>
                 <hr>
