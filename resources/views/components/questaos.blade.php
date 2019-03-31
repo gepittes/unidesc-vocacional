@@ -37,8 +37,8 @@
     </div>
     <div class="modal-footer">
         <span></span>
-        <div class="alertQ" role="alert" style="display: none" id="alert">Opa! escolha a opção para continuar</div>
-        <div class="alertQ qfim"  style="display: none"  id="msgfinal">Eba! Chegamos na última questão antes para liberar o botão para envio</div>
+        <div class="alertQ" role="alert" style="display: none" id="alert">Opa! escolha uma opção para continuar.</div>
+        <div class="alertQ qfim"  style="display: none"  id="msgfinal">Sucesso! Chegamos na última questão antes de liberar para envio.</div>
         <button type="submit" class="btn btn-success" style="display: none" id="Benviar">Enviar</button>
         <button type="button" class="btn btn-primary" id="Bnext">Próximo</button>
     </div>
@@ -47,14 +47,14 @@
 
 <script>
 
-    {{-- Carreagar o javascripts --}}
+    {{-- Validacao dos Opcoes --}}
     $(document).ready(function(){
         document.getElementById("Bnext").onclick = function() { // validar o radio
             var radios = document.getElementsByName($cont);
             $aviso=1;
             for (var i = 0; i < radios.length; i++) {
                 if (radios[i].checked) { // verificar se o radio  foi selecionado
-                    upEnum()
+                    upEnum();
                     document.getElementById("alert").style="display: node";
                 }
             }
@@ -76,6 +76,7 @@
         }
 
     });
+
     {{--Abre o Modal das Questoes--}}
     function startQuestoes() {
         $('#questoes').modal('show');
