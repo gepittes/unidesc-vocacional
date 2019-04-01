@@ -16,7 +16,7 @@ Route::get('/candidato/teste', 'Errors\ErrorsController@erro404');
 Route::get('/404', 'Errors\ErrorsController@erro404')->name('page.404');
 
 
-// CANIDADTO
+// CANDIDATO
 Route::get('/candidato/cadastro', 'CandidatoController@create')->name('cadastro.candidato');
 Route::post('/candidato/cadastro', 'CandidatoController@recebeDadosFormCand')->name('recebe.form.cand');
 Route::post('/candidato/teste', 'CandidatoController@recebeQuestDadosCand')->name('recebe.questoes.cand');
