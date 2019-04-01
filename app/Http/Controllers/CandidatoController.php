@@ -14,10 +14,7 @@ use Illuminate\Support\Facades\DB;
 
 class CandidatoController extends Controller
 {
-    public function erro404()
-    {
-        return view('errors.404');
-    }
+
 
     public function create()
     {
