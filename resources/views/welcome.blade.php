@@ -13,7 +13,7 @@
         </div>
         <div class="container">
             <div class="content-center brand">
-                <img src="{{url('templeteAssets/assets/img/teste-vocacional-logo-feira.png')}}" alt="">
+                <img src="{{url('templeteAssets/assets/img/teste-vocacional-logo-feira.png')}}" alt="" class="logo-home">
                 <h3>O que você deve saber sobre o teste vocacional!</h3>
                 <div class="content">
                     <p class="text-justify">

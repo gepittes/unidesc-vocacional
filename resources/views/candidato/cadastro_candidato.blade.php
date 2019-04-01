@@ -120,4 +120,7 @@
     </div>
 </div>
 
+@component('components.footer_simple')
+@endcomponent
+
 @endsection

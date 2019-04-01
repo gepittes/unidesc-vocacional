@@ -3,7 +3,7 @@
     position: fixed;
     float: bottom;
     bottom: 15px;
-    left: 300px;
+    left: 90%;
 }
 
 .alinhar{
@@ -77,6 +77,23 @@
     font-size: 15px;
 }
 
+.alertQ {
+    position: relative;
+    padding: 0.5rem 1.25rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    width: 100%;
+    color: #ec1a2e;
+    background-color: #ffd550;
+}
+
+.qfim{
+    color: #0f88b1;
+    background-color: rgba(90, 169, 177, 0.35);
+    font-weight: bold;
+}
+
+
 /*---------------RESONSIVE-----------------*/
 /*================IPHONE X=================*/
 
@@ -93,7 +110,7 @@
     }
 }
 
-/*!*HORIZONTAL*!*/
+/*HORIZONTAL*/
 @media (width: 812px) and (height: 375px){
     .content-center{
         margin-top: 300px;
@@ -107,18 +124,29 @@
     }
 }
 
-.alertQ {
-    position: relative;
-    padding: 0.5rem 1.25rem;
-    border: 1px solid transparent;
-    border-radius: .25rem;
-    width: 100%;
-    color: #ec1a2e;
-    background-color: #ffd550;
+
+/*Desktop 1368 x 768*/
+@media (max-width: 1366px) and (max-height: 672px){
+    .content-center{
+        margin-top: 1%;
+    }
+    .topo{
+        left: 95%;
+    }
+    .logo-home{
+        width: 70%;
+    }
+}
+/*Full Screnn*/
+@media (max-width: 1366px) and (max-height: 768px){
+    .content-center{
+        margin-top: 1%;
+    }
+    .topo{
+        left: 95%;
+    }
+    .logo-home{
+        width: 70%;
+    }
 }
 
-.qfim{
-    color: #0f88b1;
-    background-color: rgba(90, 169, 177, 0.35);
-    font-weight: bold;
-}
