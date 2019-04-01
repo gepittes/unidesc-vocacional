@@ -14,7 +14,7 @@
                     </div>
                     <div class="col">
                         <div class="d-flex flex-row-reverse mt-lg-4">
-                            <a href="{{route('home')}}"><button type="button" class="btn btn-info"><strong>Inicio</strong></button></a>
+                            <a href="{{route('home')}}"><button type="button" class="btn btn-info btn-rp-inicio"><strong>Inicio</strong></button></a>
                         </div>
                     </div>
                 </div><hr>
@@ -112,7 +112,7 @@
                             {{--IP Adress--}}
                             <input value="{{$_SERVER['REMOTE_ADDR']}}" name="visitor" type="hidden">
                             <div class="form-group mt-3">
-                                <button type="submit" class="btn btn-primary">Enviar</button>
+                                <button type="submit" class="btn btn-primary btn-rp-submit">Enviar</button>
                             </div>
                         </div>
                 </form>

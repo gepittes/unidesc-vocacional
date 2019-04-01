@@ -40,7 +40,7 @@
                 </div>
 
                 <hr>
-                <div class="center-content">
+                <div class="resultado-cursos">
                     @foreach($resultadoCursosCand as $curso)
                         <p class="badge badge-primary ml-2">{{$curso->curso_descricao}}</p>
                     @endforeach
