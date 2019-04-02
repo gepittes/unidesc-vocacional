@@ -102,7 +102,7 @@
 }
 
 
-/*---------------RESONSIVE-----------------*/
+/*---------------RESONSIVE MOBILES-----------------*/
 /*================IPHONE X=================*/
 
 /*VERTICAL*/
@@ -157,7 +157,82 @@
     }
 }
 
+/*==========IPHONE 5/SE===========*/
+/*VERTICAL*/
+@media (device-width: 320px) and (device-height: 568px){
+    .content-center{
+        margin-top: 420px;
+    }
+    .topo{
+        margin-bottom: 30px;
+        left: 85%;
+    }
+    .card{
+        margin-top: 0 !important;
+    }
+    .form-control{
+        width: 290px !important;
+    }
+    .title{
+        font-size: 16px !important;
+    }
+    .btn-rp-inicio{
+        margin-top: 25px !important;
+    }
+    .btn-rp-submit{
+        margin-left: 7em !important;
+        padding: 10px 50px !important;
+    }
+    .title-resultado-sobre{
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    .resultado-cursos{
+        flex-direction: column;
+        align-items: normal;
+    }
+    .wrapper .page-header{
+        padding-bottom: 1000px !important;
+    }
+    .section{
+        padding: 0 !important;
+    }
+    .col .title{
+        padding-top: 0;
+    }
+}
+/*HORIZONTAL*/
+@media (device-width: 568px) and (device-height: 320px){
+    .content-center{
+        margin-top: 345px;
+    }
+    .topo{
+        margin-bottom: 30px;
+        left: 85%;
+    }
+    .btn-rp-inicio{
+        margin-top: 35px !important;
+    }
+    .title-resultado-sobre{
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    .resultado-cursos{
+        flex-direction: column;
+        align-items: normal;
+    }
+    .wrapper .page-header{
+        padding-bottom: 800px !important;
+    }
+    .section{
+        padding: 0 !important;
+    }
+    .col .title{
+        padding-top: 0;
+    }
+}
 
+/*---------------RESONSIVE DESKTOPS-----------------*/
 /*Desktop 1368 x 768*/
 @media (min-width: 1366px) and (max-height: 768px){
     .content-center{
