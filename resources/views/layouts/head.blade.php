@@ -10,8 +10,10 @@
     <link rel="stylesheet" href="{{url('/fonts/fonts.css')}}">
     {{-- ICONS Font Awesonme --}}
     <link rel="stylesheet" href="{{url('/icons/css/all.min.css')}}">
-    {{-- CSS Files --}}
+    {{-- CSS Files Custom--}}
+    <link rel="stylesheet" href="{{url('css/responsive.css')}}">
     <link rel="stylesheet" href="{{url('css/modification.css')}}">
+    {{-- CSS Files Template--}}
     <link href="{{url('/templeteAssets/assets/css/bootstrap.min.css')}}" rel="stylesheet" />
     <link href="{{url('/templeteAssets/assets/css/now-ui-kit.css?v=1.2.0')}}" rel="stylesheet" />
     {{--Jquery--}}
