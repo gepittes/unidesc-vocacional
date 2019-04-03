@@ -10,12 +10,10 @@ use App\Http\Controllers\Controller;
 class APIQuestaoController extends Controller
 {
     public function JsonQuestoesEnum(){
-        $enunciadosQuest = QuestaoEnunciado::all();
-        return response($enunciadosQuest);
+        return response(QuestaoEnunciado::all('id','enunciado_questao'));
     }
 
     public function JsonQuestoesOp(){
-        $enunciadosOP = QuestaoOpcoes::all();
-        return response($enunciadosOP);
+        return response(QuestaoOpcoes::all('id', 'opcao_enunciado', 'opcao_letra'));
     }
 }
