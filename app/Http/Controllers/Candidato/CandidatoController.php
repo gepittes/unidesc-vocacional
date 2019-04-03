@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Candidato;
 
+use App\Mail\CandidatoContato;
 use App\Models\Cidade\Cidade;
 use App\Http\Requests\CandidatoFormRequest;
 use App\Models\Candidato\Candidato;
@@ -13,6 +14,7 @@ use App\Models\Candidato\ResultadoCand;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class CandidatoController extends Controller
 {
@@ -83,7 +85,7 @@ class CandidatoController extends Controller
         $resultadoCursosCand = $data[0];
         $dadosCand = $data[1];
         $caracteristicaCand = $data[2][0];
-
+        $this->enviaEmail($data); // Envia dados do candidato para função
         if (session('resultadoCand')){
             $title = "Teste Vocacional | Resultado";
             session()->forget(['grupoCand', 'dadosCand', 'resultadoCand']);
@@ -143,7 +145,7 @@ class CandidatoController extends Controller
     {
         // VALIDA QUAL CATEGORIA IRA SE ADEQUAR
         $cat = "";
-
+        
             if ($a > $b and $a > $c and $a > $d and $a > $e and $a > $f){
                 $cat = "A";
             }elseif ($b > $c and $b > $d and $b > $e and $b > $f){
@@ -173,5 +175,13 @@ class CandidatoController extends Controller
             $stringCursosDB .= $curso->curso_descricao." - " ;
         }
         return $stringCursosDB;
+    }
+
+    public function enviaEmail($data)
+    {
+        // Enviar email para o cardidato
+        Mail::to($data[1]->email)->send(new CandidatoContato($data));
+
+        return redirect()->back();
     }
 }
