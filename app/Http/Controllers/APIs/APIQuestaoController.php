@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\APIs;
 
-use App\Models\QuestaoEnunciado;
-use App\Models\QuestaoOpcoes;
+use App\Models\Questoes\QuestaoEnunciado;
+use App\Models\Questoes\QuestaoOpcoes;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 

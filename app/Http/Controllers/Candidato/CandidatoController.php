@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Candidato;
 
-use App\Cidade;
+use App\Models\Cidade\Cidade;
 use App\Http\Requests\CandidatoFormRequest;
-use App\Models\Candidato;
-use App\Models\CursoDescricao;
-use App\Models\EFundamental;
-use App\Models\EMedio;
-use App\Models\ResultadoCand;
+use App\Models\Candidato\Candidato;
+use App\Models\Curso\CursoDescricao;
+use App\Models\Curso\Curso;
+use App\Models\Ensino\EFundamental;
+use App\Models\Ensino\EMedio;
+use App\Models\Candidato\ResultadoCand;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;

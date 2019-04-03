@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Cidade;
 
 use Illuminate\Database\Eloquent\Model;
 
-class QuestaoOpcoes extends Model
+class Cidade extends Model
 {
     //
 }
