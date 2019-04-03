@@ -22,9 +22,9 @@ class CandidatoController extends Controller
     {
         // RETORNA FORM PARA CADASTRO
         $title = "Teste Vocacional | Cadastro";
-        $cidades = Cidade::all();
-        $seriesFundamental = EFundamental::all();
-        $seriesMedio= EMedio::all();
+        $cidades = Cidade::all('nome');
+        $seriesFundamental = EFundamental::all('serie');
+        $seriesMedio = EMedio::all('serie');
         return view('candidato.cadastro_candidato', compact('title', 'cidades', 'seriesFundamental', 'seriesMedio'));
     }
 
