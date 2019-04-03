@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Candidato;
 
 use App\Cidade;
 use App\Http\Requests\CandidatoFormRequest;
@@ -10,6 +10,7 @@ use App\Models\EFundamental;
 use App\Models\EMedio;
 use App\Models\ResultadoCand;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
 class CandidatoController extends Controller
