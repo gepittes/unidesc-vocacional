@@ -84,6 +84,15 @@
     font-size: 15px;
 }
 
+.f-white{
+    color: white;
+}
+
+.mt-6-rem{
+    width: auto;
+    margin-top: 6rem;
+}
+
 .alertQ {
     position: relative;
     padding: 0.5rem 1.25rem;

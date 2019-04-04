@@ -28,7 +28,7 @@
                     <a href="{{route('cadastro.candidato')}}"><button type="button" class="btn btn-success font-weight-bold">REALIZAR TESTE!</button></a>
                 </div>
                 <div class="content mt-5">
-                    <a href="#artigo-ti" class="scroll"><span class="font-italic" style="color: white">Mais informações</span>
+                    <a href="#artigo-ti" class="scroll"><span class="font-italic f-white">Mais informações</span>
                         <i class="fas fa-arrow-down"></i>
                     </a>
                 </div>
@@ -43,14 +43,14 @@
                     {{--ANALISTA CARD--}}
                     <div class="col">
                         <h5 class="title font-weight-bold">Analista de Sistemas</h5>
-                        <div class="card mt-2 " style="width: auto;">
-                            <img class="card-img-top" src="{{url('/assets/template/img/analista-card.jpg')}}" alt="Card image cap">
+                        <div class="card mt-2">
+                            <img class="card-img-top" src="{{url('/assets/template/img/analista-card.jpg')}}" alt="Analista de SI">
                             <div class="card-body">
-                                <p class="card-text font-weight-normal text-justify" style="font-size:14px">
+                                <p class="card-text font-weight-normal text-justify ft-14">
                                     Analista de sistemas é o profissional encarregado
                                     <strong>de sistematizar informações</strong>, ou seja, é aquela pessoa que realiza estudos de processos computacionais
                                     e cujo objetivo é encontrar a melhor e mais racional forma de processar a informação.</p>
-                                <p class="card-text font-weight-normal text-justify" style="font-size:14px">
+                                <p class="card-text font-weight-normal text-justify ft-14">
                                     O analista de sistemas <strong>desenvolve soluções que serão aplicadas pelo computador</strong>,
                                     baseadas na conexão que existe entre o usuário, o programa e o equipamento. </p>
                             </div>
@@ -58,7 +58,7 @@
                     </div>
                     {{--ANALISTA CARD DIREITA--}}
                     <div class="col">
-                        <div class="card content-center" style="width: auto; margin-top: 6rem;">
+                        <div class="card content-center mt-6-rem">
                             <div class="card-body">
                                 <blockquote class="blockquote blockquote-primary mb-0">
                                     <p class="font-italic font-weight-normal ft-15">
@@ -75,7 +75,7 @@
                     {{--PROGRAMADOR CARD--}}
                     <div class="col">
                         <h5 class="title font-weight-bold">Programador // Develop</h5>
-                        <div class="card mt-2" style="width: auto;">
+                        <div class="card mt-2 w-auto">
                             <img class="card-img-top" src="{{url('/assets/template/img/programador-card.jpg')}}" alt="Card image cap">
                             <div class="card-body">
                                 <p class="card-text font-weight-normal text-justify ft-14">
@@ -83,7 +83,7 @@
                                     é preciso ter domínio de outras ferramentas também.
                                     As linguagens mais solicitadas nas empresas são <strong>ASP, .NET, JAVA, PHP e Python.</strong>
                                     Assim como tecnologias como <span class="font-italic font-weight-bold">HTML 5, CSS 3 e JS.</span></p>
-                                <p class="card-text font-weight-normal text-justify" style="font-size:14px">
+                                <p class="card-text font-weight-normal text-justify ft-15">
                                     <strong>Conhecimento em banco de dados</strong> também é fundamental para ingressar em uma empresa com foco em ambientes web.<br>
                                     <strong>A linguagem SQL</strong> é um pré-requisito para a grande maioria das vagas disponíveis no mercado </p>
                             </div>
@@ -91,10 +91,10 @@
                     </div>
                     {{--PROGRAMADOR CARD DIREITA--}}
                     <div class="col">
-                        <div class="card content-center" style="width: auto; margin-top: 6rem;">
+                        <div class="card content-center mt-6-rem">
                             <div class="card-body">
                                 <blockquote class="blockquote blockquote-primary mb-0">
-                                    <p class="font-italic font-weight-normal" style="font-size: 15px;">
+                                    <p class="font-italic font-weight-normal ft-15">
                                         “Um programador web não precisa ficar confinado em um escritório,
                                         defronte a um computador 24 horas por dia. Além de trabalhar em grandes corporações,
                                         um profissional desta área também tem seu espaço no meio acadêmico, para realizar
