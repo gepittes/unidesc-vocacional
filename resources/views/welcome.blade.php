@@ -9,11 +9,11 @@
 <div class="wrapper">
     <div class="page-header clear-filter" filter-color="blue">
         <div class="page-header-image" data-parallax="true"
-             style="background-image:url({{url('/templeteAssets/assets/img/job-bg.jpg')}});">
+             style="background-image:url({{url('/assets/template/img/job-bg.jpg')}});">
         </div>
         <div class="container">
             <div class="content-center brand">
-                <img src="{{url('templeteAssets/assets/img/teste-vocacional-logo-feira.png')}}" alt="" class="logo-home">
+                <img src="{{url('/assets/template/img/teste-vocacional-logo-feira.png')}}" alt="teste-vocacional" class="logo-home">
                 <h3>O que você deve saber sobre o teste vocacional!</h3>
                 <div class="content">
                     <p class="text-justify">
@@ -44,7 +44,7 @@
                     <div class="col">
                         <h5 class="title font-weight-bold">Analista de Sistemas</h5>
                         <div class="card mt-2 " style="width: auto;">
-                            <img class="card-img-top" src="{{url('templeteAssets/assets/img/analista-card.jpg')}}" alt="Card image cap">
+                            <img class="card-img-top" src="{{url('/assets/template/img/analista-card.jpg')}}" alt="Card image cap">
                             <div class="card-body">
                                 <p class="card-text font-weight-normal text-justify" style="font-size:14px">
                                     Analista de sistemas é o profissional encarregado
@@ -76,7 +76,7 @@
                     <div class="col">
                         <h5 class="title font-weight-bold">Programador // Develop</h5>
                         <div class="card mt-2" style="width: auto;">
-                            <img class="card-img-top" src="{{url('templeteAssets/assets/img/programador-card.jpg')}}" alt="Card image cap">
+                            <img class="card-img-top" src="{{url('/assets/template/img/programador-card.jpg')}}" alt="Card image cap">
                             <div class="card-body">
                                 <p class="card-text font-weight-normal text-justify ft-14">
                                     Para trabalhar como programador web não basta conhecer uma linguagem de programação,

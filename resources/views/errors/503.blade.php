@@ -5,20 +5,18 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="{{asset('templeteAssets/assets/img/favicon.png')}}">
 
     <title>Teste Vocacional | Manutenção</title>
 
     <!-- Google font -->
-    <link href="{{url('assets404/fonts/font-oswald.css')}}" rel="stylesheet">
-    <link href="{{url('assets404/fonts/font-lato.css')}}" rel="stylesheet">
+    <link href="{{url('assets/pagesHTTP/fonts/font-oswald.css')}}" rel="stylesheet">
+    <link href="{{url('assets/pagesHTTP/fonts/font-lato.css')}}" rel="stylesheet">
 
     <!-- Font Awesome Icon -->
-    <link type="text/css" rel="stylesheet" href="{{url('assets404/css/font-awesome.min.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{url('assets/pagesHTTP/css/font-awesome.min.css')}}" />
 
     <!-- Custom stlylesheet -->
-    <link type="text/css" rel="stylesheet" href="{{url('assets404/css/style.css')}}" />
-
+    <link type="text/css" rel="stylesheet" href="{{url('assets/pagesHTTP/css/style.css')}}" />
 
 </head>
 
