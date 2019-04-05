@@ -1,64 +1,103 @@
-@extends('layouts.template_teste')
-{{$title = ''}}
 
-<html>
+{{--
+
+Observação:
+
+        Essa layouts está  usando style em linha devido ser especial para envio de e-mail,
+        sabemos que em boas práticas o correto é usar o style externo.
+
+
+--}}
+
+<!DOCTYPE html>
+<html lang="pt-br">
 <header>
-
-    <!-- temp -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <!-- temp -->
 </header>
 
-</body>
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="card" style="width:600px;">
-            <img src="https://i.imgur.com/BXlRZe2.jpg" class="card-img-top" alt="Teste Vocacional">
-            <div class="card-body">
-                <h5 class="card-title">Teste Vocacional da Unidesc</h5>
-                <p class="card-text">   Olá {{$data[1]->nome}} muito obrigado por ter participado.</p>
-                <div >
-                    <h5>Suas informações</h5>
-                    <p class="font-weight-bold" style="margin-bottom: 0;">Nome: <strong  class="font-weight-normal">{{$data[1]->nome}}</strong></p>
-                    <p class="font-weight-bold" style="margin-bottom: 0;">Telefone: <strong  class="font-weight-normal">{{$data[1]->telefone}}</strong></p>
-                    <p class="font-weight-bold" style="margin-bottom: 0;">E-mail: <strong  class="font-weight-normal">{{$data[1]->email}}</strong></p>
-                    <p class="font-weight-bold" style="margin-bottom: 0;">Cidade: <strong  class="font-weight-normal">{{$data[1]->cidade}}</strong></p><br>
+<body style="margin: 0;font-weight: 400;color: #212529;text-align: left; background-color: #fff;">
+<div style="max-width: 500px;padding: 15px;margin: auto;">
 
-                </div>
-                <div >
-                    <strong>Resultado: <span>
-                        @foreach($data[0] as $curso)
-                                <p class="badge badge-primary ml-2">{{$curso->curso_descricao}}</p>
+    <div style="display: -ms-flexbox;display: flex;-ms-flex-wrap: wrap;margin: -15px;">
+        <div style="width:600px;
+                        display: -ms-flexbox;
+                        display: flex;
+                        -ms-flex-direction: column;
+                        flex-direction: column;
+                        min-width: 0;
+                        background-color: #fff;
+                        background-clip: border-box;
+                        border: 1px solid rgba(0,0,0,.125);
+                        border-radius: .25rem;">
+            <div>
+                <img src="https://i.imgur.com/BXlRZe2.jpg"style="width: 100%;" alt="Teste Vocacional">
+                <div style="padding: 1.25rem;">
+                    <b style="margin-bottom: .75rem;">Teste Vocacional da Unidesc</b>
+                    <p class="card-text">   Olá {{$data[1]->nome}} muito obrigado por ter participado.</p>
+                    <div >
+                        <b>Suas informações:</b>
+                        <div><br>
+                            <b>Nome: </b><i>{{$data[1]->nome}}</i><br>
+                            <b>Telefone: </b><i>{{$data[1]->telefone}}</i><br>
+                            <b>E-mail: </b><i>{{$data[1]->email}}</i><br>
+                            <b>Cidade: </b><i>{{$data[1]->cidade}}</i><br>
+                        </div>
+                    </div>
+                    <div><br>
+                        <b>Resultado:</b>
+                        <ul style="padding-left: 0;margin: 2px 0;">
+                            @foreach($data[0] as $curso)
+                                <li style="
+                                    display: inline-block;
+                                    font-size: 75%;
+                                    font-weight: 700;
+                                    margin: -38px;
+                                    text-align: center;
+                                    white-space: nowrap;
+                                    vertical-align: baseline;
+                                    border-radius: .25rem;
+                                    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+                                    color: #fff;
+                                    background-color: #007bff;">{{$curso->curso_descricao}}</li><br>
+
                             @endforeach
-                   </span>
-
-                    </strong>
-                </div>
-                <strong>Caracteristica: <span class="badge badge-info">{{$data[2][0]->caracteristica}}</span></strong>
-                <div class="card-body">
-                    <p class="text-justify desc-grupo font-weight-normal">
-                        {{$data[2][0]->descricao}}
-                    </p>
-                </div>
-            </div>
-            <div class="card text-center">
-                <div class="card-body" style="background-color: darkgray;">
-                    Telefone:(61) 3878-3100 <br/>
-                    Rodovia BR-040 (Acesso à Cidade Ocidental) Jardim Flamboyant <br/>
-                    Cidade Ocidental - Goiás  <br/>
-                    <a href="http://www.unidesc.edu.br/" target="_blank" >www.unidesc.edu.br<a></a>
+                        </ul>
+                    <div>
+                        <b>Caracteristica:</b>
+                        <span style="color: #fff;
+                                    display: inline-block;
+                                    padding: .25em .4em;
+                                    font-size: 75%;
+                                    font-weight: 700;
+                                    line-height: 1;
+                                    text-align: center;
+                                    white-space: nowrap;
+                                    vertical-align: baseline;
+                                    border-radius: .25rem;
+                                    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+                                      background-color: #17a2b8;">{{$data[2][0]->caracteristica}}</span>
+                    </div>
+                    <div>
+                        <p style="/*box-shadow: 0 1px 9px -3px */ border: 1px solid rgba(0,0,0,.125);font-weight: 400;text-align: justify ;padding: 15px;background-color: #fff">
+                            {{$data[2][0]->descricao}}
+                        </p>
+                    </div>
+                    <div style="text-align: center!important;
+                            background-color: #fff;
+                            border: 1px solid rgba(0,0,0,.125);
+                            border-radius: .25rem;">
+                        <div style="background-color: darkgray; padding: 5px 0;">
+                            Telefone:(61) 3878-3100 <br/>
+                            Rodovia BR-040 (Acesso à Cidade Ocidental) Jardim Flamboyant <br/>
+                            Cidade Ocidental - Goiás  <br/>
+                            <a href="http://www.unidesc.edu.br/" target="_blank" >www.unidesc.edu.br</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
 </div>
 </body>
 </html>
