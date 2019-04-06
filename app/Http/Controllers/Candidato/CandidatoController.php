@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Candidato;
 
-use App\Mail\CandidatoContato;
+use App\Mail\MailCandidato;
 use App\Models\Cidade\Cidade;
 use App\Http\Requests\CandidatoFormRequest;
 use App\Models\Candidato\Candidato;
@@ -85,7 +85,7 @@ class CandidatoController extends Controller
         $resultadoCursosCand = $data[0];
         $dadosCand = $data[1];
         $caracteristicaCand = $data[2][0];
-        $this->enviaEmail($data); // Envia dados do candidato para função
+        $this->sendMail($data); // Envia dados do candidato para função
         if (session('resultadoCand')){
             $title = "Teste Vocacional | Resultado";
             session()->forget(['grupoCand', 'dadosCand', 'resultadoCand']);
@@ -177,10 +177,10 @@ class CandidatoController extends Controller
         return $stringCursosDB;
     }
 
-    public function enviaEmail($data)
+    public function sendMail($data)
     {
         // Enviar email para o cardidato
-        Mail::to($data[1]->email)->send(new CandidatoContato($data));
+        Mail::to($data[1]->email)->send(new MailCandidato($data));
 
         return redirect()->back();
     }

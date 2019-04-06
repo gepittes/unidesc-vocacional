@@ -6,7 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class CandidatoContato extends Mailable
+class MailCandidato extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -22,6 +22,6 @@ class CandidatoContato extends Mailable
     {
         return $this->from('unidecteste@gmail.com')
             ->subject('Teste Vocacional -  Unidesc.')
-            ->view('candidato.contato');
+            ->view('layouts.mail');
     }
 }
