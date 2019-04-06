@@ -33,14 +33,13 @@ Observação:
             <div>
                 <img src="https://i.imgur.com/NFGKQ1I.jpg"style="width: 100%;" alt="Teste Vocacional">
                 <div style="padding: 1.25rem;">
-                    <b style="margin-bottom: .75rem;">Teste Vocacional da Unidesc</b>
-                    <p class="card-text">   Olá {{$data[1]->nome}} muito obrigado por ter participado.</p>
+                    <b style="margin-bottom: .75rem;">Teste Vocacional | UNIDESC</b>
+                    <p class="card-text">   Olá {{$data[1]->nome}} muito obrigado por ter participado do nosso teste vocacional.</p>
                     <div >
                         <b>Suas informações:</b>
                         <div><br>
                             <b>Nome: </b><i>{{$data[1]->nome}}</i><br>
                             <b>Telefone: </b><i>{{$data[1]->telefone}}</i><br>
-                            <b>E-mail: </b><i>{{$data[1]->email}}</i><br>
                             <b>Cidade: </b><i>{{$data[1]->cidade}}</i><br>
                         </div>
                     </div>
