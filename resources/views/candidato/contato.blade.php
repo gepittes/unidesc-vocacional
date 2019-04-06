@@ -31,7 +31,7 @@ Observação:
                         border: 1px solid rgba(0,0,0,.125);
                         border-radius: .25rem;">
             <div>
-                <img src="https://i.imgur.com/BXlRZe2.jpg"style="width: 100%;" alt="Teste Vocacional">
+                <img src="https://i.imgur.com/NFGKQ1I.jpg"style="width: 100%;" alt="Teste Vocacional">
                 <div style="padding: 1.25rem;">
                     <b style="margin-bottom: .75rem;">Teste Vocacional da Unidesc</b>
                     <p class="card-text">   Olá {{$data[1]->nome}} muito obrigado por ter participado.</p>
@@ -50,6 +50,8 @@ Observação:
                             @foreach($data[0] as $curso)
                                 <li style="
                                     display: inline-block;
+                                    padding: 3px;
+                                    margin-left: 0;
                                     font-size: 75%;
                                     font-weight: 700;
                                     margin: -38px;
@@ -67,10 +69,9 @@ Observação:
                         <b>Caracteristica:</b>
                         <span style="color: #fff;
                                     display: inline-block;
-                                    padding: .25em .4em;
+                                    padding: 3px;
                                     font-size: 75%;
                                     font-weight: 700;
-                                    line-height: 1;
                                     text-align: center;
                                     white-space: nowrap;
                                     vertical-align: baseline;
