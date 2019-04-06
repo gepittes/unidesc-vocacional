@@ -85,8 +85,8 @@ class CandidatoController extends Controller
         $resultadoCursosCand = $data[0];
         $dadosCand = $data[1];
         $caracteristicaCand = $data[2][0];
-        $this->sendMail($data); // Envia dados do candidato para função
         if (session('resultadoCand')){
+            $this->sendMail($data); // Envia dados do candidato para função
             $title = "Teste Vocacional | Resultado";
             session()->forget(['grupoCand', 'dadosCand', 'resultadoCand']);
             return view('candidato.resultado_candidato', compact('title', 'resultadoCursosCand', 'dadosCand', 'caracteristicaCand'));
