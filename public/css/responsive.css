@@ -124,6 +124,69 @@
 /*Desktop 1680 x 1050 {OK!}*/
 /*Desktop 1920 x 1080 {OK!}*/
 
+/*---------------RESONSIVE MOBILES-----------------*/
+/*================IPHONE X=================*/
+
+/*VERTICAL*/
+@media (width: 375px) and (height: 812px){
+    /*HOME*/
+    .container .content-center{
+        margin-top: 50px;
+    }
+    .topo{
+        margin-bottom: 20px;
+        left: 85%;
+    }
+    .wrapper .section{
+        padding: 0 !important;
+    }
+    .row .col .card{
+        margin-top: 0 !important;
+    }
+    /*FORM CAND*/
+    .row .col .d-flex .title{
+        width: 200px;
+        font-size: 20px;
+    }
+    .form-row .form-group .form-control{
+        width: 350px !important;
+    }
+    .btn-rp-inicio{
+        margin-top: 25px !important;
+    }
+    .form-row .form-group .btn-rp-submit{
+        margin-left: 9.5em !important;
+        padding: 10px 50px !important;
+    }
+    /*RESULTADO CAND*/
+    .title-resultado-sobre{
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    .resultado-cursos{
+        flex-direction: column;
+        align-items: normal;
+    }
+}
+
+/*HORIZONTAL*/
+@media (width: 812px) and (height: 375px){
+    /*HOME*/
+    .container .brand{
+        margin-top: 300px;
+    }
+    .wrapper .page-header{
+        padding-bottom: 750px !important;
+    }
+    .topo{
+        margin-bottom: 20px;
+        left: 720px;
+    }
+    /*FORM CAND*/
+    .btn-rp-inicio{
+        margin-top: 30px !important;
+    }
+}
 
 
 
