@@ -37,7 +37,7 @@
                 <span class="navbar-toggler-bar bottom-bar"></span>
             </button>
         </div>
-        <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="../assets/img/blurred-image-1.jpg">
+        <div class="collapse navbar-collapse justify-content-end" id="navigation">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('home')}}">Unidesc Vocacional</a>
@@ -61,7 +61,7 @@
 <!-- End Navbar -->
 
 <div class="page-header clear-filter" filter-color="orange">
-    <div class="page-header-image" style="background-image:url({{url('templeteAssets/assets/img/estudo-bg-login.jpg')}})"></div>
+    <div class="page-header-image" style="background-image:url({{url('assets/template/img/estudo-bg-login.jpg')}})"></div>
     <div class="content">
         <div class="container">
             <div class="col-md-4 ml-auto mr-auto">
@@ -69,7 +69,7 @@
 
                     <form class="form" method="POST" action="{{route('login')}}">
                         @csrf
-                                <img src="{{url('templeteAssets/assets/img/teste-vocacional-logo.png')}}" alt="">
+                                <img src="{{url('assets/template/img/teste-vocacional-logo.png')}}" alt="">
                         <div class="card-body">
                             {{--EMAIL--}}
                             <div class="input-group no-border input-lg">
@@ -107,9 +107,9 @@
                                 </h6>
                             </div>
                             <div class="pull-right">
-                                <h6>
-                                    <a href="#" class="link">Ajuda?</a>
-                                </h6>
+                                {{--<h6>--}}
+                                    {{--<a href="#" class="link">Ajuda?</a>--}}
+                                {{--</h6>--}}
                             </div>
                         </div>
                     </form>
