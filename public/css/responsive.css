@@ -287,6 +287,106 @@
     }
 }
 
+/*MOBILES width 420px between 500px | Reference Device: Iphone 6/7/8 and 8 PLUS*/
+/*VERTICAL*/
+@media (min-device-width: 420px) and (max-device-width: 500px){
+    /*HOME*/
+    .container .content-center{
+        margin-top: 30%;
+    }
+    .topo{
+        margin-bottom: 20px;
+        left: 85%;
+    }
+    .wrapper .section{
+        padding: 0 !important;
+    }
+    .row .col .card{
+        margin-top: 0 !important;
+    }
+    .row .col .card-text{
+        font-size: 18px !important;
+    }
+    /*FORM CAND*/
+    .row .col .d-flex .title{
+        width: 200px;
+        font-size: 20px;
+    }
+    .form-row .form-group .form-control{
+        min-width: 350px !important;
+    }
+    .btn-rp-inicio{
+        margin-top: 25px !important;
+    }
+    .form-row .form-group .btn-rp-submit{
+        padding: 10px 50px !important;
+    }
+    .form-rp{
+        min-width: 375px;
+        max-width: 414px;
+    }
+    /*RESULTADO CAND*/
+    .title-resultado-sobre{
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    .resultado-cursos{
+        flex-direction: column;
+        align-items: normal;
+    }
+}
+/*HORIZONTAL*/
+@media (min-device-height: 420px) and (max-device-height: 500px){
+    /*HOME*/
+    .container .content-center{
+        margin-top: 60%;
+    }
+    .topo{
+        margin-bottom: 20px;
+        left: 85%;
+    }
+    .wrapper .section{
+        padding: 0 !important;
+    }
+    .row .col .card-text{
+        font-size: 12px !important;
+    }
+    .row .col .font-italic{
+        font-size: 12px !important;
+    }
+    .wrapper .page-header{
+        padding-bottom: 750px !important;
+    }
+    /*FORM CAND*/
+    .row .col .d-flex .title{
+        width: 200px;
+        font-size: 20px;
+    }
+    .form-row .form-group .form-control{
+        min-width: 350px !important;
+    }
+    .btn-rp-inicio{
+        margin-top: 25px !important;
+    }
+    .form-row .form-group .btn-rp-submit{
+        padding: 10px 50px !important;
+    }
+    .form-rp{
+        min-width: 375px;
+        max-width: 414px;
+    }
+    /*RESULTADO CAND*/
+    .title-resultado-sobre{
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    .resultado-cursos{
+        flex-direction: column;
+        align-items: normal;
+    }
+}
+
+
 
 
 
