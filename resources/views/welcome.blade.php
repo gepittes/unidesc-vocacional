@@ -25,7 +25,9 @@
                     </p>
                 </div>
                 <div class="content mt-5">
-                    <a href="{{route('cadastro.candidato')}}"><button type="button" class="btn btn-success font-weight-bold">REALIZAR TESTE!</button></a>
+                    <a href="{{route('cadastro.candidato')}}">
+                        <button type="button" class="btn btn-success font-weight-bold h5">
+                            <i class="fas fa-cubes"></i> REALIZAR TESTE!</button></a>
                 </div>
                 <div class="content mt-5">
                     <a href="#artigo-ti" class="scroll"><span class="font-italic f-white">Mais informações</span>
