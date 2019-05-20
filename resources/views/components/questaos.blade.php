@@ -7,29 +7,29 @@
         {{--MONTA O A DIV PARA CADA QUESTAO--}}
         @for($i = 1; $i <= 15; $i++)
             <div id="Q{{$i}}" style="display: none">
-                <div class="form-check form-check-radio">
+                <div class="form-check">
                     <label class="form-check-label"><input class="form-check-input" type="radio" name="{{$i}}" value="A">
-                        <span class="form-check-sign" id="A{{$i}}"></span></label>
+                        <span id="A{{$i}}"></span></label>
                 </div>
-                <div class="form-check form-check-radio">
+                <div class="form-check">
                     <label class="form-check-label"><input class="form-check-input" type="radio" name="{{$i}}" value="B">
-                        <span class="form-check-sign" id="B{{$i}}"></span></label>
+                        <span id="B{{$i}}"></span></label>
                 </div>
-                <div class="form-check form-check-radio">
+                <div class="form-check ">
                     <label class="form-check-label"><input class="form-check-input" type="radio" name="{{$i}}" value="C">
-                        <span class="form-check-sign" id="C{{$i}}"></span></label>
+                        <span id="C{{$i}}"></span></label>
                 </div>
-                <div class="form-check form-check-radio">
+                <div class="form-check">
                     <label class="form-check-label"><input class="form-check-input" type="radio" name="{{$i}}" value="D">
-                        <span class="form-check-sign" id="D{{$i}}"></span></label>
+                        <span id="D{{$i}}"></span></label>
                 </div>
-                <div class="form-check form-check-radio">
+                <div class="form-check ">
                     <label class="form-check-label"><input class="form-check-input" type="radio" name="{{$i}}" value="E">
-                        <span class="form-check-sign" id="E{{$i}}"></span></label>
+                        <span id="E{{$i}}"></span></label>
                 </div>
-                <div class="form-check form-check-radio">
+                <div class="form-check">
                     <label class="form-check-label"><input class="form-check-input" type="radio" name="{{$i}}" value="F">
-                        <span class="form-check-sign" id="F{{$i}}"></span></label>
+                        <span id="F{{$i}}"></span></label>
                 </div>
             </div>
         @endfor
