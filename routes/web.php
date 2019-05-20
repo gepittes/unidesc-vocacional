@@ -28,3 +28,10 @@ Route::group(['namespace' => 'Candidato'], function (){
     Route::get('/candidato/resultado', 'CandidatoController@resultadoFinal')->name('candidato.resultado');
 });
 
+
+//Temporaria (Apenas teste de view)
+route::get('/teste', function (){
+    $title = 'Teste Vocacional | Teste';
+    return view('candidato.iniciar_teste', compact('title'));
+});
+
