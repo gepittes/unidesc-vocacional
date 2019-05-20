@@ -15,5 +15,4 @@
 {{--Jquery Mask--}}
 <script src="{{url('/js/jquery.mask.js')}}"></script>
 {{--Wizard--}}
-<script src="{{url('/assets/wizard/css/smart_wizard.css')}}"></script>
 <script src="{{url('/assets/wizard/js/jquery.smartWizard.js')}}"></script>
