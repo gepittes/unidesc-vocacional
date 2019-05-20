@@ -15,4 +15,6 @@
 
 @include('layouts.scripts')
 
+@yield('scripts_wizard')
+
 </html>
