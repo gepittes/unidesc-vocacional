@@ -9,6 +9,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(['namespace' => 'APIs'], function (){
-    Route::get('/quest/enum', 'APIQuestaoController@JsonQuestoesEnum');
-    Route::get('/quest/op', 'APIQuestaoController@JsonQuestoesOp');
+    Route::get('/questoes', 'APIQuestaoController@JsonQuestoes');
 });
