@@ -16,4 +16,7 @@
     <link href="{{url('/assets/template/css/now-ui-kit.css?v=1.2.0')}}" rel="stylesheet" />
     {{--Jquery--}}
     <script src="{{url('/js/jquery.js')}}"></script>
+    {{-- Cor da aba - MOBILE --}}
+    <meta name="theme-color" content="#0e7494">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#0e7494">
 </head>

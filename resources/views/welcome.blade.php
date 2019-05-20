@@ -11,7 +11,7 @@
         <div class="page-header-image" data-parallax="true"
              style="background-image:url({{url('/assets/template/img/job-bg.jpg')}});">
         </div>
-        <div class="container">
+        <div class="container mt-5">
             <div class="content-center brand">
                 <img src="{{url('/assets/template/img/teste-vocacional-logo-feira.png')}}" alt="teste-vocacional" class="logo-home">
                 <h3>O que você deve saber sobre o teste vocacional!</h3>
@@ -25,7 +25,9 @@
                     </p>
                 </div>
                 <div class="content mt-5">
-                    <a href="{{route('cadastro.candidato')}}"><button type="button" class="btn btn-success font-weight-bold">REALIZAR TESTE!</button></a>
+                    <a href="{{route('cadastro.candidato')}}">
+                        <button type="button" class="btn btn-success font-weight-bold h5">
+                            <i class="fas fa-cubes"></i> REALIZAR TESTE!</button></a>
                 </div>
                 <div class="content mt-5">
                     <a href="#artigo-ti" class="scroll"><span class="font-italic f-white">Mais informações</span>
