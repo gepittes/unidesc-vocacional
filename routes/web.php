@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Questao\Questao;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +33,9 @@ Route::group(['namespace' => 'Candidato'], function (){
 //Temporaria (Apenas teste de view)
 route::get('/teste', function (){
     $title = 'Teste Vocacional | Teste';
-    return view('candidato.iniciar_teste', compact('title'));
+
+    $questoes = Questao::all();
+    return view('candidato.iniciar_teste', compact('title', 'questoes'));
+
 });
 

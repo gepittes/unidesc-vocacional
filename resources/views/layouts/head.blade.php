@@ -19,4 +19,9 @@
     {{-- Cor da aba - MOBILE --}}
     <meta name="theme-color" content="#0e7494">
     <meta name="apple-mobile-web-app-status-bar-style" content="#0e7494">
+    {{--Wizard--}}
+    <link href="{{url('/assets/wizard/css/smart_wizard.css')}}" rel="stylesheet" />
+    <link href="{{url('/assets/wizard/css/smart_wizard_theme_circles.css')}}" rel="stylesheet"  type="text/css" />
+{{--    <link href="{{url('/assets/wizard/css/smart_wizard_theme_arrows.css')}}" rel="stylesheet" type="text/css" />--}}
+    <link href="{{url('/assets/wizard/css/smart_wizard_theme_dots.css')}}" rel="stylesheet" type="text/css" />
 </head>
