@@ -17,7 +17,7 @@ class CreateQuestaosTable extends Migration
             $table->increments('id');
             $table->string( 'altenativa');
             $table->string( 'texto_alternativa');
-            $table->integer( 'grupo');
+            $table->string( 'grupo');
             $table->integer('opcao');
         });
     }
