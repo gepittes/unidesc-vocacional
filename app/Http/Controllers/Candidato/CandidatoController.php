@@ -54,6 +54,8 @@ class CandidatoController extends Controller
         $gabaritoCand = $request->except('_token');
         $dadosCand = session('dadosCand');
 
+        dd($gabaritoCand);
+
 
 
         return redirect(route('candidato.resultado'));
@@ -80,4 +82,14 @@ class CandidatoController extends Controller
 
         return redirect()->back();
     }
+
+
+    public function teste (Request $request)
+    {
+
+        dd($request);
+
+    }
+
+
 }

@@ -31,7 +31,7 @@ Route::group(['namespace' => 'Candidato'], function (){
 
 
 //Temporaria (Apenas teste de view)
-route::get('/teste', function (){
+Route::get('/teste', function (){
     $title = 'Teste Vocacional | Teste';
 
     $questGpA = Questao::getQuestoesPorGrupo('A');
@@ -45,5 +45,4 @@ route::get('/teste', function (){
         compact('title', 'questGpA', 'questGpB', 'questGpC', 'questGpD', 'questGpE'));
 
 });
-
 

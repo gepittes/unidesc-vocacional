@@ -6,98 +6,178 @@
 
             {{--   AQUI VEM O WIZARD  --}}
 
-            <div id="smartwizard">
-                <ul class="alinhar-mid-teste">
-                    <li><a href="#step-1">Grupo A<br/>
-                        </a></li>
-                    <li><a href="#step-2">Grupo B<br/>
-                        </a></li>
-                    <li><a href="#step-3">Grupo C<br/>
-                        </a></li>
-                    <li><a href="#step-4">Grupo D<br/>
-                        </a></li>
-                    <li><a href="#step-5">Grupo E<br/>
-                        </a></li>
-                </ul>
+            <form action="{{route('recebe.questoes.cand')}}" method="post">
+                @csrf
+
+                <div id="smartwizard">
+                    <ul class="alinhar-mid-teste">
+                        <li><a href="#step-1">Grupo A<br/>
+                            </a></li>
+                        <li><a href="#step-2">Grupo B<br/>
+                            </a></li>
+                        <li><a href="#step-3">Grupo C<br/>
+                            </a></li>
+                        <li><a href="#step-4">Grupo D<br/>
+                            </a></li>
+                        <li><a href="#step-5">Grupo E<br/>
+                            </a></li>
+                    </ul>
 
                     <div>
-                    {{-- GRUPO A --}}
-                    <div id="step-1">
-                        <div class="row">
-                            <div class="col-4 text-center"><b>Peferência A</b></div>
-                            <div class="col-4 text-center"><b>Escolha</b></div>
-                            <div class="col-4 text-center"><b>Peferência B</b></div>
+
+                        {{-- GRUPO A --}}
+                        <div id="step-1">
+                            <div class="row">
+                                <div class="col-4 text-center"><b>Peferência A</b></div>
+                                <div class="col-4 text-center"><b>Escolha</b></div>
+                                <div class="col-4 text-center"><b>Peferência B</b></div>
+                            </div>
+
+                            @for($i = 1; $i <= 12; $i++)
+                                <div class="row content-center">
+                                    <div class="col-4">
+                                        <label for="ranger{{$i}}" id="selecionarA{{$i}}"
+                                               onclick="setAlternativa('A', {{$i}}, 'A')">
+                                            A - {{$questGpA[$i]->texto_alternativa}}
+                                        </label>
+                                    </div>
+                                    <div class="col-4">
+                                        <input type="range" class="custom-range" min="0" max="2" id="rangerGpA{{$i}}"
+                                               name="GpA{{$i}}" value="">
+                                    </div>
+                                    <div class="col-4">
+                                        <label for="ranger{{$i}}" id="selecionarB{{$i}}"
+                                               onclick="setAlternativa('B', {{$i}}, 'A')">
+                                            B - {{$questGpA[$i+1]->texto_alternativa}}
+                                        </label>
+                                    </div>
+                                </div>
+                            @endfor
                         </div>
 
-                        @for($i = 1; $i <= 12; $i++)
-                            <div class="row content-center">
-                                <div class="col-4">
-                                     <label for="ranger{{$i}}" id="selecionarA{{$i}}" onclick="escolhaalternativa('A', {{$i}}, 'GrupoA')">
-                                         A - {{$questGpA[$i]->texto_alternativa}}
-                                     </label>
-                                </div>
-                                <div class="col-4">
-                                    <input type="range" class="custom-range" min="0" max="2" id="rangerGpA{{$i}}" name="GpA{{$i}}">
-                                </div>
-                                <div class="col-4">
-                                     <label for="ranger{{$i}}"  id="selecionarB{{$i}}" onclick="escolhaalternativa('B', {{$i}}, 'GrupoA')">
-                                         B - {{$questGpA[$i+1]->texto_alternativa}}
-                                     </label>
-                                </div>
+                        {{-- GRUPO B --}}
+                        <div id="step-2">
+                            <div class="row">
+                                <div class="col-4 text-center"><b>Peferência A</b></div>
+                                <div class="col-4 text-center"><b>Escolha</b></div>
+                                <div class="col-4 text-center"><b>Peferência B</b></div>
                             </div>
-                        @endfor
-                    </div>
 
-                    {{-- GRUPO B --}}
-                    <div id="step-2">
-                        <div class="row">
-                            <div class="col-4 text-center"><b>Peferência A</b></div>
-                            <div class="col-4 text-center"><b>Escolha</b></div>
-                            <div class="col-4 text-center"><b>Peferência B</b></div>
+                            @for($i = 1; $i <= 12; $i++)
+                                <div class="row content-center">
+                                    <div class="col-4">
+                                        <label for="ranger{{$i}}" id="selecionarA{{$i}}"
+                                               onclick="setAlternativa('A', {{$i}}, 'B')">
+                                            A - {{$questGpB[$i]->texto_alternativa}}
+                                        </label>
+                                    </div>
+                                    <div class="col-4">
+                                        <input type="range" class="custom-range" min="0" max="2" id="rangerGpB{{$i}}"
+                                               name="GpB{{$i}}" value="">
+                                    </div>
+                                    <div class="col-4">
+                                        <label for="ranger{{$i}}" id="selecionarB{{$i}}"
+                                               onclick="setAlternativa('B', {{$i}}, 'B')">
+                                            B - {{$questGpB[$i+1]->texto_alternativa}}
+                                        </label>
+                                    </div>
+                                </div>
+                            @endfor
                         </div>
 
-                        @for($i = 1; $i <= 12; $i++)
-                            <div class="row content-center">
-                                <div class="col-4">
-                                    <label for="ranger{{$i}}" id="selecionarA{{$i}}" onclick="escolhaalternativa('A', {{$i}}, 'GrupoB')">
-                                        A - {{$questGpB[$i]->texto_alternativa}}
-                                    </label>
-                                </div>
-                                <div class="col-4">
-                                    <input type="range" class="custom-range" min="0" max="2" id="rangerGpB{{$i}}" value="">
-                                </div>
-                                <div class="col-4">
-                                    <label for="ranger{{$i}}"  id="selecionarB{{$i}}" onclick="escolhaalternativa('B', {{$i}}, 'GrupoB')">
-                                        B - {{$questGpB[$i+1]->texto_alternativa}}
-                                    </label>
-                                </div>
+                        {{-- GRUPO C --}}
+                        <div id="step-3">
+                            <div class="row">
+                                <div class="col-4 text-center"><b>Peferência A</b></div>
+                                <div class="col-4 text-center"><b>Escolha</b></div>
+                                <div class="col-4 text-center"><b>Peferência B</b></div>
                             </div>
-                        @endfor
+
+                            @for($i = 1; $i <= 12; $i++)
+                                <div class="row content-center">
+                                    <div class="col-4">
+                                        <label for="ranger{{$i}}" id="selecionarA{{$i}}"
+                                               onclick="setAlternativa('A', {{$i}}, 'C')">
+                                            A - {{$questGpC[$i]->texto_alternativa}}
+                                        </label>
+                                    </div>
+                                    <div class="col-4">
+                                        <input type="range" class="custom-range" min="0" max="2" id="rangerGpC{{$i}}"
+                                               name="GpC{{$i}}" value="">
+                                    </div>
+                                    <div class="col-4">
+                                        <label for="ranger{{$i}}" id="selecionarB{{$i}}"
+                                               onclick="setAlternativa('B', {{$i}}, 'C')">
+                                            B - {{$questGpC[$i+1]->texto_alternativa}}
+                                        </label>
+                                    </div>
+                                </div>
+                            @endfor
+                        </div>
+
+                        {{-- GRUPO D --}}
+                        <div id="step-4">
+                            <div class="row">
+                                <div class="col-4 text-center"><b>Peferência A</b></div>
+                                <div class="col-4 text-center"><b>Escolha</b></div>
+                                <div class="col-4 text-center"><b>Peferência B</b></div>
+                            </div>
+
+                            @for($i = 1; $i <= 12; $i++)
+                                <div class="row content-center">
+                                    <div class="col-4">
+                                        <label for="ranger{{$i}}" id="selecionarA{{$i}}"
+                                               onclick="setAlternativa('A', {{$i}}, 'D')">
+                                            A - {{$questGpD[$i]->texto_alternativa}}
+                                        </label>
+                                    </div>
+                                    <div class="col-4">
+                                        <input type="range" class="custom-range" min="0" max="2" id="rangerGpD{{$i}}"
+                                               name="GpD{{$i}}" value="">
+                                    </div>
+                                    <div class="col-4">
+                                        <label for="ranger{{$i}}" id="selecionarB{{$i}}"
+                                               onclick="setAlternativa('B', {{$i}}, 'D')">
+                                            B - {{$questGpD[$i+1]->texto_alternativa}}
+                                        </label>
+                                    </div>
+                                </div>
+                            @endfor
+                        </div>
+
+                        {{-- GRUPO E --}}
+                        <div id="step-5">
+                            <div class="row">
+                                <div class="col-4 text-center"><b>Peferência A</b></div>
+                                <div class="col-4 text-center"><b>Escolha</b></div>
+                                <div class="col-4 text-center"><b>Peferência B</b></div>
+                            </div>
+
+                            @for($i = 1; $i <= 12; $i++)
+                                <div class="row content-center">
+                                    <div class="col-4">
+                                        <label for="ranger{{$i}}" id="selecionarA{{$i}}"
+                                               onclick="setAlternativa('A', {{$i}}, 'E')">
+                                            A - {{$questGpE[$i]->texto_alternativa}}
+                                        </label>
+                                    </div>
+                                    <div class="col-4">
+                                        <input type="range" class="custom-range" min="0" max="2" id="rangerGpE{{$i}}"
+                                               name="GpE{{$i}}" value="">
+                                    </div>
+                                    <div class="col-4">
+                                        <label for="ranger{{$i}}" id="selecionarB{{$i}}"
+                                               onclick="setAlternativa('B', {{$i}}, 'E')">
+                                            B - {{$questGpE[$i+1]->texto_alternativa}}
+                                        </label>
+                                    </div>
+                                </div>
+                            @endfor
+                        </div>
                     </div>
-
-                    {{-- GRUPO C --}}
-                    <div id="step-3">
-
-                    </div>
-
-                    {{-- GRUPO D --}}
-                    <div id="step-4">
-
-                    </div>
-
-                    {{-- GRUPO E --}}
-                    <div id="step-5">
-
-                    </div>
-
-
-
-
                 </div>
 
-
-            </div>
-
+            </form>
 
         </div>
     </div>
@@ -127,18 +207,16 @@
                     toolbarButtonPosition: 'right', // left, right
                     showNextButton: true, // show/hide a Next button
                     showPreviousButton: true, // show/hide a Previous button
-                    // toolbarExtraButtons: [
-                    //     $('<button></button>').text('Finish')
-                    //         .addClass('btn btn-info')
-                    //         .on('click', function () {
-                    //             alert('Finsih button click');
-                    //         }),
-                    //     $('<button></button>').text('Cancel')
-                    //         .addClass('btn btn-danger')
-                    //         .on('click', function () {
-                    //             alert('Cancel button click');
-                    //         })
-                    // ]
+                    toolbarExtraButtons: [
+                        $('<button type="submit"></button>').text('Enviar')
+                            .addClass('btn btn-info'),
+                        // //
+                        // // $('<button></button>').text('Cancel')
+                        // //     .addClass('btn btn-danger')
+                        // //     .on('click', function () {
+                        // //         alert('Cancel button click');
+                        // //     })
+                    ]
                 },
 
 
@@ -152,60 +230,78 @@
         });
 
 
-     // Selecionar escolha quando clicar na label
-    function escolhaalternativa(altenativa, index, grupo) {
+        // Selecionar escolha quando clicar na label
+        function setAlternativa(altenativa, index, grupo) {
 
-        // const escolhida = $("#ranger" + index );
+            switch (grupo) {
 
+                case 'A':
+                    const escolhidaGpA = $("#rangerGpA" + index);
+                    console.log(altenativa, index, grupo, escolhidaGpA); //DEBUG
 
-        switch (grupo) {
+                    if (altenativa === 'A') {
+                        escolhidaGpA.val(0);
+                        console.log('entrou no A')
+                    } else {
+                        escolhidaGpA.val(2);
+                        console.log('entrou no B')
+                    }
 
-            case 'GrupoA':
-                const escolhidaGpA = $("#rangerGpA" + index);
-                console.log(altenativa, index, grupo, escolhidaGpA);
-                if (altenativa === 'A'){
-                    escolhidaGpA.val(0);
+                    break;
 
-                    // TODO
-                    // $("#selecionarA" + index).toggleClass('border border-success');
-                    // $("#selecionarB" + index).removeClass('border border-success');
+                case 'B':
+                    const escolhidaGpB = $("#rangerGpB" + index);
+                    console.log(altenativa, index, grupo, escolhidaGpB); //DEBUG
 
-                }else {
-                    escolhidaGpA.val(2);
+                    if (altenativa === 'A') {
+                        escolhidaGpB.val(0);
+                        console.log('entrou no A')
+                    } else {
+                        escolhidaGpB.val(2);
+                        console.log('entrou no B')
+                    }
+                    break;
 
-                    // TODO
-                    // $("#selecionarB" + index).toggleClass('border border-success');
-                    // $("#selecionarA" + index).removeClass('border border-success');
-                }
-                break;
-            case 'GrupoB':
-                const escolhidaGpB = $("#rangerGpB" + index);
-                console.log(altenativa, index, grupo, escolhidaGpB);
-                if (altenativa === 'A'){
-                    escolhidaGpB.val(0);
+                case 'C':
+                    const escolhidaGpC = $("#rangerGpC" + index);
+                    console.log(altenativa, index, grupo, escolhidaGpC); //DEBUG
 
-                    // TODO
-                    // $("#selecionarA" + index).toggleClass('border border-success');
-                    // $("#selecionarB" + index).removeClass('border border-success');
+                    if (altenativa === 'A') {
+                        escolhidaGpC.val(0);
+                        console.log('entrou no A')
+                    } else {
+                        escolhidaGpC.val(2);
+                        console.log('entrou no B')
+                    }
+                    break;
 
-                }else {
-                    escolhidaGpB.val(2);
+                case 'D':
+                    const escolhidaGpD = $("#rangerGpD" + index);
+                    console.log(altenativa, index, grupo, escolhidaGpD); //DEBUG
 
-                    // TODO
-                    // $("#selecionarB" + index).toggleClass('border border-success');
-                    // $("#selecionarA" + index).removeClass('border border-success');
-                }
-                break;
+                    if (altenativa === 'A') {
+                        escolhidaGpD.val(0);
+                        console.log('entrou no A')
+                    } else {
+                        escolhidaGpD.val(2);
+                        console.log('entrou no B')
+                    }
+                    break;
 
+                case 'E':
+                    const escolhidaGpE = $("#rangerGpE" + index);
+                    console.log(altenativa, index, grupo, escolhidaGpE); //DEBUG
 
+                    if (altenativa === 'A') {
+                        escolhidaGpE.val(0);
+                        console.log('entrou no A')
+                    } else {
+                        escolhidaGpE.val(2);
+                        console.log('entrou no B')
+                    }
+                    break;
+            }
         }
-
-
-
-
-
-    }
-
 
     </script>
 @endsection
