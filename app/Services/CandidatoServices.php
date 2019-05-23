@@ -2,6 +2,7 @@
 
 namespace App\Http\Services;
 
+use App\Models\Candidato\ResultadoCand;
 use Illuminate\Http\Request;
 
 class CandidatoServices {
@@ -36,6 +37,20 @@ class CandidatoServices {
         }
 
         return $totPtCandA = $pointCandA + $pointCandB;
+
+    }
+
+    // Salva no banco de dados o resultado
+    public static function storeResultado($request)
+    {
+
+        $resultado = new ResultadoCand() ;
+        $resultado->GPA = CandidatoServices::filtrarByGrupo($request, 'A');
+        $resultado->GPB = CandidatoServices::filtrarByGrupo($request, 'B');
+        $resultado->GPC = CandidatoServices::filtrarByGrupo($request, 'C');
+        $resultado->GPD = CandidatoServices::filtrarByGrupo($request, 'D');
+        $resultado->GPE = CandidatoServices::filtrarByGrupo($request, 'E');
+        $resultado->save();
 
     }
 

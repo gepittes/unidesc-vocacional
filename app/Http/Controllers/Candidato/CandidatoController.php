@@ -54,13 +54,8 @@ class CandidatoController extends Controller
         $gabaritoCand = $request->except('_token');
         $dadosCand = session('dadosCand');
 
-        $pointsCandA = CandidatoServices::filtrarByGrupo($request, 'A');
-        $pointsCandB = CandidatoServices::filtrarByGrupo($request, 'B');
-        $pointsCandC = CandidatoServices::filtrarByGrupo($request, 'C');
-        $pointsCandD = CandidatoServices::filtrarByGrupo($request, 'D');
-        $pointsCandE = CandidatoServices::filtrarByGrupo($request, 'E');
-
-        dd($pointsCandA, $pointsCandB, $pointsCandC, $pointsCandD, $pointsCandE, session('dadosCand'));
+        // Envia para serviço para salvar BD
+        CandidatoServices::storeResultado($request);
 
 
 
