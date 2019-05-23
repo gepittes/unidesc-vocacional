@@ -275,10 +275,16 @@
                     $j += 2;
                 }
             });
-
+             // Mostar o botão enviar apenas no último Step
+            $("#smartwizard").on("showStep", function(e, anchorObject, stepNumber, stepDirection) {
+                if($('button.sw-btn-next').hasClass('disabled')){
+                    $('.sw-btn-group-extra').show(); // show the button extra only in the last page
+                }else{
+                    $('.sw-btn-group-extra').hide();
+                }
+            });
 
             $('#smartwizard').smartWizard({
-
                 selected: 0,  // Initial selected step, 0 = first step
                 keyNavigation: true, // Enable/Disable keyboard navigation(left and right keys are used if enabled)
                 autoAdjustHeight: false, // Automatically adjust content height
