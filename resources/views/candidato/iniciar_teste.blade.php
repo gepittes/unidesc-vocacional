@@ -177,8 +177,11 @@
                     $j = 0;
                     for($i = 1; $i <= 12; $i++){
 
-                        document.getElementById("GpAA"+$i).innerHTML = $questoes.responseJSON[$j].texto_alternativa;
-                        document.getElementById("GpAB"+$i).innerHTML = $questoes.responseJSON[$j+1].texto_alternativa;
+                        document.getElementById("GpAA"+$i).innerHTML = "<strong class='text-info'>A</strong> <i class=\"fas fa-angle-right\"></i> " +
+                            $questoes.responseJSON[$j].texto_alternativa;
+
+                        document.getElementById("GpAB"+$i).innerHTML = "<strong class='text-danger'>B</strong> <i class=\"fas fa-angle-right\"></i> " +
+                            $questoes.responseJSON[$j+1].texto_alternativa;
 
                         $j+=2;
                     }
@@ -187,8 +190,10 @@
                     $j = 25;
                     for($i = 1; $i <= 12; $i++){
 
-                        document.getElementById("GpBA"+$i).innerHTML = $questoes.responseJSON[$j].texto_alternativa;
-                        document.getElementById("GpBB"+$i).innerHTML = $questoes.responseJSON[$j+1].texto_alternativa;
+                        document.getElementById("GpBA"+$i).innerHTML = "<strong class='text-info'>A</strong> <i class=\"fas fa-angle-right\"></i> " +
+                            $questoes.responseJSON[$j].texto_alternativa;
+                        document.getElementById("GpBB"+$i).innerHTML = "<strong class='text-danger'>B</strong> <i class=\"fas fa-angle-right\"></i> " +
+                            $questoes.responseJSON[$j+1].texto_alternativa;
 
                         $j+=2;
                     }
@@ -197,8 +202,10 @@
                     $j = 48;
                     for($i = 1; $i <= 12; $i++){
 
-                        document.getElementById("GpCA"+$i).innerHTML = $questoes.responseJSON[$j].texto_alternativa;
-                        document.getElementById("GpCB"+$i).innerHTML = $questoes.responseJSON[$j+1].texto_alternativa;
+                        document.getElementById("GpCA"+$i).innerHTML = "<strong class='text-info'>A</strong> <i class=\"fas fa-angle-right\"></i> " +
+                            $questoes.responseJSON[$j].texto_alternativa;
+                        document.getElementById("GpCB"+$i).innerHTML = "<strong class='text-danger'>B</strong> <i class=\"fas fa-angle-right\"></i> " +
+                            $questoes.responseJSON[$j+1].texto_alternativa;
 
                         $j+=2;
                     }
@@ -207,8 +214,10 @@
                     $j = 72;
                     for($i = 1; $i <= 12; $i++){
 
-                        document.getElementById("GpDA"+$i).innerHTML = $questoes.responseJSON[$j].texto_alternativa;
-                        document.getElementById("GpDB"+$i).innerHTML = $questoes.responseJSON[$j+1].texto_alternativa;
+                        document.getElementById("GpDA"+$i).innerHTML = "<strong class='text-info'>A</strong> <i class=\"fas fa-angle-right\"></i> " +
+                            $questoes.responseJSON[$j].texto_alternativa;
+                        document.getElementById("GpDB"+$i).innerHTML = "<strong class='text-danger'>B</strong> <i class=\"fas fa-angle-right\"></i> " +
+                            $questoes.responseJSON[$j+1].texto_alternativa;
 
                         $j+=2;
                     }
@@ -217,8 +226,10 @@
                     $j = 96;
                     for($i = 1; $i <= 12; $i++){
 
-                        document.getElementById("GpEA"+$i).innerHTML = $questoes.responseJSON[$j].texto_alternativa;
-                        document.getElementById("GpEB"+$i).innerHTML = $questoes.responseJSON[$j+1].texto_alternativa;
+                        document.getElementById("GpEA"+$i).innerHTML = "<strong class='text-info'>A</strong> <i class=\"fas fa-angle-right\"></i> " +
+                            $questoes.responseJSON[$j].texto_alternativa;
+                        document.getElementById("GpEB"+$i).innerHTML = "<strong class='text-danger'>B</strong> <i class=\"fas fa-angle-right\"></i> " +
+                            $questoes.responseJSON[$j+1].texto_alternativa;
 
                         $j+=2;
                     }
