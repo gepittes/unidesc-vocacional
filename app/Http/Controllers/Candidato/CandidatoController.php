@@ -54,8 +54,12 @@ class CandidatoController extends Controller
         $gabaritoCand = $request->except('_token');
         $dadosCand = session('dadosCand');
 
+
         // Envia para serviço para salvar BD
-        CandidatoServices::storeResultado($request);
+        $getIdResultado = CandidatoServices::storeResultado($request);
+
+        // Envia para serviço para salvar BD
+       CandidatoServices::storeCandidato($dadosCand, $getIdResultado);
 
 
 
