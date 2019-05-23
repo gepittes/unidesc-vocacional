@@ -41,7 +41,6 @@ class CandidatoServices {
 
     }
 
-    // Salva no banco de dados o resultado
     public static function storeResultado($request)
     {
 
@@ -52,14 +51,14 @@ class CandidatoServices {
         $resultado->GPD = CandidatoServices::filtrarByGrupo($request, 'D');
         $resultado->GPE = CandidatoServices::filtrarByGrupo($request, 'E');
         $resultado->save();
-        $getIdResultado = $resultado->id;         // recuperar o ultimo id
+
+        $getIdResultado = $resultado->id;  // recupera ID do resultado do candidato
 
         return $getIdResultado;
 
     }
 
-    // Salva no banco as questoes
-    public static function storeCandidato($dadosCand,$getIdResultado)
+    public static function storeCandidato($dadosCand, $getIdResultado)
     {
         $candidato = new Candidato();
         $candidato->nome = $dadosCand['nome'] ;
