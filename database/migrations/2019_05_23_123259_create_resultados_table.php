@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCandidatosTable extends Migration
+class CreateResultadosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class CreateCandidatosTable extends Migration
      */
     public function up()
     {
-        Schema::create('candidatos', function (Blueprint $table) {
+        Schema::create('resultados', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nome');
-            $table->string('telefone');
-            $table->string('email');
-            $table->string('cidade');
-            $table->string('serie');
-            $table->ipAddress('visitor')->nullable();
-            $table->softDeletes();
+            $table->integer('GPA');
+            $table->integer('GPB');
+            $table->integer('GPC');
+            $table->integer('GPD');
+            $table->integer('GPE');
             $table->timestamps();
         });
     }
@@ -33,6 +31,6 @@ class CreateCandidatosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('candidatos');
+        Schema::dropIfExists('resultados');
     }
 }
