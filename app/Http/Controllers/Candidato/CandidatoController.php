@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Candidato;
 
+use App\Http\Services\CandidatoServices;
 use App\Mail\MailCandidato;
 use App\Models\Cidade\Cidade;
 use App\Http\Requests\CandidatoFormRequest;
@@ -16,7 +17,6 @@ use Illuminate\Support\Facades\Mail;
 
 class CandidatoController extends Controller
 {
-
 
     public function create()
     {
@@ -54,7 +54,13 @@ class CandidatoController extends Controller
         $gabaritoCand = $request->except('_token');
         $dadosCand = session('dadosCand');
 
-        dd($gabaritoCand);
+        $pointsCandA = CandidatoServices::filtrarByGrupo($request, 'A');
+        $pointsCandB = CandidatoServices::filtrarByGrupo($request, 'B');
+        $pointsCandC = CandidatoServices::filtrarByGrupo($request, 'C');
+        $pointsCandD = CandidatoServices::filtrarByGrupo($request, 'D');
+        $pointsCandE = CandidatoServices::filtrarByGrupo($request, 'E');
+
+        dd($pointsCandA, $pointsCandB, $pointsCandC, $pointsCandD, $pointsCandE, session('dadosCand'));
 
 
 
