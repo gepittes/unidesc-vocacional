@@ -90,12 +90,4 @@ class CandidatoController extends Controller
     }
 
 
-    public function teste (Request $request)
-    {
-
-        dd($request);
-
-    }
-
-
 }

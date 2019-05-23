@@ -34,15 +34,7 @@ Route::group(['namespace' => 'Candidato'], function (){
 Route::get('/teste', function (){
     $title = 'Teste Vocacional | Teste';
 
-    $questGpA = Questao::getQuestoesPorGrupo('A');
-    $questGpB = Questao::getQuestoesPorGrupo('B');
-    $questGpC = Questao::getQuestoesPorGrupo('C');
-    $questGpD = Questao::getQuestoesPorGrupo('D');
-    $questGpE = Questao::getQuestoesPorGrupo('E');
-
-
-    return view('candidato.iniciar_teste',
-        compact('title', 'questGpA', 'questGpB', 'questGpC', 'questGpD', 'questGpE'));
+    return view('candidato.iniciar_teste', compact('title'));
 
 });
 
