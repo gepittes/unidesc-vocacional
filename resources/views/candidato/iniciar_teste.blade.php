@@ -36,19 +36,15 @@
                             @for($i = 1; $i <= 12; $i++)
                                 <div class="row content-center">
                                     <div class="col-4">
-                                        <label for="ranger{{$i}}" id="selecionarA{{$i}}"
-                                               onclick="setAlternativa('A', {{$i}}, 'A')">
-                                            A - {{$questGpA[$i]->texto_alternativa}}
+                                        <label onclick="setAlternativa('A', '{{$i}}', 'A')" id="GpAA{{$i}}">
                                         </label>
                                     </div>
                                     <div class="col-4">
                                         <input type="range" class="custom-range" min="0" max="2" id="rangerGpA{{$i}}"
-                                               name="GpA{{$i}}" value="">
+                                               name="GpA{{$i}}">
                                     </div>
                                     <div class="col-4">
-                                        <label for="ranger{{$i}}" id="selecionarB{{$i}}"
-                                               onclick="setAlternativa('B', {{$i}}, 'A')">
-                                            B - {{$questGpA[$i+1]->texto_alternativa}}
+                                        <label onclick="setAlternativa('B', '{{$i}}', 'A')" id="GpAB{{$i}}">
                                         </label>
                                     </div>
                                 </div>
@@ -66,19 +62,15 @@
                             @for($i = 1; $i <= 12; $i++)
                                 <div class="row content-center">
                                     <div class="col-4">
-                                        <label for="ranger{{$i}}" id="selecionarA{{$i}}"
-                                               onclick="setAlternativa('A', {{$i}}, 'B')">
-                                            A - {{$questGpB[$i]->texto_alternativa}}
+                                        <label onclick="setAlternativa('A', '{{$i}}', 'B')" id="GpBA{{$i}}">
                                         </label>
                                     </div>
                                     <div class="col-4">
                                         <input type="range" class="custom-range" min="0" max="2" id="rangerGpB{{$i}}"
-                                               name="GpB{{$i}}" value="">
+                                               name="GpB{{$i}}">
                                     </div>
                                     <div class="col-4">
-                                        <label for="ranger{{$i}}" id="selecionarB{{$i}}"
-                                               onclick="setAlternativa('B', {{$i}}, 'B')">
-                                            B - {{$questGpB[$i+1]->texto_alternativa}}
+                                        <label onclick="setAlternativa('B', '{{$i}}', 'B')" id="GpBB{{$i}}">
                                         </label>
                                     </div>
                                 </div>
@@ -96,19 +88,15 @@
                             @for($i = 1; $i <= 12; $i++)
                                 <div class="row content-center">
                                     <div class="col-4">
-                                        <label for="ranger{{$i}}" id="selecionarA{{$i}}"
-                                               onclick="setAlternativa('A', {{$i}}, 'C')">
-                                            A - {{$questGpC[$i]->texto_alternativa}}
+                                        <label onclick="setAlternativa('A', '{{$i}}', 'C')" id="GpCA{{$i}}">
                                         </label>
                                     </div>
                                     <div class="col-4">
                                         <input type="range" class="custom-range" min="0" max="2" id="rangerGpC{{$i}}"
-                                               name="GpC{{$i}}" value="">
+                                               name="GpC{{$i}}">
                                     </div>
                                     <div class="col-4">
-                                        <label for="ranger{{$i}}" id="selecionarB{{$i}}"
-                                               onclick="setAlternativa('B', {{$i}}, 'C')">
-                                            B - {{$questGpC[$i+1]->texto_alternativa}}
+                                        <label onclick="setAlternativa('B', '{{$i}}', 'C')" id="GpCB{{$i}}">
                                         </label>
                                     </div>
                                 </div>
@@ -126,19 +114,15 @@
                             @for($i = 1; $i <= 12; $i++)
                                 <div class="row content-center">
                                     <div class="col-4">
-                                        <label for="ranger{{$i}}" id="selecionarA{{$i}}"
-                                               onclick="setAlternativa('A', {{$i}}, 'D')">
-                                            A - {{$questGpD[$i]->texto_alternativa}}
+                                        <label onclick="setAlternativa('A', '{{$i}}', 'D')" id="GpDA{{$i}}">
                                         </label>
                                     </div>
                                     <div class="col-4">
                                         <input type="range" class="custom-range" min="0" max="2" id="rangerGpD{{$i}}"
-                                               name="GpD{{$i}}" value="">
+                                               name="GpD{{$i}}">
                                     </div>
                                     <div class="col-4">
-                                        <label for="ranger{{$i}}" id="selecionarB{{$i}}"
-                                               onclick="setAlternativa('B', {{$i}}, 'D')">
-                                            B - {{$questGpD[$i+1]->texto_alternativa}}
+                                        <label onclick="setAlternativa('B', '{{$i}}', 'D')" id="GpDB{{$i}}">
                                         </label>
                                     </div>
                                 </div>
@@ -156,19 +140,15 @@
                             @for($i = 1; $i <= 12; $i++)
                                 <div class="row content-center">
                                     <div class="col-4">
-                                        <label for="ranger{{$i}}" id="selecionarA{{$i}}"
-                                               onclick="setAlternativa('A', {{$i}}, 'E')">
-                                            A - {{$questGpE[$i]->texto_alternativa}}
+                                        <label onclick="setAlternativa('A', '{{$i}}', 'E')" id="GpEA{{$i}}">
                                         </label>
                                     </div>
                                     <div class="col-4">
                                         <input type="range" class="custom-range" min="0" max="2" id="rangerGpE{{$i}}"
-                                               name="GpE{{$i}}" value="">
+                                               name="GpE{{$i}}">
                                     </div>
                                     <div class="col-4">
-                                        <label for="ranger{{$i}}" id="selecionarB{{$i}}"
-                                               onclick="setAlternativa('B', {{$i}}, 'E')">
-                                            B - {{$questGpE[$i+1]->texto_alternativa}}
+                                        <label onclick="setAlternativa('B', '{{$i}}', 'E')" id="GpEB{{$i}}">
                                         </label>
                                     </div>
                                 </div>
@@ -187,7 +167,65 @@
 
 @section('scripts_wizard')
     <script type="text/javascript">
+
         $(document).ready(function () {
+
+                {{-- Escreve os enunciados das questoes nos labels --}}
+                $questoes = $.getJSON('/api/questoes', function (data) {
+
+                    {{-- Ponto de partida do grupo A no JSON --}}
+                    $j = 0;
+                    for($i = 1; $i <= 12; $i++){
+
+                        document.getElementById("GpAA"+$i).innerHTML = $questoes.responseJSON[$j].texto_alternativa;
+                        document.getElementById("GpAB"+$i).innerHTML = $questoes.responseJSON[$j+1].texto_alternativa;
+
+                        $j+=2;
+                    }
+
+                    {{-- Ponto de partida do grupo B no JSON --}}
+                    $j = 25;
+                    for($i = 1; $i <= 12; $i++){
+
+                        document.getElementById("GpBA"+$i).innerHTML = $questoes.responseJSON[$j].texto_alternativa;
+                        document.getElementById("GpBB"+$i).innerHTML = $questoes.responseJSON[$j+1].texto_alternativa;
+
+                        $j+=2;
+                    }
+
+                    {{-- Ponto de partida do grupo C no JSON --}}
+                    $j = 48;
+                    for($i = 1; $i <= 12; $i++){
+
+                        document.getElementById("GpCA"+$i).innerHTML = $questoes.responseJSON[$j].texto_alternativa;
+                        document.getElementById("GpCB"+$i).innerHTML = $questoes.responseJSON[$j+1].texto_alternativa;
+
+                        $j+=2;
+                    }
+
+                    {{-- Ponto de partida do grupo D no JSON --}}
+                    $j = 72;
+                    for($i = 1; $i <= 12; $i++){
+
+                        document.getElementById("GpDA"+$i).innerHTML = $questoes.responseJSON[$j].texto_alternativa;
+                        document.getElementById("GpDB"+$i).innerHTML = $questoes.responseJSON[$j+1].texto_alternativa;
+
+                        $j+=2;
+                    }
+
+                    {{-- Ponto de partida do grupo E no JSON --}}
+                    $j = 96;
+                    for($i = 1; $i <= 12; $i++){
+
+                        document.getElementById("GpEA"+$i).innerHTML = $questoes.responseJSON[$j].texto_alternativa;
+                        document.getElementById("GpEB"+$i).innerHTML = $questoes.responseJSON[$j+1].texto_alternativa;
+
+                        $j+=2;
+                    }
+                });
+
+
+
             $('#smartwizard').smartWizard({
 
                 selected: 0,  // Initial selected step, 0 = first step
@@ -209,16 +247,9 @@
                     showPreviousButton: true, // show/hide a Previous button
                     toolbarExtraButtons: [
                         $('<button type="submit"></button>').text('Enviar')
-                            .addClass('btn btn-info'),
-                        // //
-                        // // $('<button></button>').text('Cancel')
-                        // //     .addClass('btn btn-danger')
-                        // //     .on('click', function () {
-                        // //         alert('Cancel button click');
-                        // //     })
+                            .addClass('btn btn-info')
                     ]
                 },
-
 
                 contentURL: null, // content url, Enables Ajax content loading. can set as data data-content-url on anchor
                 disabledSteps: [],    // Array Steps disabled
@@ -230,7 +261,7 @@
         });
 
 
-        // Selecionar escolha quando clicar na label
+        {{-- Selecionar escolha quando clicar na label --}}
         function setAlternativa(altenativa, index, grupo) {
 
             switch (grupo) {
