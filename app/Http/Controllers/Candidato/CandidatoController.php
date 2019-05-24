@@ -66,15 +66,6 @@ class CandidatoController extends Controller
         return redirect(route('candidato.resultado'));
     }
 
-    public function resultadoFinal()
-    {
-        $candidato = Candidato::all();
-//        dd($candidato[0]);
-        $title = 'Teste Vocacional | Teste';
-
-        return view('candidato.resultado_candidato',compact('title','candidato'));
-
-    }
 
 
     public function storeCand($dadosCandDB)
