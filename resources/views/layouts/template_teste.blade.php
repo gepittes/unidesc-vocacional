@@ -5,9 +5,6 @@
 @endcomponent
 
     <body class="index-page sidebar-collapse">
-        <header class="alinhar">
-            <img class="bg-form" src="{{asset("/assets/template/img/capa-teste.jpg")}}" alt="">
-        </header>
 
             @yield('conteudo')
 
@@ -16,5 +13,7 @@
 @include('layouts.scripts')
 
 @yield('scripts_wizard')
+
+@yield('scripts_google_charts')
 
 </html>

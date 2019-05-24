@@ -30,11 +30,5 @@ Route::group(['namespace' => 'Candidato'], function (){
 });
 
 
-//Temporaria (Apenas teste de view)
-Route::get('/teste', function (){
-    $title = 'Teste Vocacional | Teste';
 
-    return view('candidato.iniciar_teste', compact('title'));
-
-});
 
