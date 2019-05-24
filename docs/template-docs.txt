@@ -1,3 +1,5 @@
 https://demos.creative-tim.com/now-ui-kit/docs/1.0/getting-started/introduction.html
 
 http://techlaboratory.net/smartwizard/documentation
+
+https://developers.google.com/chart/interactive/docs/gallery/piechart#making-a-3d-pie-chart
