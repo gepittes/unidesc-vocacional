@@ -1983,6 +1983,28 @@ fieldset[disabled] .btn-info.active {
   color: #FFFFFF;
 }
 
+.btn-purple {
+    background-color: #3366cd;
+    color: #FFFFFF;
+}
+
+.btn-purple:hover,
+.btn-purple:focus,
+.btn-purple:not(:disabled):not(.disabled):active,
+.btn-purple:not(:disabled):not(.disabled).active,
+.btn-purple:not(:disabled):not(.disabled):active:focus,
+.btn-purple:not(:disabled):not(.disabled).active:focus,
+.btn-purple:active:hover,
+.btn-purple.active:hover,
+.show>.btn-purple.dropdown-toggle,
+.show>.btn-purple.dropdown-toggle:focus,
+.show>.btn-purple.dropdown-toggle:hover {
+    background-color: #3366cd;
+    color: #FFFFFF;
+    box-shadow: none;
+}
+
+
 .btn-warning:hover,
 .btn-warning:focus,
 .btn-warning:not(:disabled):not(.disabled):active,
