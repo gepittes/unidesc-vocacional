@@ -114,6 +114,31 @@
                                 </div>
                             </div>
 
+                            {{-- GRUPO D --}}
+                            <div class="dropdown">
+                                <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <span class="font-weight-bold"><i class="fas fa-newspaper"></i> Grupo D</span>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="">
+                                    <div class="container" style="width: 20rem;">
+                                        <div class="alinhar-mid-teste">
+                                            <img class="card-img-top justify-content-center" draggable="false"
+                                                 src="{{url('/assets/template/img/resultado-images/grupo-D-illustration.jpg')}}"
+                                                 alt="Card image cap" style="width: 200px">
+                                        </div>
+
+                                        <div class="card-body">
+                                            <p class="text-justify font-weight-normal">
+                                                Exibe maior interesse por profissões ligadas ao uso e <span class="font-italic"> domínio da língua </span>
+                                                (oral e escrita), como <span class="text-info">, relações públicas, jornalismo,
+                                                    letras e etc</span>.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
 
 
