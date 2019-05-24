@@ -31,7 +31,7 @@ class CandidatoController extends Controller
     public function recebeDadosFormCand(CandidatoFormRequest $dadosCand)
     {
         // GUARDA DADOS DO CANDIDATO NA SESSION
-        $dadosCand->session()->put('dadosCand',[
+        $dadosCand->session()->put('dadosCand', [
             'nome' => $dadosCand->nome,
             'telefone' => $dadosCand->telefone,
             'email' => $dadosCand->email,
@@ -40,43 +40,36 @@ class CandidatoController extends Controller
             'visitor' => $dadosCand->visitor,
         ]);
 
-        if (session('dadosCand')){
+        if (session('dadosCand')) {
             $title = 'Teste Vocacional | Teste';
             return view('candidato.iniciar_teste', compact('title'));
-        }else{
+        } else {
             return view('errors.404');
         }
     }
 
     public function recebeQuestDadosCand(Request $request)
     {
-        // GABARITO E DADOS DO CANDIDATO
-        $gabaritoCand = $request->except('_token');
-        $dadosCand = session('dadosCand');
+        $dadosCand = session('dadosCand'); // RESGATA DADOS CANDIDATO
+
+        // Armazena RESULTADO e CANDIDATO
+        $getIdResultado = ResultadoCand::storeResultado($request);
+        $candidato = Candidato::storeCandidato($dadosCand, $getIdResultado);
 
 
-        // Envia para serviço para salvar BD
-        $getIdResultado = CandidatoServices::storeResultado($request);
-
-        // Envia para serviço para salvar BD
-       CandidatoServices::storeCandidato($dadosCand, $getIdResultado);
-
-
+        session()->flush();
+        session()->put('resultado_cand', $candidato);
 
         return redirect(route('candidato.resultado'));
     }
 
-
-
-    public function storeCand($dadosCandDB)
+    public function resultadoFinal()
     {
-        // MODEL PARA FAZER O INSERT
-        // TODO passar para Eloquent ORM e metodo static
-        $cad  = new Candidato();
-        $cad->storeCand($dadosCandDB);
+        $resultado_cand = session('resultado_cand'); // RESGATA RESULTADO FINAL DO CANDIDATO
+        $title = 'Teste Vocacional | Resultado';
+
+        return view('candidato.resultado_candidato', compact('resultado_cand', 'title'));
     }
-
-
 
 
     // TODO Isso vai para um controller de Email

@@ -41,35 +41,4 @@ class CandidatoServices {
 
     }
 
-    // Salva no banco de dados o resultado
-    public static function storeResultado($request)
-    {
-
-        $resultado = new ResultadoCand() ;
-        $resultado->GPA = CandidatoServices::filtrarByGrupo($request, 'A');
-        $resultado->GPB = CandidatoServices::filtrarByGrupo($request, 'B');
-        $resultado->GPC = CandidatoServices::filtrarByGrupo($request, 'C');
-        $resultado->GPD = CandidatoServices::filtrarByGrupo($request, 'D');
-        $resultado->GPE = CandidatoServices::filtrarByGrupo($request, 'E');
-        $resultado->save();
-        $getIdResultado = $resultado->id;         // recuperar o ultimo id
-
-        return $getIdResultado;
-
-    }
-
-    // Salva no banco as questoes
-    public static function storeCandidato($dadosCand,$getIdResultado)
-    {
-        $candidato = new Candidato();
-        $candidato->nome = $dadosCand['nome'] ;
-        $candidato->telefone = $dadosCand['telefone'] ;
-        $candidato->email = $dadosCand['email'] ;
-        $candidato->cidade = $dadosCand['cidade'];
-        $candidato->serie = $dadosCand['serie'] ;
-        $candidato->visitor = $dadosCand['visitor'] ;
-        $candidato->id_resultado = $getIdResultado ;
-        $candidato->save();
-    }
-
 }

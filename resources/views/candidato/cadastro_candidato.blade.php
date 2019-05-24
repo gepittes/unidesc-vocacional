@@ -3,6 +3,11 @@
 @section('conteudo')
 
 <div class="wrapper">
+    <header class="alinhar">
+        <img class="bg-form" src="{{asset("/assets/template/img/capa-teste.jpg")}}" alt="capa">
+    </header>
+
+
         <div class="section-form">
             <div class="container">
 

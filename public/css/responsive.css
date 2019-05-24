@@ -14,6 +14,7 @@
     align-items: center;
     background: #00a3ce;
 }
+
 .alinhar-mid-teste{
     position: center;
     display: flex;
@@ -43,6 +44,24 @@
 .bg-form{
     background-image: url("../assets/template/img/capa-teste.jpg");
     background-repeat: no-repeat ;
+}
+
+.alinhar-bg-questoes{
+    position: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: url("../assets/template/img/fundo-capa-2019.jpg") center;
+}
+
+.alinhar-bg-resultado{
+    position: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: url("../assets/template/img/fundo-capa-2019.jpg");
 }
 
 .section-form{

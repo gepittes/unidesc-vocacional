@@ -2,28 +2,32 @@
 
 namespace App\Models\Candidato;
 
+use App\Http\Services\CandidatoServices;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Support\Facades\DB;
 
 class Candidato extends Model
 {
     Use SoftDeletes;
     protected $dates =['deleted_at'];
 
-    public function storeCand($dadosCandDB)
+    protected $fillable = ['nome', 'telefone', 'email', 'cidade', 'serie', 'visitor', 'id_resultado'];
+
+    # Relacionamentos
+
+    public function resultado()
     {
-        //INSERT NO BANCO DO REGISTRO DO CANDIDATO
-        DB::table('candidatos')->insert([
-            'nome' => $dadosCandDB->nome,
-            'telefone' => $dadosCandDB->telefone,
-            'email' => $dadosCandDB->email,
-            'cidade' => $dadosCandDB->cidade,
-            'serie' => $dadosCandDB->serie,
-            'resultado_curso' => $dadosCandDB->resultado_curso,
-            'visitor' => $dadosCandDB->visitor,
-            'created_at' => date("Y-m-d H:i:s"),
-            'updated_at' => date("Y-m-d H:i:s")
-        ]);
+        return $this->hasOne(ResultadoCand::class, 'id');
     }
+
+
+    public static function storeCandidato($dadosCand, $getIdResultado)
+    {
+        # Coloca id do resuldado no registro do Candidato
+        $dadosCand += ['id_resultado' => $getIdResultado];
+
+        return Candidato::create($dadosCand);
+
+    }
+
 }
