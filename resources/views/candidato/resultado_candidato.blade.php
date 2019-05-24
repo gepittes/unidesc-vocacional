@@ -232,5 +232,17 @@
             var chart = new google.visualization.PieChart(document.getElementById('resultadoGrafico'));
             chart.draw(data, options);
         }
+        
+        // Mostar grupo ao passar mause por cima
+        $(".dropdown-toggle")
+            .mouseover(function() {
+                $(this).parent().hasClass("show");
+                $(this).click();
+            })
+            .mouseout(function() {
+                $(this).parent().hasClass("hide");
+                $(this).click();
+            });
+
     </script>
 @endsection
