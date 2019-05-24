@@ -50,13 +50,25 @@ class CandidatoController extends Controller
 
     public function recebeQuestDadosCand(Request $request)
     {
-        $dadosCand = session('dadosCand'); // DADOS DO CANDIDATO
+        $dadosCand = session('dadosCand'); // RESGATA DADOS CANDIDATO
 
         // Armazena RESULTADO e CANDIDATO
-        $getIdResultado = CandidatoServices::storeResultado($request);
-        CandidatoServices::storeCandidato($dadosCand, $getIdResultado);
+        $getIdResultado = ResultadoCand::storeResultado($request);
+        $candidato = Candidato::storeCandidato($dadosCand, $getIdResultado);
+
+
+        session()->flush();
+        session()->put('resultado_cand', $candidato);
 
         return redirect(route('candidato.resultado'));
+    }
+
+    public function resultadoFinal()
+    {
+        $resultado_cand = session('resultado_cand'); // RESGATA RESULTADO FINAL DO CANDIDATO
+        $title = 'Teste Vocacional | Resultado';
+
+        return view('candidato.resultado_candidato', compact('resultado_cand', 'title'));
     }
 
 
