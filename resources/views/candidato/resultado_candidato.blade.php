@@ -1,9 +1,9 @@
 @extends('layouts.template_teste')
-{{--{{$title = 'teste'}}--}}
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 @section('conteudo')
     <header class="alinhar-bg-questoes">
-        <img src="{{asset("/assets/template/img/elemento-capa-2019.png")}}" alt="capa" style="width: 800px">
+        <img src="{{asset("/assets/template/img/elemento-capa-2019.png")}}" alt="capa" style="width: 800px"
+             draggable="false">
     </header>
 
 
@@ -28,79 +28,105 @@
 
                 <hr>
 
-{{--                <div class="shadow-sm p-3 border border-dark mb-3">--}}
-{{--                    <div class="row">--}}
-{{--                        <div class="col">--}}
-{{--                            <div class="card" style="width: 20rem;">--}}
-{{--                                <img class="card-img-top" src="..." alt="Card image cap">--}}
-{{--                                <div class="card-body">--}}
-{{--                                    <p class="card-text">Some quick example text to build on the card title and make up--}}
-{{--                                        the bulk of the card's content.</p>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="col">--}}
-{{--                            <div class="card" style="width: 20rem;">--}}
-{{--                                <img class="card-img-top" src="..." alt="Card image cap">--}}
-{{--                                <div class="card-body">--}}
-{{--                                    <p class="card-text">Some quick example text to build on the card title and make up--}}
-{{--                                        the bulk of the card's content.</p>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="col">--}}
-{{--                            <div class="card" style="width: 20rem;">--}}
-{{--                                <img class="card-img-top" src="..." alt="Card image cap">--}}
-{{--                                <div class="card-body">--}}
-{{--                                    <p class="card-text">Some quick example text to build on the card title and make up--}}
-{{--                                        the bulk of the card's content.</p>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
 
-{{--                    <div class="row justify-content-md-center">--}}
-{{--                        <div class="col col-auto">--}}
-{{--                            <div class="card" style="width: 20rem;">--}}
-{{--                                <img class="card-img-top" src="..." alt="Card image cap">--}}
-{{--                                <div class="card-body">--}}
-{{--                                    <p class="card-text">Some quick example text to build on the card title and make up--}}
-{{--                                        the bulk of the card's content.</p>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+                <div class="row">
 
-{{--                        <div class="col col-auto">--}}
-{{--                            <div class="card" style="width: 20rem;">--}}
-{{--                                <img class="card-img-top" src="..." alt="Card image cap">--}}
-{{--                                <div class="card-body">--}}
-{{--                                    <p class="card-text">Some quick example text to build on the card title and make up--}}
-{{--                                        the bulk of the card's content.</p>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
+                    <div class="col-auto">
+                        <div id="resultadoGrafico" style="height: 500px; width: 700px"></div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="container mt-5">
 
-{{--                </div>--}}
+                            {{-- GRUPO A --}}
+                            <div class="dropdown">
+                                <button class="btn btn-purple dropdown-toggle" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <span class="font-weight-bold"><i class="fas fa-network-wired"></i> Grupo A</span>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="">
+                                    <div class="container" style="width: 20rem;">
+                                        <div class="alinhar-mid-teste">
+                                            <img class="card-img-top justify-content-center" draggable="false"
+                                                 src="{{url('/assets/template/img/resultado-images/grupo-A-illustration.jpg')}}"
+                                                 alt="Card image cap" style="width: 200px">
+                                        </div>
 
+                                        <div class="card-body">
+                                            <p class="text-justify  font-weight-normal">
+                                                Queda para o campo das <span class="text-info">ciências físicas</span>,
+                                                que abrange profissões como
+                                                <span class="text-info">engenharia, física e computação</span> por
+                                                exemplo.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                    <div class="alinhar-mid-teste">
-                        <div id="resultadoGrafico" style="width: 900px; height: 500px;">
+                            {{-- GRUPO B --}}
+                            <div class="dropdown">
+                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <span class="font-weight-bold"><i
+                                            class="fas fa-briefcase-medical"></i> Grupo B</span>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="">
+                                    <div class="container" style="width: 20rem;">
+                                        <div class="alinhar-mid-teste">
+                                            <img class="card-img-top justify-content-center" draggable="false"
+                                                 src="{{url('/assets/template/img/resultado-images/grupo-B-illustration.jpg')}}"
+                                                 alt="Card image cap" style="width: 200px">
+                                        </div>
+
+                                        <div class="card-body">
+                                            <p class="text-justify font-weight-normal">
+                                                Mostra interesse pela área de <span class="text-info">biológicas</span>,
+                                                ou seja, cursos indicados como <span class="text-info"> medicina,
+                                                biologia, odontologia </span>e etc.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{-- GRUPO C --}}
+                            <div class="dropdown">
+                                <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <span class="font-weight-bold"><i class="fas fa-gavel"></i> Grupo C</span>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="">
+                                    <div class="container" style="width: 20rem;">
+                                        <div class="alinhar-mid-teste">
+                                            <img class="card-img-top justify-content-center" draggable="false"
+                                                 src="{{url('/assets/template/img/resultado-images/grupo-C-illustration.jpg')}}"
+                                                 alt="Card image cap" style="width: 200px">
+                                        </div>
+
+                                        <div class="card-body">
+                                            <p class="text-justify font-weight-normal">
+                                                Tem maior inclinação para a área de humanas,
+                                                <span class="text-info">como direito, psicologia,
+                                                    sociologia, economia e administração</span>.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
 
+
                     </div>
 
+                </div>
 
 
-
-
-
-                                {{$resultado_cand->resultado->GPA}}
-                                {{$resultado_cand->resultado->GPB}}
-                                {{$resultado_cand->resultado->GPC}}
-                                {{$resultado_cand->resultado->GPD}}
-                                {{$resultado_cand->resultado->GPE}}
+                {{--                {{$resultado_cand->resultado->GPA}}--}}
+                {{--                {{$resultado_cand->resultado->GPB}}--}}
+                {{--                {{$resultado_cand->resultado->GPC}}--}}
+                {{--                {{$resultado_cand->resultado->GPD}}--}}
+                {{--                {{$resultado_cand->resultado->GPE}}--}}
 
 
                 <div class="row shadow-sm p-3 border border-success">
@@ -109,7 +135,7 @@
                         <span class="badge badge-default">0 a 3 pontos – pequeno</span>
                     </div>
                     <div class="col">
-                        <span class="badge badge-warning">4 a 6 pontos – moderado</span>
+                        <span class="badge badge-icon text-dark">4 a 6 pontos – moderado</span>
                     </div>
                     <div class="col">
                         <span class="badge badge-primary">7 a 9 pontos – grande</span>
@@ -120,7 +146,9 @@
                 </div>
 
                 <div class="alinhar-mid-teste">
-                    <a href="{{route('home')}}"><button class="btn btn-success"><strong>Finalizar Teste !</strong></button></a>
+                    <a href="{{route('home')}}">
+                        <button class="btn btn-success"><strong>Finalizar Teste !</strong></button>
+                    </a>
                 </div>
 
 
@@ -134,16 +162,17 @@
 
 @section('scripts_google_charts')
     <script type="text/javascript">
-        google.charts.load("current", {packages:["corechart"]});
+        google.charts.load("current", {packages: ["corechart"]});
         google.charts.setOnLoadCallback(drawChart);
+
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
                 ['Grupos', 'Pontos'],
-                ['GRUPO A',  {{$resultado_cand->resultado->GPA}}],
-                ['GRUPO B',  {{$resultado_cand->resultado->GPB}}],
-                ['GRUPO C',  {{$resultado_cand->resultado->GPC}}],
-                ['GRUPO D',  {{$resultado_cand->resultado->GPD}}],
-                ['GRUPO E',  {{$resultado_cand->resultado->GPE}}]
+                ['Grupo A',  {{$resultado_cand->resultado->GPA}}],
+                ['Grupo B',  {{$resultado_cand->resultado->GPB}}],
+                ['Grupo C',  {{$resultado_cand->resultado->GPC}}],
+                ['Grupo D',  {{$resultado_cand->resultado->GPD}}],
+                ['Grupo E',  {{$resultado_cand->resultado->GPE}}]
             ]);
 
             var options = {

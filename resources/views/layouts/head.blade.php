@@ -22,6 +22,7 @@
     {{--Wizard--}}
     <link href="{{url('/assets/wizard/css/smart_wizard.css')}}" rel="stylesheet" />
     <link href="{{url('/assets/wizard/css/smart_wizard_theme_circles.css')}}" rel="stylesheet"  type="text/css" />
-{{--    <link href="{{url('/assets/wizard/css/smart_wizard_theme_arrows.css')}}" rel="stylesheet" type="text/css" />--}}
     <link href="{{url('/assets/wizard/css/smart_wizard_theme_dots.css')}}" rel="stylesheet" type="text/css" />
+    {{-- Google Charts --}}
+    <script type="text/javascript" src="{{url('/js/loader.js')}}"></script>
 </head>
