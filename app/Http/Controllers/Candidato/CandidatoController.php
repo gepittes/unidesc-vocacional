@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Candidato;
 
 use App\Http\Services\CandidatoServices;
-use App\Mail\MailCandidato;
+use App\Http\Services\EmailServices;
 use App\Models\Cidade\Cidade;
 use App\Http\Requests\CandidatoFormRequest;
 use App\Models\Candidato\Candidato;
@@ -13,7 +13,7 @@ use App\Models\Candidato\ResultadoCand;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Mail;
+
 
 class CandidatoController extends Controller
 {
@@ -68,18 +68,10 @@ class CandidatoController extends Controller
         $resultado_cand = session('resultado_cand'); // RESGATA RESULTADO FINAL DO CANDIDATO
         $title = 'Teste Vocacional | Resultado';
 
+        // Chama services para enviar o email
+        EmailServices::sendEmail($resultado_cand);
+
         return view('candidato.resultado_candidato', compact('resultado_cand', 'title'));
     }
-
-
-    // TODO Isso vai para um controller de Email
-    public function sendMail($data)
-    {
-        // Enviar email para o cardidato
-        Mail::to($data[1]->email)->send(new MailCandidato($data));
-
-        return redirect()->back();
-    }
-
 
 }
