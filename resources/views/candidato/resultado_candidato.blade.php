@@ -171,12 +171,6 @@
                 </div>
 
 
-                {{--                {{$resultado_cand->resultado->GPA}}--}}
-                {{--                {{$resultado_cand->resultado->GPB}}--}}
-                {{--                {{$resultado_cand->resultado->GPC}}--}}
-                {{--                {{$resultado_cand->resultado->GPD}}--}}
-                {{--                {{$resultado_cand->resultado->GPE}}--}}
-
 
                 <div class="row shadow-sm p-3 border border-success">
                     <span class="font-weight-bold">Nivel de Interesse:</span>
@@ -234,15 +228,15 @@
         }
         
         // Mostar grupo ao passar mause por cima
-        $(".dropdown-toggle")
-            .mouseover(function() {
-                $(this).parent().hasClass("show");
-                $(this).click();
-            })
-            .mouseout(function() {
-                $(this).parent().hasClass("hide");
-                $(this).click();
-            });
+        // $(".dropdown-toggle")
+        //     .mouseover(function() {
+        //         $(this).parent().hasClass("show");
+        //         $(this).click();
+        //     })
+        //     .mouseout(function() {
+        //         $(this).parent().hasClass("hide");
+        //         $(this).click();
+        //     });
 
     </script>
 @endsection
