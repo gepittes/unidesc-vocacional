@@ -43,11 +43,10 @@ class CandidatoController extends Controller
 
     public function recebeQuestDadosCand(Request $request)
     {
-        $dadosCand = session('dadosCand'); // RESGATA DADOS CANDIDATO
 
         // Armazena RESULTADO e CANDIDATO
         $getIdResultado = ResultadoCand::storeResultado($request);
-        $candidato = Candidato::storeCandidato($dadosCand, $getIdResultado);
+        $candidato = Candidato::storeCandidato(CandidatoServices::getSession(), $getIdResultado);
 
 
         session()->flush();

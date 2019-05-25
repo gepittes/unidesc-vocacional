@@ -55,4 +55,12 @@ class CandidatoServices {
         ]);
     }
 
+    // RESGATA DADOS CANDIDATO
+    public static function getSession()
+    {
+
+        return  session('dadosCand');
+
+    }
+
 }
