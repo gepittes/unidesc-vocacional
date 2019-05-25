@@ -2,6 +2,7 @@
 
 namespace App\Http\Services;
 
+use App\Http\Requests\CandidatoFormRequest;
 use App\Models\Candidato\Candidato;
 use App\Models\Candidato\ResultadoCand;
 use Illuminate\Http\Request;
@@ -39,6 +40,19 @@ class CandidatoServices {
 
         return $totPtCandA = $pointCandA + $pointCandB;
 
+    }
+
+    // GUARDA DADOS DO CANDIDATO NA SESSION
+    public static function setSession(CandidatoFormRequest $dadosCand)
+    {
+        $dadosCand->session()->put('dadosCand', [
+            'nome' => $dadosCand->nome,
+            'telefone' => $dadosCand->telefone,
+            'email' => $dadosCand->email,
+            'cidade' => $dadosCand->cidade,
+            'serie' => $dadosCand->serie,
+            'visitor' => $dadosCand->visitor,
+        ]);
     }
 
 }

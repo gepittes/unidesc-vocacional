@@ -30,15 +30,8 @@ class CandidatoController extends Controller
 
     public function recebeDadosFormCand(CandidatoFormRequest $dadosCand)
     {
-        // GUARDA DADOS DO CANDIDATO NA SESSION
-        $dadosCand->session()->put('dadosCand', [
-            'nome' => $dadosCand->nome,
-            'telefone' => $dadosCand->telefone,
-            'email' => $dadosCand->email,
-            'cidade' => $dadosCand->cidade,
-            'serie' => $dadosCand->serie,
-            'visitor' => $dadosCand->visitor,
-        ]);
+        // Chama o services para guardar os dados candidato na Session
+        CandidatoServices::setSession($dadosCand);
 
         if (session('dadosCand')) {
             $title = 'Teste Vocacional | Teste';
