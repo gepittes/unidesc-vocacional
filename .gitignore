@@ -11,3 +11,4 @@ npm-debug.log
 yarn-error.log
 .idea/*
 .directory
+public/assets/template/scss/.sass-cache/
