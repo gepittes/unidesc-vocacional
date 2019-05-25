@@ -48,9 +48,10 @@ class CandidatoController extends Controller
         $getIdResultado = ResultadoCand::storeResultado($request);
         $candidato = Candidato::storeCandidato(CandidatoServices::getSession(), $getIdResultado);
 
-
         session()->flush();
-        session()->put('resultado_cand', $candidato);
+
+        // Chama o services para guardar o resultado do candidato na Session
+        CandidatoServices::setSessionResultado($candidato);
 
         return redirect(route('candidato.resultado'));
     }

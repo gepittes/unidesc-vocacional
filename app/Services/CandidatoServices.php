@@ -63,4 +63,10 @@ class CandidatoServices {
 
     }
 
+    // GUARDA O RESULTADO DO CANDIDATO NA SESSION
+    public static function setSessionResultado($candidato)
+    {
+        session()->put('resultado_cand', $candidato);
+    }
+
 }
