@@ -56,6 +56,16 @@ $success-states-color:       lighten($success-color, 6%) !default;
 $success-color-opacity:      rgba(24, 206, 15, .3) !default;
 $success-color-alert:        rgba(24, 206, 15, .8) !default;
 
+$purple-color: #3366cd !default;
+$purple-states-color:       lighten($purple-color, 6%) !default;
+$purple-color-opacity: rgba(51, 102, 205, 0.3) !default;
+$purple-color-alert: rgba(51, 102, 205, 0.8) !default;
+
+$purple-white-color: #9d5399 !default;
+$purple-white-states-color:          lighten($purple-white-color, 6%) !default;
+$purple-white-color-opacity: rgba(157, 83, 153, 0.3) !default;
+$purple-white-color-alert: rgba(157, 83, 153, 0.8) !default;
+
 $info-color:                 #2CA8FF !default;
 $info-states-color:          lighten($info-color, 6%) !default;
 $info-color-opacity:         rgba(44, 168, 255, .3) !default;

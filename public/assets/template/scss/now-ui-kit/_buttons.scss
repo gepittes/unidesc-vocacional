@@ -84,6 +84,8 @@
 .btn-primary { @include btn-styles($primary-color, $primary-states-color); }
 .btn-success { @include btn-styles($success-color, $success-states-color); }
 .btn-info    { @include btn-styles($info-color, $info-states-color); }
+.btn-purple  { @include btn-styles($purple-color, $purple-states-color); }
+.btn-purple-white  { @include btn-styles($purple-white-color, $purple-white-states-color); }
 .btn-warning { @include btn-styles($warning-color, $warning-states-color); }
 .btn-danger  { @include btn-styles($danger-color, $danger-states-color); }
 .btn-neutral { @include btn-styles($white-color, $white-color); }
