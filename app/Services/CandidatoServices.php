@@ -77,4 +77,12 @@ class CandidatoServices {
 
     }
 
+    // LISTAR GRUPOS
+    public static function getGrupos()
+    {
+        $grupo = ['','A','B','C','D','E'];
+        return $grupo;
+
+    }
+
 }

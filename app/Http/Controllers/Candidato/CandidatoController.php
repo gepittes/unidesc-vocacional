@@ -35,7 +35,8 @@ class CandidatoController extends Controller
 
         if (session('dadosCand')) {
             $title = 'Teste Vocacional | Teste';
-            return view('candidato.iniciar_teste', compact('title'));
+            $grupo = CandidatoServices::getGrupos();
+            return view('candidato.iniciar_teste', compact('title','grupo'));
         } else {
             return view('errors.404');
         }
