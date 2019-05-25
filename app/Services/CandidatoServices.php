@@ -69,4 +69,12 @@ class CandidatoServices {
         session()->put('resultado_cand', $candidato);
     }
 
+    // RESGATA RESULTADO FINAL DO CANDIDATO
+    public static function getSessionResultado()
+    {
+
+        return  session('resultado_cand');
+
+    }
+
 }

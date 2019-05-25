@@ -58,13 +58,15 @@ class CandidatoController extends Controller
 
     public function resultadoFinal()
     {
-        $resultado_cand = session('resultado_cand'); // RESGATA RESULTADO FINAL DO CANDIDATO
+
+        // Chama o services para pegar o resultado do candidato na Session
+        $resultado_cand = CandidatoServices::getSessionResultado();
+
         $title = 'Teste Vocacional | Resultado';
 
         // Chama services para enviar o email
-        EmailServices::sendEmail($resultado_cand);
+        EmailServices::sendEmail(CandidatoServices::getSessionResultado());
 
         return view('candidato.resultado_candidato', compact('resultado_cand', 'title'));
     }
-
 }
