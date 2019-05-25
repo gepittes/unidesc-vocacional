@@ -141,7 +141,7 @@
 
                             {{-- GRUPO E --}}
                             <div class="dropdown">
-                                <button class="btn bg-dark dropdown-toggle" type="button" id="dropdownMenuButton"
+                                <button class="btn btn-purple-white dropdown-toggle" type="button" id="dropdownMenuButton"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                     <span class="font-weight-bold"><i class="fas fa-film"></i> Grupo E</span>
                                 </button>
