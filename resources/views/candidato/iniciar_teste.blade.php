@@ -25,16 +25,18 @@
                                 do campo <strong>A</strong> e depois do campo <strong>B</strong> de cada grupo e
                                 escolher
                                 uma alternativa que seja do seu interesse.
-                                <span class="font-italic text-danger">
+                                <span class="font-italic text-danger font-weight-bold">
                                     Caso não tenha interesse por nenhuma das alternativas pode deixar em branco.
                                 </span>
                             </p>
-                            <p class="text-justify font-weight-normal"><strong>2-</strong> De acordo com a pontuação de
-                                cada grupo, na última página, você irá
-                                identificar as áreas de conhecimento que você apresenta mais
+                            <p class="text-justify font-weight-normal"><strong>2-</strong>
+                                <span class="text-info font-weight-bold">
+                                    De acordo com a pontuação de cada grupo, na última página
+                                </span>, você irá identificar as áreas de conhecimento que você apresenta mais
                                 habilidades e interesse.</p>
-                            <p class="text-justify font-weight-normal"><strong>3-</strong> Com base no seu resultado,
-                                pesquise sobre as profissões relacionadas a
+                            <p class="text-justify font-weight-normal"><strong>3-</strong>
+                                <span class="btn-dark font-weight-bold">Com base no seu resultado,
+                                pesquise sobre as profissões relacionadas</span> a
                                 cada área (o que faz, onde atua, mercado de trabalho e etc)
                                 e veja aquela com a qual tem maior afinidade para estudo.</p>
                         </div>
@@ -91,20 +93,21 @@
 
                                 @for($i = 1; $i <= 12; $i++)
                                     <div class="row content-center">
-                                        <div class="col-4" >
+                                        <div class="col-4">
                                             <label onclick="setAlternativa('A', '{{$i}}', '{{$grupo[$j]}}')"
                                                    id="Gp{{$grupo[$j]}}A{{$i}}">
-                                                <strong class='text-info'>A</strong> <i class="fas fa-angle-right" ></i>
+                                                <strong class='text-info'>A</strong> <i class="fas fa-angle-right"></i>
                                             </label>
                                         </div>
                                         <div class="col-4">
                                             <input type="range" class="custom-range" min="0" max="2"
                                                    id="rangerGp{{$grupo[$j]}}{{$i}}" name="Gp{{$grupo[$j]}}{{$i}}">
                                         </div>
-                                        <div class="col-4" >
+                                        <div class="col-4">
                                             <label onclick="setAlternativa('B', '{{$i}}', '{{$grupo[$j]}}')"
                                                    id="Gp{{$grupo[$j]}}B{{$i}}">
-                                                <strong class='text-danger'>B</strong> <i class="fas fa-angle-right"></i>
+                                                <strong class='text-danger'>B</strong> <i
+                                                    class="fas fa-angle-right"></i>
                                             </label>
                                         </div>
                                     </div>
@@ -125,110 +128,110 @@
 @section('scripts_wizard')
     <script type="text/javascript">
 
-           function montarGrupo(){
+        function montarGrupo() {
 
-               // Mostar o botão enviar apenas no último Step
-               $("#smartwizard").on("showStep", function(e, anchorObject, stepNumber, stepDirection) {
-                   if($('button.sw-btn-next').hasClass('disabled')){
-                       $('.sw-btn-group-extra').show(); // show the button extra only in the last page
-                   }else{
-                       $('.sw-btn-group-extra').hide();
-                   }
-               });
+            // Mostar o botão enviar apenas no último Step
+            $("#smartwizard").on("showStep", function (e, anchorObject, stepNumber, stepDirection) {
+                if ($('button.sw-btn-next').hasClass('disabled')) {
+                    $('.sw-btn-group-extra').show(); // show the button extra only in the last page
+                } else {
+                    $('.sw-btn-group-extra').hide();
+                }
+            });
 
-               $('#smartwizard').smartWizard({
-                   selected: 0,  // Initial selected step, 0 = first step
-                   keyNavigation: true, // Enable/Disable keyboard navigation(left and right keys are used if enabled)
-                   autoAdjustHeight: false, // Automatically adjust content height
-                   cycleSteps: false, // Allows to cycle the navigation of steps
-                   backButtonSupport: true, // Enable the back button support
-                   useURLhash: true, // Enable selection of the step based on url hash
-                   lang: {  // Language variables
-                       next: 'Proximo',
-                       previous: 'Anterior'
-                   },
-
-
-                   toolbarSettings: {
-                       toolbarPosition: 'bottom', // none, top, bottom, both
-                       toolbarButtonPosition: 'right', // left, right
-                       showNextButton: true, // show/hide a Next button
-                       showPreviousButton: true, // show/hide a Previous button
-                       toolbarExtraButtons: [
-                           $('<button type="submit"></button>').text('Enviar')
-                               .addClass('btn btn-info')
-                       ]
-                   },
-
-                   contentURL: null, // content url, Enables Ajax content loading. can set as data data-content-url on anchor
-                   disabledSteps: [],    // Array Steps disabled
-                   errorSteps: [],    // Highlight step with errors
-                   theme: 'dots',
-                   transitionEffect: 'fade', // Effect on navigation, none/slide/fade
-                   transitionSpeed: '400'
-               });
-
-           }
-
-           // Escreve os enunciados das questões nos labels
-
-            function montarQuestoes() {
+            $('#smartwizard').smartWizard({
+                selected: 0,  // Initial selected step, 0 = first step
+                keyNavigation: true, // Enable/Disable keyboard navigation(left and right keys are used if enabled)
+                autoAdjustHeight: false, // Automatically adjust content height
+                cycleSteps: false, // Allows to cycle the navigation of steps
+                backButtonSupport: true, // Enable the back button support
+                useURLhash: true, // Enable selection of the step based on url hash
+                lang: {  // Language variables
+                    next: 'Proximo',
+                    previous: 'Anterior'
+                },
 
 
-                    $questoes = $.getJSON('/api/questoes', function () {
+                toolbarSettings: {
+                    toolbarPosition: 'bottom', // none, top, bottom, both
+                    toolbarButtonPosition: 'right', // left, right
+                    showNextButton: true, // show/hide a Next button
+                    showPreviousButton: true, // show/hide a Previous button
+                    toolbarExtraButtons: [
+                        $('<button type="submit"></button>').text('Enviar')
+                            .addClass('btn btn-info')
+                    ]
+                },
 
-                    {{-- Ponto de partida do grupo A no JSON --}}
-                        $j = 0;
-                    for ($i = 1; $i <= 12; $i++) {
+                contentURL: null, // content url, Enables Ajax content loading. can set as data data-content-url on anchor
+                disabledSteps: [],    // Array Steps disabled
+                errorSteps: [],    // Highlight step with errors
+                theme: 'dots',
+                transitionEffect: 'fade', // Effect on navigation, none/slide/fade
+                transitionSpeed: '400'
+            });
 
-                        $("#GpAA" + $i).append($questoes.responseJSON[$j].texto_alternativa);
-                        $("#GpAB" + $i).append($questoes.responseJSON[$j + 1].texto_alternativa);
+        }
 
-                        $j += 2;
-                    }
+        // Escreve os enunciados das questões nos labels
 
-                    {{-- Ponto de partida do grupo B no JSON --}}
-                        $j = 25;
-                    for ($i = 1; $i <= 12; $i++) {
-
-                        $("#GpBA" + $i).append($questoes.responseJSON[$j].texto_alternativa);
-                        $("#GpBB" + $i).append($questoes.responseJSON[$j + 1].texto_alternativa);
-
-                        $j += 2;
-                    }
-
-                    {{-- Ponto de partida do grupo C no JSON --}}
-                        $j = 48;
-                    for ($i = 1; $i <= 12; $i++) {
-
-                        $("#GpCA" + $i).append($questoes.responseJSON[$j].texto_alternativa);
-                        $("#GpCB" + $i).append($questoes.responseJSON[$j + 1].texto_alternativa);
-
-                        $j += 2;
-                    }
-
-                    {{-- Ponto de partida do grupo D no JSON --}}
-                        $j = 72;
-                    for ($i = 1; $i <= 12; $i++) {
-
-                        $("#GpDA" + $i).append($questoes.responseJSON[$j].texto_alternativa);
-                        $("#GpDB" + $i).append($questoes.responseJSON[$j + 1].texto_alternativa);
+        function montarQuestoes() {
 
 
-                        $j += 2;
-                    }
+            $questoes = $.getJSON('/api/questoes', function () {
 
-                    {{-- Ponto de partida do grupo E no JSON --}}
-                        $j = 96;
-                    for ($i = 1; $i <= 12; $i++) {
+                {{-- Ponto de partida do grupo A no JSON --}}
+                    $j = 0;
+                for ($i = 1; $i <= 12; $i++) {
 
-                        $("#GpEA" + $i).append($questoes.responseJSON[$j].texto_alternativa);
-                        $("#GpEB" + $i).append($questoes.responseJSON[$j + 1].texto_alternativa);
+                    $("#GpAA" + $i).append($questoes.responseJSON[$j].texto_alternativa);
+                    $("#GpAB" + $i).append($questoes.responseJSON[$j + 1].texto_alternativa);
 
-                        $j += 2;
-                    }
-                });
-            }
+                    $j += 2;
+                }
+
+                {{-- Ponto de partida do grupo B no JSON --}}
+                    $j = 25;
+                for ($i = 1; $i <= 12; $i++) {
+
+                    $("#GpBA" + $i).append($questoes.responseJSON[$j].texto_alternativa);
+                    $("#GpBB" + $i).append($questoes.responseJSON[$j + 1].texto_alternativa);
+
+                    $j += 2;
+                }
+
+                {{-- Ponto de partida do grupo C no JSON --}}
+                    $j = 48;
+                for ($i = 1; $i <= 12; $i++) {
+
+                    $("#GpCA" + $i).append($questoes.responseJSON[$j].texto_alternativa);
+                    $("#GpCB" + $i).append($questoes.responseJSON[$j + 1].texto_alternativa);
+
+                    $j += 2;
+                }
+
+                {{-- Ponto de partida do grupo D no JSON --}}
+                    $j = 72;
+                for ($i = 1; $i <= 12; $i++) {
+
+                    $("#GpDA" + $i).append($questoes.responseJSON[$j].texto_alternativa);
+                    $("#GpDB" + $i).append($questoes.responseJSON[$j + 1].texto_alternativa);
+
+
+                    $j += 2;
+                }
+
+                {{-- Ponto de partida do grupo E no JSON --}}
+                    $j = 96;
+                for ($i = 1; $i <= 12; $i++) {
+
+                    $("#GpEA" + $i).append($questoes.responseJSON[$j].texto_alternativa);
+                    $("#GpEB" + $i).append($questoes.responseJSON[$j + 1].texto_alternativa);
+
+                    $j += 2;
+                }
+            });
+        }
 
         {{-- Selecionar escolha quando clicar na label --}}
         function setAlternativa(altenativa, index, grupo) {
@@ -305,17 +308,17 @@
 
 
         // Isso é importante para as montagens  dos elementos
-        $(document).ready(function() {
+        $(document).ready(function () {
             montarGrupo();
             montarQuestoes();
 
             // Delay para mostrar a lista de grupos
-            setTimeout(function(){
-                $('#smartwizard').css("display","block");
+            setTimeout(function () {
+                $('#smartwizard').css("display", "block");
             }, 200);
 
             // Delay para mostrar a modal com as Dicas
-            setTimeout(function(){
+            setTimeout(function () {
                 $('#avisoCand').modal('show');
             }, 2000);
 
