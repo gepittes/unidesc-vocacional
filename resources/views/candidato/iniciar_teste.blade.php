@@ -69,7 +69,18 @@
                     <div>
 
 
-                        {{-- Listar Grupos --}}
+                        {{--
+
+                       Listar Grupos
+
+                       Lista de forma dinamica 5 vezes, uma para cada grupo
+                       Sendo assim gerando ID`s dinamicos de 1 a 5.
+
+                       Deste modo o JS mapea os ID`s de 1 a 5 para escrever as questoes
+                       em cada grupo repectivamente
+
+
+                       --}}
                         @for ($j = 1; $j <=5; $j++)
                             <div id="step-{{ $j }}">
                                 <div class="row">
