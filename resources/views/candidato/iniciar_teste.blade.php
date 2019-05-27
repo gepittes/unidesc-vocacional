@@ -310,7 +310,7 @@
             // Delay para mostrar a modal com as Dicas
             setTimeout(function () {
                 $('#avisoCand').modal('show');
-            }, 2000);
+            }, 1000);
 
         })
 
