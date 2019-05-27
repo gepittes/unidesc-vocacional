@@ -54,6 +54,13 @@ class CandidatoController extends Controller
         // Chama o services para guardar o resultado do candidato na Session
         CandidatoServices::setSessionResultado($candidato);
 
+        // Chama services para enviar o email
+        /*
+            OBS: Servico de email deve ser chamado anterior ao mostrar resultado na pagina
+            Pois assim e possivel das F5 nas pagina sem disparar mais emails
+        */
+        EmailServices::sendEmail(CandidatoServices::getSessionResultado());
+
         return redirect(route('candidato.resultado'));
     }
 
@@ -64,9 +71,6 @@ class CandidatoController extends Controller
         $resultado_cand = CandidatoServices::getSessionResultado();
 
         $title = 'Teste Vocacional | Resultado';
-
-        // Chama services para enviar o email
-        EmailServices::sendEmail(CandidatoServices::getSessionResultado());
 
         return view('candidato.resultado_candidato', compact('resultado_cand', 'title'));
     }
