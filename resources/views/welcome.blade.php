@@ -87,7 +87,7 @@
                                     Assim como tecnologias como <span class="font-italic font-weight-bold">HTML 5, CSS 3 e JS.</span></p>
                                 <p class="card-text font-weight-normal text-justify ft-15">
                                     <strong>Conhecimento em banco de dados</strong> também é fundamental para ingressar em uma empresa com foco em ambientes web.<br>
-                                    <strong>A linguagem SQL</strong> é um pré-requisito para a grande maioria das vagas disponíveis no mercado </p>
+                                    <strong>A linguagem SQL</strong> é um pré-requisito para a grande maioria das vagas disponíveis no mercado.</p>
                             </div>
                         </div>
                     </div>
