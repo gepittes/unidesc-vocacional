@@ -117,6 +117,32 @@
                     </div>
                 </div>
 
+                {{--  MODAL DE CONFIRMACAO  --}}
+
+                <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog"
+                     aria-hidden="true" id="confirm-modal">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <span class="font-weight-bold">Deseja enviar?</span>
+                            </div>
+                            <div class="modal-body">
+                                <div class="alinhar-mid-teste">
+                                    <div class="m-1">
+                                        <button type="submit" class="btn btn-success"><span
+                                                class="font-weight-bold">Sim</span></button>
+                                    </div>
+                                    <div class="m-1">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal"><span
+                                                class="font-weight-bold">Não</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </form>
 
         </div>
@@ -127,6 +153,10 @@
 
 @section('scripts_wizard')
     <script type="text/javascript">
+
+        function modalConfirmacao() {
+            $('#confirm-modal').modal('show')
+        }
 
         function montarGrupo() {
 
@@ -158,7 +188,7 @@
                     showNextButton: true, // show/hide a Next button
                     showPreviousButton: true, // show/hide a Previous button
                     toolbarExtraButtons: [
-                        $('<button type="submit"></button>').text('Enviar')
+                        $('<button type="button" id="enviar" onclick="modalConfirmacao()"></button>').text('Enviar')
                             .addClass('btn btn-info')
                     ]
                 },
