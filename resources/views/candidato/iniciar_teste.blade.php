@@ -240,67 +240,57 @@
 
                 case 'A':
                     const escolhidaGpA = $("#rangerGpA" + index);
-                    console.log(altenativa, index, grupo, escolhidaGpA); //DEBUG
+                    {{-- console.log(altenativa, index, grupo, escolhidaGpA); //DEBUG --}}
 
                     if (altenativa === 'A') {
                         escolhidaGpA.val(0);
-                        console.log('entrou no A')
                     } else {
                         escolhidaGpA.val(2);
-                        console.log('entrou no B')
                     }
 
                     break;
 
                 case 'B':
                     const escolhidaGpB = $("#rangerGpB" + index);
-                    console.log(altenativa, index, grupo, escolhidaGpB); //DEBUG
+                    {{-- console.log(altenativa, index, grupo, escolhidaGpB); //DEBUG --}}
 
                     if (altenativa === 'A') {
                         escolhidaGpB.val(0);
-                        console.log('entrou no A')
                     } else {
                         escolhidaGpB.val(2);
-                        console.log('entrou no B')
                     }
                     break;
 
                 case 'C':
                     const escolhidaGpC = $("#rangerGpC" + index);
-                    console.log(altenativa, index, grupo, escolhidaGpC); //DEBUG
+                    {{--  console.log(altenativa, index, grupo, escolhidaGpC); //DEBUG --}}
 
                     if (altenativa === 'A') {
                         escolhidaGpC.val(0);
-                        console.log('entrou no A')
                     } else {
                         escolhidaGpC.val(2);
-                        console.log('entrou no B')
                     }
                     break;
 
                 case 'D':
                     const escolhidaGpD = $("#rangerGpD" + index);
-                    console.log(altenativa, index, grupo, escolhidaGpD); //DEBUG
+                    {{-- console.log(altenativa, index, grupo, escolhidaGpD); //DEBUG --}}
 
                     if (altenativa === 'A') {
                         escolhidaGpD.val(0);
-                        console.log('entrou no A')
                     } else {
                         escolhidaGpD.val(2);
-                        console.log('entrou no B')
                     }
                     break;
 
                 case 'E':
                     const escolhidaGpE = $("#rangerGpE" + index);
-                    console.log(altenativa, index, grupo, escolhidaGpE); //DEBUG
+                    {{-- console.log(altenativa, index, grupo, escolhidaGpE); //DEBUG --}}
 
                     if (altenativa === 'A') {
                         escolhidaGpE.val(0);
-                        console.log('entrou no A')
                     } else {
                         escolhidaGpE.val(2);
-                        console.log('entrou no B')
                     }
                     break;
             }
