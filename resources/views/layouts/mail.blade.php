@@ -64,7 +64,7 @@ Observação:
                                         border-radius: .25rem;
                                         transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
                                         color: #fff;
-                                        background-color: #007bff;
+                                        background-color: #3366cd;
                                         margin: 3px;">Grupo A
                                 </li>{{$data->resultado->GPA}} Pontos |
 
@@ -79,7 +79,7 @@ Observação:
                                             border-radius: .25rem;
                                             transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
                                             color: #fff;
-                                            background-color: #007bff;
+                                            background-color: #FF3636;
                                             margin: 3px;">Grupo B
                                 </li>{{$data->resultado->GPB}} Pontos <br>
 
@@ -94,9 +94,10 @@ Observação:
                                             border-radius: .25rem;
                                             transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
                                             color: #fff;
-                                            background-color: #007bff;
+                                            background-color: #FFB236;
                                             margin: 3px;">Grupo C
                                 </li>{{$data->resultado->GPC}} Pontos |
+
                                 <li style="
                                             display: inline-block;
                                             padding: 3px;
@@ -108,7 +109,7 @@ Observação:
                                             border-radius: .25rem;
                                             transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
                                             color: #fff;
-                                            background-color: #007bff;
+                                            background-color: #18ce0f;
                                             margin: 3px;">Grupo D
                                 </li>{{$data->resultado->GPD}} Pontos |
 
@@ -123,7 +124,7 @@ Observação:
                                             border-radius: .25rem;
                                             transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
                                             color: #fff;
-                                            background-color: #007bff;
+                                            background-color: #9d5399;
                                             margin: 3px;">Grupo E
                                 </li>{{$data->resultado->GPE}} Pontos <br>
                             </ul>
@@ -135,7 +136,7 @@ Observação:
 
                                 <b>Nivel de Interesse:</b><br><br>
                                 <b>0 A 3: </b><i>Pontos – Pequeno</i><br>
-                                <b>4 A 6: </b><i>Pontos –Moderado</i><br>
+                                <b>4 A 6: </b><i>Pontos – Moderado</i><br>
                                 <b>7 A 9: </b><i>Pontos – Grande</i><br>
                                 <b>10 A 12: </b><i>Pontos – Muito Forte</i>
 
