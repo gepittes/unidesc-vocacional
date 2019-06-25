@@ -414,8 +414,15 @@
     }
 }
 
+/*Scroll Bar Custom*/
 
-
+::-webkit-scrollbar {
+    width: 8px;
+    background: #dad7d7;
+}
+::-webkit-scrollbar-thumb {
+    background: #2ca8ff;
+}
 
 
 
