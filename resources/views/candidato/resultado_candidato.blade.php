@@ -131,7 +131,7 @@
                                 <div class="card-body">
                                     <p class="text-justify font-weight-normal">
                                         Tem interesse por <span class="font-italic">atividades artísticas</span>,
-                                        como<span class="text-info"> cinema, teatro, música,                                                arquitetura e
+                                        como<span class="text-info"> cinema, teatro, música, arquitetura e
                                             artes plásticas</span>.
                                     </p>
                                 </div>
@@ -143,9 +143,11 @@
                 <hr>
 
                 <div class="row">
-                    <div class="col-sm-6">
-                        <div id="resultadoGrafico" style="height: 250px; width: 450px"></div>
+
+                    <div class="col-sm-6 mb-3">
+                        <canvas id="resultadoGrafico"></canvas>
                     </div>
+
                     <div class="col-sm-6">
                         <span class="title-resultado-sobre">Resultado Final</span>
                         <p class="text-justify font-weight-normal sobre-teste-desc">
@@ -155,8 +157,7 @@
                         </p>
                         <hr>
                         <strong>
-                            <i>Obrigado <span class="badge badge-success">{{$resultado_cand->nome}}</span> pela sua
-                                participação!</i>
+                        <i>Obrigado <span class="badge badge-success">{{$resultado_cand->nome}}</span> pela sua participação!</i>
                         </strong>
                     </div>
                 </div>
@@ -192,40 +193,40 @@
     @endcomponent
 @endsection
 
-@section('scripts_google_charts')
+@section('scripts_charts')
     <script type="text/javascript">
-        google.charts.load("current", {packages: ["corechart"]});
-        google.charts.setOnLoadCallback(drawChart);
 
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-                ['Grupos', 'Pontos'],
-                ['Grupo A',  {{$resultado_cand->resultado->GPA}}],
-                ['Grupo B',  {{$resultado_cand->resultado->GPB}}],
-                ['Grupo C',  {{$resultado_cand->resultado->GPC}}],
-                ['Grupo D',  {{$resultado_cand->resultado->GPD}}],
-                ['Grupo E',  {{$resultado_cand->resultado->GPE}}]
-            ]);
-
-            var options = {
-                title: 'Resultado por grupo',
-                is3D: true,
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('resultadoGrafico'));
-            chart.draw(data, options);
-        }
-
-        // Mostar grupo ao passar mause por cima
-        // $(".dropdown-toggle")
-        //     .mouseover(function() {
-        //         $(this).parent().hasClass("show");
-        //         $(this).click();
-        //     })
-        //     .mouseout(function() {
-        //         $(this).parent().hasClass("hide");
-        //         $(this).click();
-        //     });
+        var ctx = document.getElementById('resultadoGrafico').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['GRUPO A', 'GRUPO B', 'GRUPO C', 'GRUPO D', 'GRUPO E'],
+                datasets: [{
+                    data: [
+                        [{{$resultado_cand->resultado->GPA}}],
+                        [{{$resultado_cand->resultado->GPB}}],
+                        [{{$resultado_cand->resultado->GPC}}],
+                        [{{$resultado_cand->resultado->GPD}}],
+                        [{{$resultado_cand->resultado->GPE}}],
+                    ],
+                    backgroundColor: [
+                        'rgba(75, 120, 211, 1)',
+                        'rgba(245, 82, 85, 1)',
+                        'rgba(255, 178, 55, 1)',
+                        'rgba(114, 224, 19, 1)',
+                        'rgba(172, 98, 168, 1)',
+                    ],
+                    borderColor: [
+                        'rgba(255,255,255)',
+                        'rgba(255,255,255)',
+                        'rgba(255,255,255)',
+                        'rgba(255,255,255)',
+                        'rgba(255,255,255)',
+                    ],
+                    borderWidth: 4
+                }]
+            },
+        });
 
     </script>
 @endsection

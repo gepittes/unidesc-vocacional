@@ -14,6 +14,6 @@
 
 @yield('scripts_wizard')
 
-@yield('scripts_google_charts')
+@yield('scripts_charts')
 
 </html>

@@ -14,19 +14,19 @@
     <title>{{$title}}</title>
 
     {{-- FONTS --}}
-    <link rel="stylesheet" href="{{asset('/assets/fonts/fonts.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/fonts/fonts.css')}}">
     {{-- ICONS Font Awesonme --}}
-    <link rel="stylesheet" href="{{asset('/assets/icons/css/all.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/icons/css/all.min.css')}}">
     {{-- CSS Files Custom--}}
-    <link rel="stylesheet" href="{{asset('/assets/css/responsive.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
     {{-- CSS Files Template--}}
-    <link href="{{asset('/assets/template/css/bootstrap.min.css')}}" rel="stylesheet" />
-    <link href="{{asset('/assets/template/css/now-ui-kit.css?v=1.2.0')}}" rel="stylesheet" />
+    <link href="{{asset('assets/template/css/bootstrap.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/template/css/now-ui-kit.css?v=1.2.0')}}" rel="stylesheet" />
     {{--Jquery--}}
-    <script src="{{asset('/assets/js/jquery.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.min.js')}}"></script>
     {{--Wizard--}}
-    <link href="{{asset('/assets/wizard/css/smart_wizard.css')}}" rel="stylesheet" />
-    <link href="{{asset('/assets/wizard/css/smart_wizard_theme_dots.css')}}" rel="stylesheet" type="text/css" />
-    {{-- Google Charts --}}
-    <script type="text/javascript" src="{{asset('/assets/js/loader.js')}}"></script>
+    <link href="{{asset('assets/wizard/css/smart_wizard.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/wizard/css/smart_wizard_theme_dots.css')}}" rel="stylesheet" type="text/css" />
+    {{-- Charts --}}
+    <script type="text/javascript" src="{{asset('assets/js/charts/Chart.js')}}"></script>
 </head>
