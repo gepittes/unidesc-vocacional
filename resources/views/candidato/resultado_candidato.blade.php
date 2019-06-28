@@ -13,7 +13,7 @@
 
                 <div class="row alinhar-mid-teste">
                     {{-- GRUPO A --}}
-                    <div class="dropdown">
+                    <div class="dropdown ml-2 mr-2">
                         <button class="btn btn-purple dropdown-toggle" type="button" id="dropdownMenuButton"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             <span class="font-weight-bold"><i class="fas fa-network-wired"></i> Grupo A</span>
@@ -22,8 +22,8 @@
                             <div class="container" style="width: 20rem;">
                                 <div class="alinhar-mid-teste">
                                     <img class="card-img-top justify-content-center" draggable="false"
-                                            src="{{url('/assets/template/img/resultado-images/grupo-A-illustration.jpg')}}"
-                                            alt="Card image cap" style="width: 200px">
+                                         src="{{asset('/assets/template/img/resultado-images/grupo-A-illustration.jpg')}}"
+                                         alt="Card image cap" style="width: 200px">
                                 </div>
 
                                 <div class="card-body">
@@ -39,7 +39,7 @@
                     </div>
 
                     {{-- GRUPO B --}}
-                    <div class="dropdown">
+                    <div class="dropdown ml-2 mr-2">
                         <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             <span class="font-weight-bold"><i
@@ -49,8 +49,8 @@
                             <div class="container" style="width: 20rem;">
                                 <div class="alinhar-mid-teste">
                                     <img class="card-img-top justify-content-center" draggable="false"
-                                            src="{{url('/assets/template/img/resultado-images/grupo-B-illustration.jpg')}}"
-                                            alt="Card image cap" style="width: 200px">
+                                         src="{{asset('/assets/template/img/resultado-images/grupo-B-illustration.jpg')}}"
+                                         alt="Card image cap" style="width: 200px">
                                 </div>
 
                                 <div class="card-body">
@@ -65,7 +65,7 @@
                     </div>
 
                     {{-- GRUPO C --}}
-                    <div class="dropdown">
+                    <div class="dropdown ml-2 mr-2">
                         <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             <span class="font-weight-bold"><i class="fas fa-gavel"></i> Grupo C</span>
@@ -74,8 +74,8 @@
                             <div class="container" style="width: 20rem;">
                                 <div class="alinhar-mid-teste">
                                     <img class="card-img-top justify-content-center" draggable="false"
-                                            src="{{url('/assets/template/img/resultado-images/grupo-C-illustration.jpg')}}"
-                                            alt="Card image cap" style="width: 200px">
+                                         src="{{asset('/assets/template/img/resultado-images/grupo-C-illustration.jpg')}}"
+                                         alt="Card image cap" style="width: 200px">
                                 </div>
 
                                 <div class="card-body">
@@ -90,7 +90,7 @@
                     </div>
 
                     {{-- GRUPO D --}}
-                    <div class="dropdown">
+                    <div class="dropdown ml-2 mr-2">
                         <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             <span class="font-weight-bold"><i class="fas fa-newspaper"></i> Grupo D</span>
@@ -99,8 +99,8 @@
                             <div class="container" style="width: 20rem;">
                                 <div class="alinhar-mid-teste">
                                     <img class="card-img-top justify-content-center" draggable="false"
-                                            src="{{url('/assets/template/img/resultado-images/grupo-D-illustration.jpg')}}"
-                                            alt="Card image cap" style="width: 200px">
+                                         src="{{asset('/assets/template/img/resultado-images/grupo-D-illustration.jpg')}}"
+                                         alt="Card image cap" style="width: 200px">
                                 </div>
 
                                 <div class="card-body">
@@ -115,7 +115,7 @@
                     </div>
 
                     {{-- GRUPO E --}}
-                    <div class="dropdown">
+                    <div class="dropdown ml-2 mr-2">
                         <button class="btn btn-purple-white dropdown-toggle" type="button" id="dropdownMenuButton"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             <span class="font-weight-bold"><i class="fas fa-film"></i> Grupo E</span>
@@ -124,13 +124,14 @@
                             <div class="container" style="width: 20rem;">
                                 <div class="alinhar-mid-teste">
                                     <img class="card-img-top justify-content-center" draggable="false"
-                                            src="{{url('/assets/template/img/resultado-images/grupo-E-illustration.jpg')}}"
-                                            alt="Card image cap" style="width: 200px">
+                                         src="{{asset('/assets/template/img/resultado-images/grupo-E-illustration.jpg')}}"
+                                         alt="Card image cap" style="width: 200px">
                                 </div>
 
                                 <div class="card-body">
                                     <p class="text-justify font-weight-normal">
-                                        Tem interesse por <span class="font-italic">atividades artísticas</span>, como<span class="text-info"> cinema, teatro, música,                                                arquitetura e
+                                        Tem interesse por <span class="font-italic">atividades artísticas</span>,
+                                        como<span class="text-info"> cinema, teatro, música,                                                arquitetura e
                                             artes plásticas</span>.
                                     </p>
                                 </div>
@@ -139,23 +140,25 @@
                     </div>
                 </div>
 
-                      <hr>
+                <hr>
 
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div id="resultadoGrafico" style="height: 250px; width: 450px"></div>
-                        </div>
-                        <div class="col-sm-6">
-                            <span class="title-resultado-sobre">Resultado Final</span>
-                            <p class="text-justify font-weight-normal sobre-teste-desc">
-                                É hora de descobrir as profissões para as quais você demonstra certa inclinação.
-                                Veja onde você fez mais pontos e, usando como critério a tabela a acima, confira a sua vocação.
-                            </p>
-                            <hr>
-                            <strong>
-                                <i>Obrigado  <span class="badge badge-success">{{$resultado_cand->nome}}</span> pela sua participação!</i>
-                            </strong>
-                        </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div id="resultadoGrafico" style="height: 250px; width: 450px"></div>
+                    </div>
+                    <div class="col-sm-6">
+                        <span class="title-resultado-sobre">Resultado Final</span>
+                        <p class="text-justify font-weight-normal sobre-teste-desc">
+                            É hora de descobrir as profissões para as quais você demonstra certa inclinação.
+                            Veja onde você fez mais pontos e, usando como critério a tabela a acima, confira a sua
+                            vocação.
+                        </p>
+                        <hr>
+                        <strong>
+                            <i>Obrigado <span class="badge badge-success">{{$resultado_cand->nome}}</span> pela sua
+                                participação!</i>
+                        </strong>
+                    </div>
                 </div>
 
                 <div class="row shadow-sm p-3 border border-success">
