@@ -8,7 +8,7 @@
     {{-- FONTS --}}
     <link rel="stylesheet" href="{{url('/fonts/fonts.css')}}">
     {{-- ICONS Font Awesonme --}}
-    <link rel="stylesheet" href="{{url('/icons/css/all.min.css')}}">
+    <link rel="stylesheet" href="{{url('/assets/icons/css/all.min.css')}}">
     {{-- CSS Files Custom--}}
     <link rel="stylesheet" href="{{url('css/responsive.css')}}">
     {{-- CSS Files Template--}}
