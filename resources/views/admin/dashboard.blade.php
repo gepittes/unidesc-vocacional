@@ -19,10 +19,10 @@
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><b><i class="fas fa-table"></i> Relatório</b></a>
+                        <a class="nav-link" href="#" id="bt_relatorio"><b><i class="fas fa-table"></i> Relatório</b></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><b><i class="fas fa-chart-line"></i> Gráfico</b></a>
+                        <a class="nav-link" href="#" id="bt_grafico"><b><i class="fas fa-chart-line"></i> Gráfico</b></a>
                     </li>
                 </ul>
                 <div class="form-inline ml-auto" data-background-color>
@@ -48,20 +48,99 @@
         </div>
     </nav>
 
-    <div class="container">
+    <div class="ml-5 mr-5">
         <div class="d-flex justify-content-center">
             <div class="mb-5">
                 <h3 class="title"><i class="fas fa-table"></i> Resultados</h3>
+            </div>
+        </div>
 
-                <div class="card">
-                    <div class="card-body">
-                        This is some text within a card body.
-                    </div>
-                </div>
+        <div class="card" id="tabela" style="display: none">
+            <div class="card-body">
 
+                <table id="example" class="display" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Telefone</th>
+                            <th>Grupo A</th>
+                            <th>Grupo B</th>
+                            <th>Grupo C</th>
+                            <th>Grupo D</th>
+                            <th>Grupo E</th>
+                            <th>Data</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($data_tabela as $dat)
+                            <tr>
+                                <td>{{$dat->nome}}</td>
+                                <td>{{$dat->email}}</td>
+                                <td>{{$dat->telefone}}</td>
+                                <td>{{$dat->resultado->GPA}}</td>
+                                <td>{{$dat->resultado->GPB}}</td>
+                                <td>{{$dat->resultado->GPC}}</td>
+                                <td>{{$dat->resultado->GPD}}</td>
+                                <td>{{$dat->resultado->GPE}}</td>
+                                <td>{{$dat->created_at}}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card" id="grafico" style="display: none">
+            <div class="card-body">
+                This is some text within a card body.
             </div>
         </div>
     </div>
 
 
+@endsection
+
+
+@section('scripts_dashboard')
+
+    <script>
+
+        $(document).ready(function () {
+            $("#tabela").show();
+        });
+
+        $("#bt_relatorio").click(function () {
+            $("#grafico").hide(500);
+            $("#tabela").show(500);
+        });
+
+        $("#bt_grafico").click(function () {
+            $("#tabela").hide(500);
+            $("#grafico").show(500);
+        });
+
+
+        $(document).ready(function() {
+
+            $('#example').DataTable( {
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'pdfHtml5',
+                        title: 'Resultados Teste Vocacional',
+                        className: 'btn btn-primary'
+                    }
+                ]
+            } );
+
+
+            // Fix layput
+            document.querySelectorAll('input[type=search]')[0].className = 'form-control';
+            document.querySelectorAll('input[type=search]')[0].placeholder = 'Pesquise aqui';
+            document.querySelectorAll('label')[0].firstChild.data = ''
+
+        } );
+
+    </script>
 @endsection

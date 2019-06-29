@@ -29,4 +29,9 @@
     <link href="{{asset('assets/wizard/css/smart_wizard_theme_dots.css')}}" rel="stylesheet" type="text/css" />
     {{-- Charts --}}
     <script type="text/javascript" src="{{asset('assets/js/charts/Chart.js')}}"></script>
+    {{-- Datatable --}}
+    <link rel="stylesheet" href="{{asset('assets/datatable/DataTables-1.10.18/css/jquery.dataTables.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/datatable/Buttons-1.5.6/css/buttons.dataTables.min.css')}}">
+
+
 </head>

@@ -18,4 +18,6 @@
 
 @yield('scripts_charts')
 
+@yield('scripts_dashboard')
+
 </html>
