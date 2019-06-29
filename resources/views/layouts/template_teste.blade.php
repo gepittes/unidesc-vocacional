@@ -8,6 +8,8 @@
 
             @yield('conteudo')
 
+            @yield('admin_conteudo')
+
     </body>
 
 @include('layouts.scripts')

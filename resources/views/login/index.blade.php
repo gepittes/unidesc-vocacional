@@ -16,16 +16,6 @@
                 <span class="button-bar"></span>
                 <span class="button-bar"></span>
             </a>
-            {{--<div class="dropdown-menu" aria-labelledby="navbarDropdown">--}}
-                {{--<a class="dropdown-header">Dropdown header</a>--}}
-                {{--<a class="dropdown-item" href="#">Action</a>--}}
-                {{--<a class="dropdown-item" href="#">Another action</a>--}}
-                {{--<a class="dropdown-item" href="#">Something else here</a>--}}
-                {{--<div class="dropdown-divider"></div>--}}
-                {{--<a class="dropdown-item" href="#">Separated link</a>--}}
-                {{--<div class="dropdown-divider"></div>--}}
-                {{--<a class="dropdown-item" href="#">One more separated link</a>--}}
-            {{--</div>--}}
         </div>
         <div class="navbar-translate">
             <a class="navbar-brand" href="http://www.unidesc.edu.br/" rel="tooltip"  data-placement="bottom" target="_blank">
@@ -78,7 +68,7 @@
                                       <i class="now-ui-icons users_circle-08"></i>
                                     </span>
                                 </div>
-                                <input type="email" class="form-control" placeholder="Email" name="email">
+                                <input type="email" class="form-control" placeholder="Email" name="email" value="{{old('email')}}">
                             </div>
                             @if ($errors->has('email'))
                                 <span class="badge badge-danger">{{ $errors->first('email') }}</span>

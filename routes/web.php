@@ -30,5 +30,11 @@ Route::group(['namespace' => 'Candidato'], function (){
 });
 
 
+//ADM
+Route::group(['namespace' => 'Admin'], function (){
+   Route::get('/dashboard', 'DashboardAdmController@index')->name('admin.dashboard');
+});
+
+
 
 
