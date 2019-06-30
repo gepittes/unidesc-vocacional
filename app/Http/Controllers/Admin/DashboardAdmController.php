@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Candidato\Candidato;
+use App\Models\Candidato\ResultadoCand;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -13,10 +14,8 @@ class DashboardAdmController extends Controller
         $title = 'Dashboard | Admin';
 
         $data_tabela = Candidato::getAllData();
+        $data_grafico = ResultadoCand::getDataGraficoByGroup();
 
-//        dd($data_tabela[0]->resultado->GPB);
-
-        return view('admin.dashboard', compact('title', 'data_tabela'));
-
+        return view('admin.dashboard', compact('title', 'data_tabela', 'data_grafico'));
     }
 }

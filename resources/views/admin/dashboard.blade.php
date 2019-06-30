@@ -50,9 +50,7 @@
 
     <div class="ml-5 mr-5">
         <div class="d-flex justify-content-center">
-            <div class="mb-5">
                 <h3 class="title"><i class="fas fa-table"></i> Resultados</h3>
-            </div>
         </div>
 
         <div class="card" id="tabela" style="display: none">
@@ -93,18 +91,24 @@
 
         <div class="card" id="grafico" style="display: none">
             <div class="card-body">
-                This is some text within a card body.
+                <div class="d-flex justify-content-center">
+                    <div style="width: 1000px">
+                        <canvas id="graficoByGrupo"></canvas>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-
+    @include('components.footer_simple')
 @endsection
 
 
 @section('scripts_dashboard')
 
     <script>
+
+        // Cards
 
         $(document).ready(function () {
             $("#tabela").show();
@@ -120,6 +124,7 @@
             $("#grafico").show(500);
         });
 
+        // Datatable
 
         $(document).ready(function() {
 
@@ -134,13 +139,63 @@
                 ]
             } );
 
-
-            // Fix layput
+            // Fix layout
             document.querySelectorAll('input[type=search]')[0].className = 'form-control';
             document.querySelectorAll('input[type=search]')[0].placeholder = 'Pesquise aqui';
             document.querySelectorAll('label')[0].firstChild.data = ''
 
-        } );
+        });
+
+
+        // Charts
+
+        var ctx = document.getElementById('graficoByGrupo').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['GRUPO A', 'GRUPO B', 'GRUPO C', 'GRUPO D', 'GRUPO E'],
+                datasets: [{
+                    label: '(Pontuacao > 6 no grupo)',
+                    data: [
+                        [{{$data_grafico->GPA}}],
+                        [{{$data_grafico->GPB}}],
+                        [{{$data_grafico->GPC}}],
+                        [{{$data_grafico->GPD}}],
+                        [{{$data_grafico->GPE}}]
+                    ],
+                    backgroundColor: [
+                        'rgba(75, 120, 211, 1)',
+                        'rgba(245, 82, 85, 1)',
+                        'rgba(255, 178, 55, 1)',
+                        'rgba(114, 224, 19, 1)',
+                        'rgba(172, 98, 168, 1)',
+                    ],
+                    borderColor: [
+                        'rgba(25,27,96,0.64)',
+                        'rgba(25,27,96,0.64)',
+                        'rgba(25,27,96,0.64)',
+                        'rgba(25,27,96,0.64)',
+                        'rgba(25,27,96,0.64)'
+                    ],
+                    borderWidth: 4
+                }]
+            },
+            options: {
+
+                title: {
+                    display: true,
+                    text: 'Quantitativo por Grupo'
+                },
+
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
 
     </script>
 @endsection
