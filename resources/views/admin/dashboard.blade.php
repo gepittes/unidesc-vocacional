@@ -133,6 +133,7 @@
                 buttons: [
                     {
                         extend: 'pdfHtml5',
+                        orientation: 'landscape',
                         title: 'Resultados Teste Vocacional',
                         className: 'btn btn-primary'
                     }
