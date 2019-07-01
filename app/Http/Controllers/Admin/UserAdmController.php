@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\UserAdmFormRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -16,7 +17,7 @@ class UserAdmController extends Controller
        return view('admin.profile',compact('title'));
     }
 
-    public function update(Request $request)
+    public function update(UserAdmFormRequest $request)
     {
         $data = $request->all();
 

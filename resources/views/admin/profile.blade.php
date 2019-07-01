@@ -90,3 +90,16 @@
     @include('components.footer_simple')
 @endsection
 
+@section('scripts_profile')
+    <script>
+
+        // Isso é importante em caso de erro mosta o modal novmente
+        $(document).ready(function () {
+            const error = $('span').hasClass('space-error-bg')
+            if (error) {
+                $('#modalUpdate').modal('show');
+            }
+        })
+    </script>
+@endsection
+

@@ -20,4 +20,6 @@
 
 @yield('scripts_dashboard')
 
+@yield('scripts_profile')
+
 </html>
