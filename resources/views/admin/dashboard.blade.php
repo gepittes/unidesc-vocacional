@@ -33,10 +33,14 @@
                                 <i class="fas fa-user-circle"></i> Olá, <b>{{Auth::user()->name}}</b>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="{{ route('admin.profile') }}">
+                                    <span class="text-dark"> Meu Perfil <i class="fas fa-user-alt"></i></span>
+                                </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
                                     <span class="text-dark">Sair <i class="fas fa-door-open"></i></span>
                                 </a>
+
                                 <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>

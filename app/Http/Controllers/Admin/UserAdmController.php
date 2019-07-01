@@ -1,0 +1,39 @@
+<?php
+
+namespace App\Http\Controllers\Admin;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
+
+
+class UserAdmController extends Controller
+{
+    public function index ()
+    {
+        $title = 'Admin| Profile';
+
+       return view('admin.profile',compact('title'));
+    }
+
+    public function update(Request $request)
+    {
+        $data = $request->all();
+
+        if ( $data['password'] != null )
+                $data['password'] = Hash::make($data['password']);
+        else
+            unset($data['password']);
+
+        $update = auth()->user()->update($data);
+
+        if ($update)
+            return redirect()
+                ->route('admin.profile')
+                ->with('success','Perfil atualizado com sucesso.');
+        return redirect()
+            ->route('admin.profile')
+            ->with('error','Falha ao atualizar perfil.');
+    }
+
+}
