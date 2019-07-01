@@ -16,11 +16,15 @@
 <script src="{{asset('/assets/js/jquery.mask.js')}}"></script>
 {{-- Wizard --}}
 <script src="{{asset('/assets/wizard/js/jquery.smartWizard.js')}}"></script>
-{{-- Datatable --}}
-<script src="{{asset('assets/datatable/DataTables-1.10.18/js/jquery.dataTables.min.js')}}"></script>
-<script src="{{asset('assets/datatable/Buttons-1.5.6/js/dataTables.buttons.min.js')}}"></script>
-<script src="{{asset('assets/datatable/pdfmake-0.1.36/pdfmake.min.js')}}"></script>
-<script src="{{asset('assets/datatable/pdfmake-0.1.36/vfs_fonts.js')}}"></script>
-<script src="{{asset('assets/datatable/Buttons-1.5.6/js/buttons.html5.min.js')}}"></script>
-<script src="{{asset('assets/datatable/DataTables-1.10.18/js/dataTables.semanticui.min.js')}}"></script>
-<script src="{{asset('assets/datatable/datatables.min.js')}}"></script>
+
+{{-- Carregar apenas na página dashboard--}}
+@hasSection('scripts_dashboard')
+    {{-- Datatable --}}
+    <script src="{{asset('assets/datatable/DataTables-1.10.18/js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('assets/datatable/Buttons-1.5.6/js/dataTables.buttons.min.js')}}"></script>
+    <script src="{{asset('assets/datatable/pdfmake-0.1.36/pdfmake.min.js')}}"></script>
+    <script src="{{asset('assets/datatable/pdfmake-0.1.36/vfs_fonts.js')}}"></script>
+    <script src="{{asset('assets/datatable/Buttons-1.5.6/js/buttons.html5.min.js')}}"></script>
+    <script src="{{asset('assets/datatable/DataTables-1.10.18/js/dataTables.semanticui.min.js')}}"></script>
+    <script src="{{asset('assets/datatable/datatables.min.js')}}"></script>
+@endif
