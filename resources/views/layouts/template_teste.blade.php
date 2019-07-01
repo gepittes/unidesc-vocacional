@@ -8,12 +8,16 @@
 
             @yield('conteudo')
 
+            @yield('admin_conteudo')
+
     </body>
 
 @include('layouts.scripts')
 
 @yield('scripts_wizard')
 
-@yield('scripts_google_charts')
+@yield('scripts_charts')
+
+@yield('scripts_dashboard')
 
 </html>

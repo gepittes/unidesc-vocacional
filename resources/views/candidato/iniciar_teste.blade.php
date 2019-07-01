@@ -95,7 +95,7 @@
                                     <div class="row content-center">
                                         <div class="col-4">
                                             <label onclick="setAlternativa('A', '{{$i}}', '{{$grupo[$j]}}')"
-                                                   id="Gp{{$grupo[$j]}}A{{$i}}">
+                                                   id="Gp{{$grupo[$j]}}A{{$i}}" onselect="return false">
                                                 <strong class='text-info'>A</strong> <i class="fas fa-angle-right"></i>
                                             </label>
                                         </div>
@@ -105,9 +105,8 @@
                                         </div>
                                         <div class="col-4">
                                             <label onclick="setAlternativa('B', '{{$i}}', '{{$grupo[$j]}}')"
-                                                   id="Gp{{$grupo[$j]}}B{{$i}}">
-                                                <strong class='text-danger'>B</strong> <i
-                                                    class="fas fa-angle-right"></i>
+                                                   id="Gp{{$grupo[$j]}}B{{$i}}" onselect="return false">
+                                                <strong class='text-danger'>B</strong> <i class="fas fa-angle-right"></i>
                                             </label>
                                         </div>
                                     </div>

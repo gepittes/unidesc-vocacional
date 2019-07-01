@@ -30,4 +30,9 @@ class Candidato extends Model
 
     }
 
+    public static function getAllData()
+    {
+        return Candidato::all();
+    }
+
 }

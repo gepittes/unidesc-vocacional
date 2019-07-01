@@ -27,4 +27,21 @@ class ResultadoCand extends Model
 
     }
 
+    public static function getDataGraficoByGroup()
+    {
+        $letras = ['A', 'B', 'C', 'D', 'E'];
+        $data_grafico = [];
+
+        foreach ($letras as $letra)
+        {
+            $data_grafico += [
+                'GP'.$letra =>  ResultadoCand::select('GP'.$letra)
+                                ->where('GP'.$letra, '>=', 6)
+                                ->count()
+            ];
+        }
+
+        return (object)$data_grafico;
+    }
+
 }
