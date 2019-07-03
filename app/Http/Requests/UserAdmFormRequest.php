@@ -23,7 +23,6 @@ class UserAdmFormRequest extends FormRequest
      */
     public function rules()
     {
-
         $validated = [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255'],
@@ -33,7 +32,6 @@ class UserAdmFormRequest extends FormRequest
         if (!$this->request->get('password'))
             unset($validated['password']);
 
-//        dd($validated);
         return  $validated;
     }
 }
