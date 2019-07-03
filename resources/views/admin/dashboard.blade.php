@@ -95,10 +95,10 @@
 
         <div class="card" id="grafico" style="display: none">
             <div class="card-body">
+                <button type="button"  class="btn btn-primary" onclick="generatePDF()" >PDF</button>
                 <div class="d-flex justify-content-center">
                     <div style="width: 1000px">
                         <canvas id="graficoByGrupo"></canvas>
-                    </div>
                 </div>
             </div>
         </div>
@@ -109,7 +109,6 @@
 
 
 @section('scripts_dashboard')
-
     <script>
 
         // Cards
@@ -202,5 +201,14 @@
             }
         });
 
+       function generatePDF(){
+          const Canvas = document.getElementById("graficoByGrupo");
+          const Context = Canvas.getContext("2d");
+
+           var imgData = Canvas.toDataURL('image/png');
+           var pdf = new jsPDF('landscape');
+           pdf.addImage(imgData, 'PNG', 15, 15,0, 0);
+           pdf.save('download.pdf');
+        }
     </script>
 @endsection

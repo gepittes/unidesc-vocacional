@@ -27,4 +27,5 @@
     <script src="{{asset('assets/datatable/Buttons-1.5.6/js/buttons.html5.min.js')}}"></script>
     <script src="{{asset('assets/datatable/DataTables-1.10.18/js/dataTables.semanticui.min.js')}}"></script>
     <script src="{{asset('assets/datatable/datatables.min.js')}}"></script>
+    <script src="{{asset('assets/jsPDF/jspdf.js')}}"></script>
 @endif
