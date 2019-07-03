@@ -6,7 +6,7 @@
         <img src="{{asset("/assets/template/img/elemento-capa-2019.png")}}" alt="capa" style="width: 800px">
     </header>
 
-    <nav class="navbar navbar-expand-lg bg-info">
+    <nav class="navbar navbar-expand-lg bg-info mb-1">
         <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -52,15 +52,15 @@
         </div>
     </nav>
 
-    <div class="ml-5 mr-5">
-        <div class="d-flex justify-content-center">
-                <h3 class="title"><i class="fas fa-table"></i> Resultados</h3>
+    <div class="ml-5 mr-5 ">
+        <div class="d-flex justify-content-center pt-0">
+                <h3 class="title p-0 mb-1"><i class="fas fa-table"></i> Resultados</h3>
         </div>
 
         <div class="card" id="tabela" style="display: none">
             <div class="card-body">
 
-                <table id="example" class="display" style="width:100%">
+                <table id="relatorio" class="display" style="width:100%">
                     <thead>
                         <tr>
                             <th>Nome</th>
@@ -85,7 +85,7 @@
                                 <td>{{$dat->resultado->GPC}}</td>
                                 <td>{{$dat->resultado->GPD}}</td>
                                 <td>{{$dat->resultado->GPE}}</td>
-                                <td>{{$dat->created_at}}</td>
+                                <td>{{$dat->created_at->format('d-m-Y')}}</td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -95,11 +95,14 @@
 
         <div class="card" id="grafico" style="display: none">
             <div class="card-body">
+            <div class="position-absolute mr-5 mt-1 ">
                 <button type="button"  class="btn btn-primary" onclick="generatePDF()" >PDF</button>
-                <div class="d-flex justify-content-center">
-                    <div style="width: 1000px">
-                        <canvas id="graficoByGrupo"></canvas>
+            </div>
+            <div class="d-flex justify-content-center">
+                <div style="width: 1000px">
+                    <canvas id="graficoByGrupo"></canvas>
                 </div>
+            </div>
             </div>
         </div>
     </div>
@@ -110,7 +113,6 @@
 
 @section('scripts_dashboard')
     <script>
-
         // Cards
 
         $(document).ready(function () {
@@ -128,10 +130,21 @@
         });
 
         // Datatable
-
         $(document).ready(function() {
 
-            $('#example').DataTable( {
+            $('#relatorio').DataTable( {
+                "bJQueryUI": true,
+                "oLanguage": {
+                    "sProcessing":   "Processando...",
+                    "sZeroRecords":  "Não foram encontrados resultados",
+                    "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+                    "oPaginate": {
+                        "sFirst":    "Primeiro",
+                        "sPrevious": "Anterior",
+                        "sNext":     "Seguinte",
+                        "sLast":     "Último"
+                    }
+                },
                 dom: 'Bfrtip',
                 buttons: [
                     {
@@ -140,6 +153,17 @@
                         title: 'Resultados Teste Vocacional',
                         className: 'btn btn-primary'
                     }
+                ],
+                "columns": [
+                    null,
+                    null,
+                    { "width": "95px" },
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    { "width": "58px" }
                 ]
             } );
 
@@ -149,7 +173,6 @@
             document.querySelectorAll('label')[0].firstChild.data = ''
 
         });
-
 
         // Charts
 
