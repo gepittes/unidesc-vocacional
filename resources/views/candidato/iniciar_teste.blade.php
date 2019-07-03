@@ -276,7 +276,7 @@
                     } else {
                         escolhidaGpA.val(2);
                     }
-
+                     selecionaOpcao(grupo, index)
                     break;
 
                 case 'B':
@@ -288,6 +288,7 @@
                     } else {
                         escolhidaGpB.val(2);
                     }
+                    selecionaOpcao(grupo, index)
                     break;
 
                 case 'C':
@@ -299,6 +300,7 @@
                     } else {
                         escolhidaGpC.val(2);
                     }
+                    selecionaOpcao(grupo, index)
                     break;
 
                 case 'D':
@@ -310,6 +312,7 @@
                     } else {
                         escolhidaGpD.val(2);
                     }
+                    selecionaOpcao(grupo, index)
                     break;
 
                 case 'E':
@@ -321,10 +324,52 @@
                     } else {
                         escolhidaGpE.val(2);
                     }
+                    selecionaOpcao(grupo, index)
                     break;
             }
         }
 
+        // chamado quando seleciona pelo ranger
+        function selecionaRanger(grupo) {
+            for (let i = 1 ; i <= 12; i++) {
+                $('#rangerGp'+ grupo + i).change( function() {
+                    mudaFundoAltenativa(grupo, i, $(this).val())
+                });
+            }
+        }
+
+        // Altera a cor do texto quando escolhido alterativas
+        function mudaFundoAltenativa(grupo, index, opcao) {
+            if (opcao ==="2"){
+                $( '#Gp'+ grupo + 'B' + index ).addClass( "text-success" );
+                $( '#Gp'+ grupo + 'A' + index ).removeClass( "text-success" );
+            } else {
+                if (opcao === "1") {
+                    $( '#Gp'+ grupo + 'A' + index ).removeClass( "text-success" );
+                    $( '#Gp'+ grupo + 'B' + index ).removeClass( "text-success" );
+                } else {
+                    $( '#Gp'+ grupo + 'A' + index ).addClass( "text-success" );
+                    $( '#Gp'+ grupo + 'B' + index ).removeClass( "text-success" );
+                }
+            }
+        }
+
+        // Chamado quando clique na altenativa
+        function selecionaOpcao(grupo, index) {
+
+            const  opcao = $("#rangerGp"+ grupo + index).val()
+            mudaFundoAltenativa(grupo, index, opcao)
+            selecionaRanger(grupo);
+        }
+
+        //Ao passar o mouse por cima da questão muda o fundo
+        $( "label" ).hover(
+            function() {
+                $( this ).parent().addClass( "bg-light" );
+            }, function() {
+                $( this ).parent().removeClass( "bg-light" );
+            }
+        );
 
         // Isso é importante para as montagens  dos elementos
         $(document).ready(function () {
@@ -342,7 +387,7 @@
             }, 1000);
 
         })
-
+        
     </script>
 @endsection
 
