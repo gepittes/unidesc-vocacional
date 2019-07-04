@@ -54,7 +54,7 @@
 
     <div class="ml-5 mr-5 ">
         <div class="d-flex justify-content-center pt-0">
-                <h3 class="title p-0 mb-1"><i class="fas fa-table"></i> Resultados</h3>
+                <h3 class="title p-2 mb-2"><i class="fas fa-table"></i> Resultados</h3>
         </div>
 
         <div class="card" id="tabela" style="display: none">
@@ -157,13 +157,13 @@
                 "columns": [
                     null,
                     null,
-                    { "width": "95px" },
+                    { "width": "100px" },
                     null,
                     null,
                     null,
                     null,
                     null,
-                    { "width": "58px" }
+                    { "width": "70px" }
                 ]
             } );
 
