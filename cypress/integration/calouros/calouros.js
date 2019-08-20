@@ -17,6 +17,19 @@ export const apresentation = () => {
     }
 };
 
+export const obterValueAleatorio = (tamanho, tipo) => {
+    let value = 'ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz';
+    let aleatorio = '';
+    if(tipo){
+        value = '0123456789'
+    }
+    for (let i = 0; i < tamanho; i++) {
+        let rnum = Math.floor(Math.random() * value.length);
+        aleatorio += value.substring(rnum, rnum + 1);
+    }
+    return aleatorio;
+}
+
 export const test2E2 = () => {
     cy.visit('http://127.0.0.1:8000/');
     cy.wait(2000);
@@ -28,9 +41,9 @@ export const test2E2 = () => {
 
     cy.contains('REALIZAR TESTE!').click();
 
-    cy.get('input[name=nome]').type('Ana', {delay: 70});
-    cy.get('input[name=telefone]').type('61665548215', {delay: 70});
-    cy.get('input[name=email]').type('candidato@gmail.com', {delay: 70});
+    cy.get('input[name=nome]').type(obterValueAleatorio(3, false), {delay: 70});
+    cy.get('input[name=telefone]').type(obterValueAleatorio(11, true), {delay: 70});
+    cy.get('input[name=email]').type(`${obterValueAleatorio(15, false)}@gmail.com`, {delay: 70});
     cy.get('select[name=cidade]').select('Gama');
     cy.get('select[name=serie]').select('Concluido');
 
@@ -39,7 +52,7 @@ export const test2E2 = () => {
     cy.contains('Enviar').click();
 
     cy.get('input[name=nome]').clear();
-    cy.get('input[name=nome]').type('Candidato Calouro', {delay: 70});
+    cy.get('input[name=nome]').type(`${obterValueAleatorio(5, false)} ${obterValueAleatorio(8, false)}`, {delay: 70});
     cy.wait(1200);
     cy.contains('Enviar').click();
 
