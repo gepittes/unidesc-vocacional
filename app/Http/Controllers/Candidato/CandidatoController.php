@@ -59,7 +59,7 @@ class CandidatoController extends Controller
             OBS: Servico de email deve ser chamado anterior ao mostrar resultado na pagina
             Pois assim e possivel das F5 nas pagina sem disparar mais emails
         */
-        EmailServices::sendEmail(CandidatoServices::getSessionResultado());
+//        EmailServices::sendEmail(CandidatoServices::getSessionResultado());
 
         return redirect(route('candidato.resultado'));
     }

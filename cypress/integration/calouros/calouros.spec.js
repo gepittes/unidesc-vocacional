@@ -124,5 +124,7 @@ export const test2E2 = () => {
 
     cy.get('.btn > strong').click();
 
+    cy.wait(1500);
+
 };
 
