@@ -18,7 +18,8 @@ export const apresentation = () => {
 };
 
 export const test2E2 = () => {
-    cy.visit('http://165.227.34.129/');
+    // cy.visit('http://165.227.34.129/');
+    cy.visit('http://localhost:8000/');
 
     cy.contains('REALIZAR TESTE!').click();
 
@@ -30,7 +31,7 @@ export const test2E2 = () => {
 
     cy.contains('Enviar').click();
 
-    cy.wait(1000);
+    cy.wait(1500);
 
     cy.contains('OK!').click();
 
