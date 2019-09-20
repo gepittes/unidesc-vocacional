@@ -11,7 +11,7 @@ Route::get('/', 'Home\HomeController@index')->name('home');
 
 
 // TRATAMENTO DE ROTAS
-Route::group(['namespace' => 'Errors'], function (){
+Route::group(['namespace' => 'Errors'], function () {
     Route::get('/register', 'ErrorsController@erro404');
     Route::get('/password/reset', 'ErrorsController@erro404');
     Route::get('/candidato/teste', 'ErrorsController@erro404');
@@ -22,7 +22,7 @@ Route::group(['namespace' => 'Errors'], function (){
 
 
 // CANDIDATO
-Route::group(['namespace' => 'Candidato'], function (){
+Route::group(['namespace' => 'Candidato'], function () {
     Route::get('/candidato/cadastro', 'CandidatoController@create')->name('cadastro.candidato');
     Route::post('/candidato/cadastro', 'CandidatoController@recebeDadosFormCand')->name('recebe.form.cand');
     Route::post('/candidato/teste', 'CandidatoController@recebeQuestDadosCand')->name('recebe.questoes.cand');
@@ -31,11 +31,10 @@ Route::group(['namespace' => 'Candidato'], function (){
 
 
 //ADM
-Route::group(['namespace' => 'Admin', 'middleware' => ['auth']], function (){
-   Route::get('/dashboard', 'DashboardAdmController@index')->name('admin.dashboard');
-   Route::get('/profile', 'UserAdmController@index')->name('admin.profile');
-   Route::post('/profile/update', 'UserAdmController@update')->name('admin.profileUpdate');
-
+Route::group(['namespace' => 'Admin', 'middleware' => ['auth']], function () {
+    Route::get('/dashboard', 'DashboardAdmController@index')->name('admin.dashboard');
+    Route::get('/profile', 'UserAdmController@index')->name('admin.profile');
+    Route::post('/profile/update', 'UserAdmController@update')->name('admin.profileUpdate');
 });
 
 
