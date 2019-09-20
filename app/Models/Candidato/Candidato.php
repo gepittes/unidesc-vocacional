@@ -27,7 +27,6 @@ class Candidato extends Model
         $dadosCand += ['id_resultado' => $getIdResultado];
 
         return Candidato::create($dadosCand);
-
     }
 
     public static function getAllData()

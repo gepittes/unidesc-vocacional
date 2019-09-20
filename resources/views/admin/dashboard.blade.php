@@ -3,7 +3,7 @@
 @section('admin_conteudo')
 
     <header class="alinhar-bg-questoes">
-        <img src="{{asset("/assets/template/img/elemento-capa-2019.png")}}" alt="capa" style="width: 800px">
+        <img src="{{asset("/assets/template/img/elemento-capa-2019.png")}}"  style="width: 800px">
     </header>
 
     <nav class="navbar navbar-expand-lg bg-info mb-1">
@@ -149,11 +149,22 @@
                 buttons: [
                     {
                         extend: 'pdfHtml5',
+                        text: '<i class="fas fa-file-pdf"></i> PDF',
+                        titleAttr: 'PDF',
+                        className: 'btn btn-primary',
                         orientation: 'landscape',
-                        title: 'Resultados Teste Vocacional',
-                        className: 'btn btn-primary'
+                    },
+                    {
+                        extend: 'print',
+                        text: '<i class="fas fa-print"></i> Print',
+                        titleAttr: 'Print',
+                        className: 'btn btn-primary',
+                        orientation: 'landscape',
+
                     }
                 ],
+                responsive: true,
+
                 "columns": [
                     null,
                     null,
