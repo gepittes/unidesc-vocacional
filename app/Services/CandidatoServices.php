@@ -5,6 +5,9 @@ namespace App\Http\Services;
 use App\Http\Requests\CandidatoFormRequest;
 use App\Models\Candidato\Candidato;
 use App\Models\Candidato\ResultadoCand;
+use App\Models\Cidade\Cidade;
+use App\Models\Ensino\EFundamental;
+use App\Models\Ensino\EMedio;
 use Illuminate\Http\Request;
 
 class CandidatoServices {
@@ -17,7 +20,6 @@ class CandidatoServices {
         }
 
         return self::countPointByGroup($questoesGrupo, $grupo);
-
     }
 
     # Realiza a contagem de ponto do candidato naquele grupo
@@ -58,9 +60,7 @@ class CandidatoServices {
     // RESGATA DADOS CANDIDATO
     public static function getSession()
     {
-
         return  session('dadosCand');
-
     }
 
     // GUARDA O RESULTADO DO CANDIDATO NA SESSION
@@ -72,9 +72,7 @@ class CandidatoServices {
     // RESGATA RESULTADO FINAL DO CANDIDATO
     public static function getSessionResultado()
     {
-
         return  session('resultado_cand');
-
     }
 
     // LISTAR GRUPOS
@@ -82,7 +80,14 @@ class CandidatoServices {
     {
         $grupo = ['','A','B','C','D','E'];
         return $grupo;
+    }
 
+    public static function getDadosForm ()
+    {
+        $cidades = Cidade::all('nome');
+        $seriesFundamental = EFundamental::all('serie');
+        $seriesMedio = EMedio::all('serie');
+        return compact('cidades', 'seriesFundamental', 'seriesMedio');
     }
 
 }

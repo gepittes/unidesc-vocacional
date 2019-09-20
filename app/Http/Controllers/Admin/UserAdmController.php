@@ -10,19 +10,19 @@ use Illuminate\Support\Facades\Hash;
 
 class UserAdmController extends Controller
 {
-    public function index ()
+    public function index()
     {
         $title = 'Admin| Profile';
 
-       return view('admin.profile',compact('title'));
+        return view('admin.profile', compact('title'));
     }
 
     public function update(UserAdmFormRequest $request)
     {
         $data = $request->all();
 
-        if ( $data['password'] != null )
-                $data['password'] = Hash::make($data['password']);
+        if ($data['password'] != null)
+            $data['password'] = Hash::make($data['password']);
         else
             unset($data['password']);
 
@@ -31,10 +31,10 @@ class UserAdmController extends Controller
         if ($update)
             return redirect()
                 ->route('admin.profile')
-                ->with('success','Perfil atualizado com sucesso.');
+                ->with('success', 'Perfil atualizado com sucesso.');
         return redirect()
             ->route('admin.profile')
-            ->with('error','Falha ao atualizar perfil.');
+            ->with('error', 'Falha ao atualizar perfil.');
     }
 
 }
