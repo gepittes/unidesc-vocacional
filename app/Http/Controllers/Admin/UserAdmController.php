@@ -12,9 +12,7 @@ class UserAdmController extends Controller
 {
     public function index()
     {
-        $title = 'Admin| Profile';
-
-        return view('admin.profile', compact('title'));
+        return view('admin.profile');
     }
 
     public function update(UserAdmFormRequest $request)
