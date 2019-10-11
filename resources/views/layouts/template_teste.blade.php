@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-@component('layouts.head', ['title' => $title])
-@endcomponent
+@include('layouts.head')
 
     <body class="index-page sidebar-collapse">
 

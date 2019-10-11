@@ -17,7 +17,6 @@
 {{-- Wizard --}}
 <script src="{{asset('/assets/wizard/js/jquery.smartWizard.js')}}"></script>
 
-{{-- Carregar apenas na página dashboard--}}
 @hasSection('scripts_dashboard')
     {{-- Datatable --}}
     <script src="{{asset('assets/datatable/DataTables-1.10.18/js/jquery.dataTables.min.js')}}"></script>
