@@ -20,7 +20,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $title = "Teste Vocacional | UNIDESC";
-        return view('welcome', compact('title'));
+        return view('welcome');
     }
 }

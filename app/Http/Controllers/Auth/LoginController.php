@@ -40,7 +40,6 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        $title = "ADMIN | Teste Vocacional";
-        return view('login.index', compact('title'));
+        return view('login.index');
     }
 }
