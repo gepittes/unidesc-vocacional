@@ -23,9 +23,9 @@ Route::group(['namespace' => 'Errors'], function () {
 
 // CANDIDATO
 Route::group(['namespace' => 'Candidato'], function () {
-    Route::get('/candidato/cadastro', 'CandidatoController@create')->name('cadastro.candidato');
-    Route::post('/candidato/cadastro', 'CandidatoController@recebeDadosFormCand')->name('recebe.form.cand');
-    Route::post('/candidato/teste', 'CandidatoController@recebeQuestDadosCand')->name('recebe.questoes.cand');
+    Route::get('/candidato/cadastro', 'CandidatoController@create')->name('candidato.cadastro');
+    Route::post('/candidato/cadastro', 'CandidatoController@recebeDadosFormCand')->name('candidato.dados');
+    Route::post('/candidato/teste', 'CandidatoController@recebeQuestDadosCand')->name('candidato.questoes');
     Route::get('/candidato/resultado', 'CandidatoController@resultadoFinal')->name('candidato.resultado');
 });
 

@@ -29,7 +29,7 @@
                     </p>
                 </div>
                 <div class="content mt-5">
-                    <a href="{{route('cadastro.candidato')}}">
+                    <a href="{{route('candidato.cadastro')}}">
                         <button type="button" class="btn btn-success font-weight-bold h5">
                             <i class="fas fa-cubes"></i> REALIZAR TESTE!
                         </button>
