@@ -6,7 +6,6 @@
             <img src="{{asset("/assets/template/img/elemento-capa-2019.png")}}" alt="capa" style="width: 800px">
         </header>
 
-
         <div class="container">
 
             {{-- MODAL(Mensagem de Orientacao)--}}
@@ -51,7 +50,7 @@
 
             {{--   AQUI VEM O WIZARD  --}}
 
-            <form action="{{route('recebe.questoes.cand')}}" method="post">
+            <form action="{{route('candidato.questoes')}}" method="post">
                 @csrf
 
                 <div id="smartwizard" style="display: none;">
@@ -140,10 +139,7 @@
                         </div>
                     </div>
                 </div>
-
-
             </form>
-
         </div>
     </div>
 
@@ -387,7 +383,7 @@
             }, 1000);
 
         })
-        
+
     </script>
 @endsection
 

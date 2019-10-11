@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-    @component('layouts.head', ['title' => $title])
-    @endcomponent
-
+    @include('layouts.head')
 
 <body class="login-page sidebar-collapse">
 
@@ -21,7 +19,8 @@
             <a class="navbar-brand" href="http://www.unidesc.edu.br/" rel="tooltip"  data-placement="bottom" target="_blank">
                 UNIDESC
             </a>
-            <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                    aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-bar top-bar"></span>
                 <span class="navbar-toggler-bar middle-bar"></span>
                 <span class="navbar-toggler-bar bottom-bar"></span>
@@ -64,25 +63,24 @@
                             {{--EMAIL--}}
                             <div class="input-group no-border input-lg">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">
+                                    <label class="input-group-text" for="email">
                                       <i class="now-ui-icons users_circle-08"></i>
-                                    </span>
+                                    </label>
                                 </div>
-                                <input type="email" class="form-control" placeholder="Email" name="email" value="{{old('email')}}">
+                                <input type="email" class="form-control" placeholder="Email" name="email" id="email" value="{{old('email')}}">
                             </div>
                             @if ($errors->has('email'))
                                 <span class="badge badge-danger">{{ $errors->first('email') }}</span>
                             @endif
 
-
                             {{--PASSWORD--}}
                             <div class="input-group no-border input-lg">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">
+                                    <label class="input-group-text" type="label" for="password">
                                       <i class="now-ui-icons text_caps-small"></i>
-                                    </span>
+                                    </label>
                                 </div>
-                                <input type="password" placeholder="Password" class="form-control" name="password"/>
+                                <input type="password" placeholder="Password" class="form-control" name="password" id="password"/>
                             </div>
                             @if ($errors->has('password'))
                                 <span class="badge badge-danger">{{ $errors->first('password') }}</span>
@@ -119,8 +117,7 @@
         </footer>
     </div>
 </div>
-    @component('layouts.scripts')
-    @endcomponent
+    @include('layouts.scripts')
 </body>
 
 </html>

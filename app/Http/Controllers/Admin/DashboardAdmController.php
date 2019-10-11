@@ -11,8 +11,6 @@ class DashboardAdmController extends Controller
 {
     public function index()
     {
-        $title = 'Dashboard | Admin';
-
         $data_tabela = Candidato::getAllData();
         $data_grafico = ResultadoCand::getDataGraficoByGroup();
 

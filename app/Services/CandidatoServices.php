@@ -39,12 +39,9 @@ class CandidatoServices {
             }
 
         }
-
         return $totPtCandA = $pointCandA + $pointCandB;
-
     }
 
-    // GUARDA DADOS DO CANDIDATO NA SESSION
     public static function setSession(CandidatoFormRequest $dadosCand)
     {
         $dadosCand->session()->put('dadosCand', [
@@ -57,37 +54,32 @@ class CandidatoServices {
         ]);
     }
 
-    // RESGATA DADOS CANDIDATO
     public static function getSession()
     {
-        return  session('dadosCand');
+        return session('dadosCand');
     }
 
-    // GUARDA O RESULTADO DO CANDIDATO NA SESSION
     public static function setSessionResultado($candidato)
     {
         session()->put('resultado_cand', $candidato);
     }
 
-    // RESGATA RESULTADO FINAL DO CANDIDATO
     public static function getSessionResultado()
     {
-        return  session('resultado_cand');
+        return session('resultado_cand');
     }
 
-    // LISTAR GRUPOS
     public static function getGrupos()
     {
         $grupo = ['','A','B','C','D','E'];
-        return $grupo;
+        return compact('grupo');
     }
 
-    public static function getDadosForm ()
+    public static function getDadosForm()
     {
         $cidades = Cidade::all('nome');
         $seriesFundamental = EFundamental::all('serie');
         $seriesMedio = EMedio::all('serie');
         return compact('cidades', 'seriesFundamental', 'seriesMedio');
     }
-
 }

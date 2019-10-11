@@ -20,37 +20,27 @@ class CandidatoController extends Controller
 
     public function create()
     {
-        $title = "Teste Vocacional | Cadastro";
-        return view('candidato.cadastro_candidato', CandidatoServices::getDadosForm(), compact('title'));
+        return view('candidato.cadastro', CandidatoServices::getDadosForm());
     }
 
     public function recebeDadosFormCand(CandidatoFormRequest $dadosCand)
     {
-        // Chama o services para guardar os dados candidato na Session
         CandidatoServices::setSession($dadosCand);
 
-        if (session('dadosCand')) {
-            $title = 'Teste Vocacional | Teste';
-            $grupo = CandidatoServices::getGrupos();
-            return view('candidato.iniciar_teste', compact('title','grupo'));
-        } else {
-            return view('errors.404');
-        }
+        if (session('dadosCand')) return view('candidato.teste', CandidatoServices::getGrupos());
+
+        return view('errors.404');
     }
 
     public function recebeQuestDadosCand(Request $request)
     {
-
-        // Armazena RESULTADO e CANDIDATO
-        $getIdResultado = ResultadoCand::storeResultado($request);
-        $candidato = Candidato::storeCandidato(CandidatoServices::getSession(), $getIdResultado);
+        $resultado_id = ResultadoCand::storeResultado($request);
+        $candidato = Candidato::storeCandidato(CandidatoServices::getSession(), $resultado_id);
 
         session()->flush();
 
-        // Chama o services para guardar o resultado do candidato na Session
         CandidatoServices::setSessionResultado($candidato);
 
-        // Chama services para enviar o email
         /*
             OBS: Servico de email deve ser chamado anterior ao mostrar resultado na pagina
             Pois assim e possivel das F5 nas pagina sem disparar mais emails
@@ -61,17 +51,11 @@ class CandidatoController extends Controller
         } catch (\Exception $error) {
             return redirect(route('candidato.resultado'));
         }
-
     }
 
     public function resultadoFinal()
     {
-
-        // Chama o services para pegar o resultado do candidato na Session
         $resultado_cand = CandidatoServices::getSessionResultado();
-
-        $title = 'Teste Vocacional | Resultado';
-
-        return view('candidato.resultado_candidato', compact('resultado_cand', 'title'));
+        return view('candidato.resultado', compact('resultado_cand'));
     }
 }
