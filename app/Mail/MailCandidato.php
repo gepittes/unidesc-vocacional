@@ -21,7 +21,7 @@ class MailCandidato extends Mailable
     public function build()
     {
         return $this->from('testevocacional@unidesc.edu.br')
-            ->subject('Teste Vocacional -  Unidesc.')
+            ->subject('Teste Vocacional')
             ->view('layouts.mail');
     }
 }

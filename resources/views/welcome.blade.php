@@ -12,7 +12,7 @@
         </div>
         <div class="container mt-5">
             <div class="content-center brand">
-                <img src="{{url('/assets/template/img/teste-vocacional-logo-feira.png')}}" alt="teste-vocacional"
+                <img src="{{asset('/assets/template/img/edicao-fenom/teste-vocacional-logo-feira-fenom.png')}}" alt="teste-vocacional"
                      class="logo-home">
                 <h3>O que você deve saber sobre o teste vocacional!</h3>
                 <div class="content">

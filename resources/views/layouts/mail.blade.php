@@ -32,9 +32,9 @@ Observação:
                             border: 1px solid rgba(0,0,0,.125);
                             border-radius: .25rem;">
                 <div>
-                    <img src="https://i.imgur.com/NFGKQ1I.jpg"style="width: 100%;" alt="Teste Vocacional">
+                    <img src="https://i.imgur.com/a0oMaiN.jpg" style="width: 100%;" alt="Teste Vocacional">
                     <div style="padding: 1.25rem;">
-                        <b style="margin-bottom: .75rem;">Teste Vocacional | UNIDESC</b>
+                        <b style="margin-bottom: .75rem;">Teste Vocacional</b>
                         <p class="card-text">   Olá {{$data->nome}} muito obrigado por ter participado do nosso teste vocacional.</p>
 
                         <!-- Informação do candidato -->
@@ -175,7 +175,7 @@ Observação:
                                 font-weight: 400;text-align: justify ;padding: 15px;background-color: #fff">
 
                                     <b>Grupo E:</b>
-                                    Tem interesse por atividades artísticas, como cinema, teatro, música,                                                arquitetura e
+                                    Tem interesse por atividades artísticas, como cinema, teatro, música, arquitetura e
                                     artes plásticas.
 
                                 </p>
@@ -184,17 +184,17 @@ Observação:
 
                             <!-- Rodapé -->
 
-                            <div style="text-align: center!important;
-                                background-color: #fff;
-                                border: 1px solid rgba(0,0,0,.125);
-                                border-radius: .25rem;">
-                                <div style="background-color: darkgray; padding: 5px 0;">
-                                    Telefone:(61) 3878-3100 <br/>
-                                    Rodovia BR-040 (Acesso à Cidade Ocidental) Jardim Flamboyant <br/>
-                                    Cidade Ocidental - Goiás  <br/>
-                                    <a href="http://www.unidesc.edu.br/" target="_blank" >www.unidesc.edu.br</a>
-                                </div>
-                            </div>
+{{--                            <div style="text-align: center!important;--}}
+{{--                                background-color: #fff;--}}
+{{--                                border: 1px solid rgba(0,0,0,.125);--}}
+{{--                                border-radius: .25rem;">--}}
+{{--                                <div style="background-color: darkgray; padding: 5px 0;">--}}
+{{--                                    Telefone:(61) 3878-3100 <br/>--}}
+{{--                                    Rodovia BR-040 (Acesso à Cidade Ocidental) Jardim Flamboyant <br/>--}}
+{{--                                    Cidade Ocidental - Goiás  <br/>--}}
+{{--                                    <a href="http://www.unidesc.edu.br/" target="_blank" >www.unidesc.edu.br</a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
                             <!-- Fim Rodapé -->
 

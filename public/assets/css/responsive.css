@@ -42,7 +42,7 @@
 }
 
 .bg-form{
-    background-image: url("../template/img/capa-teste.jpg");
+    background-image: url("../template/img/edicao-fenom/capa-teste-2019-fenom.jpg");
     background-repeat: no-repeat ;
 }
 
@@ -52,7 +52,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background: url("../template/img/fundo-capa-2019.jpg") center;
+    background: url("../template/img/edicao-fenom/fundo-capa-2019-fenom.jpg") center;
 }
 
 .alinhar-bg-resultado{
@@ -61,7 +61,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background: url("../template/img/fundo-capa-2019.jpg");
+    background: url("../template/img/edicao-fenom/fundo-capa-2019-fenom.jpg");
 }
 
 .section-form{
