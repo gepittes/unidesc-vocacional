@@ -13,7 +13,8 @@ class Cidade extends Model
     {
         return DB::table('cidades')
             ->join('estados', 'estado_id', '=', 'estados.id')
-            ->where('sg_estado', $sigla)
+            ->orWhere('sg_estado', $sigla)
+            ->orWhere('cidades.estado_id', $sigla)
             ->select
             (
                 'cidades.id AS cidade_id',

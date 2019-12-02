@@ -21,4 +21,6 @@
 
 @yield('scripts_profile')
 
+@yield('scripts_cadastro_candidato')
+
 </html>

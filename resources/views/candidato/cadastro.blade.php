@@ -58,28 +58,23 @@
                             @endif
                         </div>
                     </div>
-                    {{--CIDADE--}}
                     <div class="form-row">
+                        {{--LOCALIDADE--}}
                         <div class="form-group col">
-                            <label for="cidade">Cidade</label>
-                            <select class="form-control" id="cidade" name="cidade">
-                                @if(old('cidade'))
-                                @else
-                                    <option value="" selected>Selecionar</option>
-                                @endif
-
-                                @foreach($cidades as $cidade)
-                                    @if($cidade->nome == old('cidade'))
-                                        <option value="{{old('cidade')}}" selected>{{old('cidade')}}</option>
-                                    @else
-                                        <option value="{{$cidade->nome}}">{{$cidade->nome}}</option>
-                                    @endif
-                                @endforeach
-
-                            </select>
-                            @if($errors->has('cidade'))
-                                <span class="badge badge-danger space-error-bg">{{ $errors->first('cidade') }}</span>
-                            @endif
+                            <div id="estados">
+                                <label for="opcaoEstados">Estados</label>
+                                <select class="form-control" id="opcaoEstados" name="opcaoEstados">
+                                    <option value="">Selecione seu estado</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col">
+                            <div id="cidades">
+                                <label for="opcaoCidades">Cidades</label>
+                                <select class="form-control" id="opcaoCidades" name="opcaoCidades">
+                                    <option value="">Selecione sua cidade</option>
+                                </select>
+                            </div>
                         </div>
                         {{--SERIE--}}
                         <div class="form-group col">
@@ -88,7 +83,7 @@
 
                                 @if(old('serie'))
                                 @else
-                                    <option value="" selected>Selecionar</option>
+                                    <option value="0" selected>Selecionar</option>
                                 @endif
                                 <optgroup label="Ensino Fundamental">
                                     @foreach($seriesFundamental as $ano)
@@ -136,4 +131,47 @@
 
     @include('components.footer_simple')
 
+@endsection
+
+@section('scripts_cadastro_candidato')
+    <script src="{{asset('assets/js/axios.min.js')}}"></script>
+    <script type="text/javascript">
+        axios.get('{{route('api.get.estados')}}').then((resp) => {
+
+            let estados = document.querySelector('#opcaoEstados');
+            let cidades = document.querySelector('#opcaoCidades');
+
+            // Monta os estados
+            resp.data.forEach(({ id, nm_estado }) => {
+                let opt = document.createElement('option');
+                opt.value = id;
+                opt.innerHTML = nm_estado;
+                estados.appendChild(opt)
+            });
+
+            estados.addEventListener('change', () => {
+
+                let estado_id = estados.value;
+                rollbackLocalidades();
+
+                const BASE_URL = '{{$_SERVER['SERVER_NAME']}}';
+                const PORT = '{{$_SERVER['SERVER_PORT']}}';
+
+                axios.get(`http://${BASE_URL}:${PORT}/api/cidades/${estado_id}`).then(({data}) => {
+
+                    // Monta as cidades do estado
+                    data.forEach(({ cidade_id, nm_cidade }) => {
+                        let opt = document.createElement('option');
+                        opt.value = cidade_id;
+                        opt.innerHTML = nm_cidade;
+                        cidades.appendChild(opt)
+                    });
+
+                });
+            })
+        });
+
+        const rollbackLocalidades = () => $('#cidades').find('option').remove().end();
+
+    </script>
 @endsection

@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Candidato;
 
 use App\Http\Services\CandidatoServices;
 use App\Http\Services\EmailServices;
-use App\Models\Cidade\Cidade;
 use App\Http\Requests\CandidatoFormRequest;
 use App\Models\Candidato\Candidato;
 use App\Models\Ensino\EFundamental;

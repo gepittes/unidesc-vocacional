@@ -77,7 +77,6 @@ class CandidatoServices {
 
     public static function getDadosForm()
     {
-        $cidades = Cidade::all('nome');
         $seriesFundamental = EFundamental::all('serie');
         $seriesMedio = EMedio::all('serie');
         return compact('cidades', 'seriesFundamental', 'seriesMedio');
