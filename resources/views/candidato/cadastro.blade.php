@@ -63,7 +63,7 @@
                         <div class="form-group col">
                             <div id="estados">
                                 <label for="opcaoEstados">Estados</label>
-                                <select class="form-control" id="opcaoEstados" name="opcaoEstados" required>
+                                <select class="form-control" id="opcaoEstados" required>
                                     <option value="">Selecione seu estado</option>
                                 </select>
                             </div>
@@ -71,7 +71,7 @@
                         <div class="form-group col">
                             <div id="cidades" class="mt-1">
                                 <label for="opcaoCidades">Cidades</label>
-                                <select class="form-control" id="opcaoCidades" name="opcaoCidades">
+                                <select class="form-control" id="opcaoCidades" name="cidade">
                                     <option value="">Selecione sua cidade</option>
                                 </select>
                             </div>
@@ -172,6 +172,14 @@
         });
 
         const rollbackLocalidades = () => $('#cidades').find('option').remove().end();
+
+        (() => {
+            $("#nome").keyup(function() {
+                let val = $(this).val();
+                $(this).val(val.toUpperCase())
+            })
+        })();
+
 
     </script>
 @endsection
