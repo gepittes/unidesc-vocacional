@@ -34,7 +34,7 @@
                         <div class="form-group col">
                             <label for="nome">Nome Completo</label>
                             <input type="text" class="form-control" id="nome" name="nome" placeholder="Insira seu nome"
-                                   value="{{old('nome')}}">
+                                   value="{{old('nome')}}" required>
                             @if($errors->has('nome'))
                                 <span class="badge badge-danger space-error-bg">{{ $errors->first('nome') }}</span>
                             @endif
@@ -43,7 +43,7 @@
                         <div class="form-group col">
                             <label for="telefone">Telefone Celular</label>
                             <input type="text" class="form-control phone_with_ddd" id="telefone" name="telefone"
-                                   placeholder="(DD) 00000-0000" value="{{old('telefone')}}">
+                                   placeholder="(DD) 00000-0000" value="{{old('telefone')}}" required>
                             @if($errors->has('telefone'))
                                 <span class="badge badge-danger space-error-bg">{{ $errors->first('telefone') }}</span>
                             @endif
@@ -52,7 +52,7 @@
                         <div class="form-group col">
                             <label for="email">Email</label>
                             <input type="email" class="form-control" id="email" name="email"
-                                   placeholder="nome@gmail.com" value="{{old('email')}}">
+                                   placeholder="nome@gmail.com" value="{{old('email')}}" required>
                             @if($errors->has('email'))
                                 <span class="badge badge-danger space-error-bg">{{ $errors->first('email') }}</span>
                             @endif
@@ -63,13 +63,13 @@
                         <div class="form-group col">
                             <div id="estados">
                                 <label for="opcaoEstados">Estados</label>
-                                <select class="form-control" id="opcaoEstados" name="opcaoEstados">
+                                <select class="form-control" id="opcaoEstados" name="opcaoEstados" required>
                                     <option value="">Selecione seu estado</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group col">
-                            <div id="cidades">
+                            <div id="cidades" class="mt-1">
                                 <label for="opcaoCidades">Cidades</label>
                                 <select class="form-control" id="opcaoCidades" name="opcaoCidades">
                                     <option value="">Selecione sua cidade</option>
@@ -79,11 +79,11 @@
                         {{--SERIE--}}
                         <div class="form-group col">
                             <label for="serie">Serie</label>
-                            <select class="form-control" id="serie" name="serie">
+                            <select class="form-control" id="serie" name="serie" required>
 
                                 @if(old('serie'))
                                 @else
-                                    <option value="0" selected>Selecionar</option>
+                                    <option value="" selected>Selecionar</option>
                                 @endif
                                 <optgroup label="Ensino Fundamental">
                                     @foreach($seriesFundamental as $ano)
