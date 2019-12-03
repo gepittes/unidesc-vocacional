@@ -76,44 +76,36 @@
                                 </select>
                             </div>
                         </div>
-                        {{--SERIE--}}
+                        {{--ESCOLARIDADES--}}
                         <div class="form-group col">
-                            <label for="serie">Serie</label>
-                            <select class="form-control" id="serie" name="serie" required>
-
-                                @if(old('serie'))
-                                @else
-                                    <option value="" selected>Selecionar</option>
-                                @endif
+                            <label for="escolaridade">Serie</label>
+                            <select class="form-control" id="escolaridade" name="escolaridade" required>
+                                <option value="">Selecione sua Série</option>
                                 <optgroup label="Ensino Fundamental">
-                                    @foreach($seriesFundamental as $ano)
-                                        @if($ano->serie == old('serie'))
-                                            <option value="{{old('serie')}}" selected>{{old('serie')}}º</option>
-                                        @else
-                                            <option value="{{$ano->serie}}">{{$ano->serie}}º</option>
+                                    @foreach($escolaridades as $esc)
+                                        @if ($esc->id <= 4)
+                                            @if($esc->id == old('escolaridade'))
+                                                <option value="{{old('escolaridade')}}" selected>{{$esc->ano}}</option>
+                                            @else
+                                                <option value="{{$esc->id}}">{{$esc->ano}}</option>
+                                            @endif
                                         @endif
                                     @endforeach
                                 </optgroup>
-
-                                <optgroup label="Ensino Medio">
-                                    @foreach($seriesMedio as $ano)
-                                        {{-- RECUPERACAO FORM --}}
-                                        @if($ano->serie == old('serie'))
-                                            <option value="{{old('serie')}}"
-                                                    selected>{{old('serie') == "concluido" ? 'Concluido' : $ano->serie."º"}}</option>
-                                        @else
-                                            {{--  EXIBICAO  --}}
-                                            @if($ano->serie == 'concluido')
-                                                <option value="{{$ano->serie}}">Concluido</option>
+                                <optgroup label="Ensino Médio">
+                                    @foreach($escolaridades as $esc)
+                                        @if ($esc->id >= 5)
+                                            @if($esc->id == old('escolaridade'))
+                                                <option value="{{old('escolaridade')}}" selected>{{$esc->ano}}</option>
                                             @else
-                                                <option value="{{$ano->serie}}">{{$ano->serie}}º</option>
+                                                <option value="{{$esc->id}}">{{$esc->ano}}</option>
                                             @endif
                                         @endif
                                     @endforeach
                                 </optgroup>
                             </select>
-                            @if($errors->has('serie'))
-                                <span class="badge badge-danger space-error-bg">{{ $errors->first('serie') }}</span>
+                            @if($errors->has('escolariade'))
+                                <span class="badge badge-danger space-error-bg">{{ $errors->first('escolariade') }}</span>
                             @endif
                         </div>
                         {{--IP Adress--}}

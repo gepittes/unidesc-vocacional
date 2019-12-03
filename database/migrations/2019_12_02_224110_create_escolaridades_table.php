@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEMediosTable extends Migration
+class CreateEscolaridadesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateEMediosTable extends Migration
      */
     public function up()
     {
-        Schema::create('e_medios', function (Blueprint $table) {
+        Schema::create('escolaridades', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('serie');
+            $table->string('ano');
+            $table->string('descricao');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateEMediosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('e_medios');
+        Schema::dropIfExists('escolaridades');
     }
 }

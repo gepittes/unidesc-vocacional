@@ -14,9 +14,8 @@ class DatabaseSeeder extends Seeder
          $this->call([
              LocalidadesSeeder::class,
              UsersTableSeeder::class,
-             EMedioSeeder::class,
-             EFundamentalSeeder::class,
-             QuestaosSeeder::class
+             QuestaosSeeder::class,
+             EscolaridadesSeeder::class
          ]);
     }
 }

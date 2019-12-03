@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddResultadosToCandidatosTable extends Migration
+class AddFkCidadeCandidato extends Migration
 {
     /**
      * Run the migrations.
@@ -14,11 +14,10 @@ class AddResultadosToCandidatosTable extends Migration
     public function up()
     {
         Schema::table('candidatos', function (Blueprint $table) {
+            $table->unsignedInteger('cidade_id')->after('email');
 
-            $table->unsignedInteger('id_resultado')->after('serie');
-
-            $table->foreign('id_resultado')
-                ->references('id')->on('resultados')
+            $table->foreign('cidade_id')
+                ->references('id')->on('cidades')
                 ->onDelete('cascade');
         });
     }

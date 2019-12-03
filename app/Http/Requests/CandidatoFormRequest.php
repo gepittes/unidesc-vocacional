@@ -28,7 +28,7 @@ class CandidatoFormRequest extends FormRequest
             'email' => 'required',
             'telefone' => 'required|min:14',
             'cidade' => 'required',
-            'serie' => 'required'
+            'escolaridade' => 'required'
         ];
     }
 }

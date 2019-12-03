@@ -11,7 +11,7 @@ class Candidato extends Model
     Use SoftDeletes;
     protected $dates =['deleted_at'];
 
-    protected $fillable = ['nome', 'telefone', 'email', 'cidade', 'serie', 'visitor', 'id_resultado'];
+    protected $fillable = ['nome', 'telefone', 'email', 'cidade_id', 'escolaridade_id', 'resultado_id', 'visitor'];
 
     # Relacionamentos
 
@@ -20,12 +20,9 @@ class Candidato extends Model
         return $this->hasOne(ResultadoCand::class, 'id');
     }
 
-
-    public static function storeCandidato($dadosCand, $getIdResultado)
+    public static function storeCandidato($dadosCand, $resultadoID)
     {
-        # Coloca id do resuldado no registro do Candidato
-        $dadosCand += ['id_resultado' => $getIdResultado];
-
+        $dadosCand += ['resultado_id' => $resultadoID];
         return Candidato::create($dadosCand);
     }
 

@@ -6,8 +6,6 @@ use App\Http\Services\CandidatoServices;
 use App\Http\Services\EmailServices;
 use App\Http\Requests\CandidatoFormRequest;
 use App\Models\Candidato\Candidato;
-use App\Models\Ensino\EFundamental;
-use App\Models\Ensino\EMedio;
 use App\Models\Candidato\ResultadoCand;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -40,10 +38,6 @@ class CandidatoController extends Controller
 
         CandidatoServices::setSessionResultado($candidato);
 
-        /*
-            OBS: Servico de email deve ser chamado anterior ao mostrar resultado na pagina
-            Pois assim e possivel das F5 nas pagina sem disparar mais emails
-        */
         try {
             EmailServices::sendEmail(CandidatoServices::getSessionResultado());
             return redirect(route('candidato.resultado'));
