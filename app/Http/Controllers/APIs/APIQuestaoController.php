@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 
 class APIQuestaoController extends Controller
 {
-    public function JsonQuestoes()
+    public function getQuestoes()
     {
         return response(Questao::all());
     }
