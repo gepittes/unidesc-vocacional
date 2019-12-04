@@ -31,7 +31,7 @@
                     @csrf
                     {{--NOME COMPLETO--}}
                     <div class="form-row">
-                        <div class="form-group col">
+                        <div class="form-group col-sm-12 col-md-4">
                             <label for="nome">Nome Completo</label>
                             <input type="text" class="form-control" id="nome" name="nome" placeholder="Insira seu nome"
                                    value="{{old('nome')}}" required>
@@ -40,7 +40,7 @@
                             @endif
                         </div>
                         {{--TELEFONE--}}
-                        <div class="form-group col">
+                        <div class="form-group col-sm-12 col-md-4">
                             <label for="telefone">Telefone Celular</label>
                             <input type="text" class="form-control phone_with_ddd" id="telefone" name="telefone"
                                    placeholder="(DD) 00000-0000" value="{{old('telefone')}}" required>
@@ -49,7 +49,7 @@
                             @endif
                         </div>
                         {{--EMAIL--}}
-                        <div class="form-group col">
+                        <div class="form-group col-sm-12 col-md-4">
                             <label for="email">Email</label>
                             <input type="email" class="form-control" id="email" name="email"
                                    placeholder="nome@gmail.com" value="{{old('email')}}" required>
@@ -60,7 +60,7 @@
                     </div>
                     <div class="form-row">
                         {{--LOCALIDADE--}}
-                        <div class="form-group col">
+                        <div class="form-group col-sm-12 col-md-3">
                             <div id="estados">
                                 <label for="opcaoEstados">Estados</label>
                                 <select class="form-control" id="opcaoEstados" required>
@@ -68,7 +68,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group col">
+                        <div class="form-group col-sm-12 col-md-3">
                             <div id="cidades">
                                 <label for="opcaoCidades">Cidades</label>
                                 <select class="form-control" id="opcaoCidades" name="cidade">
@@ -77,7 +77,7 @@
                             </div>
                         </div>
                         {{--ESCOLARIDADES--}}
-                        <div class="form-group col">
+                        <div class="form-group col-sm-12 col-md-3">
                             <label for="escolaridade">Serie</label>
                             <select class="form-control" id="escolaridade" name="escolaridade" required>
                                 <option value="">Selecione sua Série</option>
@@ -109,7 +109,7 @@
                             @endif
                         </div>
                         {{--UNIVERSIDADES--}}
-                        <div class="form-group col">
+                        <div class="form-group col-sm-12 col-md-3">
                             <label for="universidade">Você está em qual Universidade?</label>
                             <select class="form-control" id="universidade" name="universidade" required>
                                 <option value="">Selecione a Universidade</option>
@@ -127,7 +127,7 @@
                         </div>
                         {{--IP Adress--}}
                         <input value="{{$_SERVER['REMOTE_ADDR']}}" name="visitor" type="hidden">
-                        <div class="form-group mt-3">
+                        <div class="form-group d-flex justify-content-end col-sm-12">
                             <button type="submit" class="btn btn-primary btn-rp-submit"><i
                                     class="fas fa-paper-plane"></i> Enviar
                             </button>
