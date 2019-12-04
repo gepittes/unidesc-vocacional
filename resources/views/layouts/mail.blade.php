@@ -32,19 +32,19 @@ Observação:
                             border: 1px solid rgba(0,0,0,.125);
                             border-radius: .25rem;">
                 <div>
-                    <img src="https://i.imgur.com/NFGKQ1I.jpg"style="width: 100%;" alt="Teste Vocacional">
+                    <img src="https://i.imgur.com/NFGKQ1I.jpg" style="width: 100%;" alt="Teste Vocacional">
                     <div style="padding: 1.25rem;">
                         <b style="margin-bottom: .75rem;">Teste Vocacional | UNIDESC</b>
-                        <p class="card-text">   Olá {{$data->nome}} muito obrigado por ter participado do nosso teste vocacional.</p>
+                        <p class="card-text"> Olá {{ucwords(strtolower($data->nome))}}, muito obrigado por ter participado do nosso teste vocacional.</p>
 
                         <!-- Informação do candidato -->
 
                         <div >
                             <b>Suas informações:</b>
                             <div><br>
-                                <b>Nome: </b><i>{{$data->nome}}</i><br>
+                                <b>Nome: </b><i>{{ucwords(strtolower($data->nome))}}</i><br>
                                 <b>Telefone: </b><i>{{$data->telefone}}</i><br>
-                                <b>Cidade: </b><i>{{$data->cidade}}</i><br>
+                                <b>Cidade: </b><i>{{$data->cidade->nm_cidade}} - {{$data->cidade->estado->sg_estado}}</i><br>
                             </div>
                         </div>
 

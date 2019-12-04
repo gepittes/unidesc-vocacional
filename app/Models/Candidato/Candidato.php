@@ -3,6 +3,7 @@
 namespace App\Models\Candidato;
 
 use App\Http\Services\CandidatoServices;
+use App\Models\Localidades\Cidade;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -14,6 +15,11 @@ class Candidato extends Model
     protected $fillable = ['nome', 'telefone', 'email', 'cidade_id', 'escolaridade_id', 'resultado_id', 'visitor'];
 
     # Relacionamentos
+
+    public function cidade()
+    {
+        return $this->hasOne(Cidade::class, 'id', 'cidade_id');
+    }
 
     public function resultado()
     {

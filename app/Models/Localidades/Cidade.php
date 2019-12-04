@@ -9,6 +9,11 @@ class Cidade extends Model
 {
     protected $fillable = ['nm_cidade', 'estado_id'];
 
+    public function estado()
+    {
+        return $this->hasOne(Estado::class, 'id', 'estado_id');
+    }
+
     public static function cidadesByEstado($sigla)
     {
         return DB::table('cidades')
