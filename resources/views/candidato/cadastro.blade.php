@@ -69,7 +69,7 @@
                             </div>
                         </div>
                         <div class="form-group col">
-                            <div id="cidades" class="mt-1">
+                            <div id="cidades">
                                 <label for="opcaoCidades">Cidades</label>
                                 <select class="form-control" id="opcaoCidades" name="cidade">
                                     <option value="">Selecione sua cidade</option>
@@ -106,6 +106,23 @@
                             </select>
                             @if($errors->has('escolariade'))
                                 <span class="badge badge-danger space-error-bg">{{ $errors->first('escolariade') }}</span>
+                            @endif
+                        </div>
+                        {{--UNIVERSIDADES--}}
+                        <div class="form-group col">
+                            <label for="universidade">Você está em qual Universidade?</label>
+                            <select class="form-control" id="universidade" name="universidade" required>
+                                <option value="">Selecione a Universidade</option>
+                                @foreach($universidades as $uni)
+                                    @if($uni->id == old('universidade'))
+                                        <option value="{{old('universidade')}}" selected>{{$uni->nm_universidade}}</option>
+                                    @else
+                                        <option value="{{$uni->id}}">{{$uni->nm_universidade}}</option>
+                                    @endif
+                                @endforeach
+                            </select>
+                            @if($errors->has('universidade'))
+                                <span class="badge badge-danger space-error-bg">{{ $errors->first('universidade') }}</span>
                             @endif
                         </div>
                         {{--IP Adress--}}

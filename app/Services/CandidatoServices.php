@@ -6,6 +6,7 @@ use App\Http\Requests\CandidatoFormRequest;
 use App\Models\Candidato\Candidato;
 use App\Models\Candidato\ResultadoCand;
 use App\Models\Escolaridade\Escolaridade;
+use App\Models\Universidade\Universidade;
 use Illuminate\Http\Request;
 
 class CandidatoServices {
@@ -48,6 +49,7 @@ class CandidatoServices {
             'email' => $dadosCand->email,
             'cidade_id' => $dadosCand->cidade,
             'escolaridade_id' => $dadosCand->escolaridade,
+            'universidade_id' => $dadosCand->universidade,
             'visitor' => $dadosCand->visitor,
         ]);
     }
@@ -76,6 +78,7 @@ class CandidatoServices {
     public static function getDadosForm()
     {
         $escolaridades = Escolaridade::all();
-        return compact('cidades', 'escolaridades');
+        $universidades = Universidade::all();
+        return compact('cidades', 'escolaridades', 'universidades');
     }
 }

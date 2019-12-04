@@ -10,11 +10,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Candidato extends Model
 {
     Use SoftDeletes;
-    protected $dates =['deleted_at'];
+    protected $dates = ['deleted_at'];
 
-    protected $fillable = ['nome', 'telefone', 'email', 'cidade_id', 'escolaridade_id', 'resultado_id', 'visitor'];
-
-    # Relacionamentos
+    protected $fillable = ['nome', 'telefone', 'email', 'cidade_id', 'escolaridade_id', 'resultado_id',
+                           'visitor', 'universidade_id'];
 
     public function cidade()
     {
