@@ -42,4 +42,17 @@ class Candidato extends Model
         return Candidato::all();
     }
 
+    public static function getByDate($filtro)
+    {
+
+        if($filtro->dt_fim == $filtro->dt_inicio) {
+            return Candidato::where('created_at', 'like', $filtro->dt_fim.'%')->get();
+        }
+
+        return Candidato::where('created_at', '<=', $filtro->dt_fim)
+                        ->where('created_at', '>=', $filtro->dt_inicio)
+                        ->get();
+
+    }
+
 }

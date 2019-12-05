@@ -19,7 +19,6 @@
 
 @hasSection('scripts_dashboard')
     {{-- Datatable --}}
-    <script src="{{asset('assets/datatable/js/jquery-3.3.1.js')}}"></script>
     <script src="{{asset('assets/datatable/js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('assets/datatable/js/dataTables.buttons.min.js')}}"></script>
     <script src="{{asset('assets/datatable/js/buttons.flash.min.js')}}"></script>
