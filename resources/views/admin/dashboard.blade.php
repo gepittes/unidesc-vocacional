@@ -66,11 +66,12 @@
                             <th>Nome</th>
                             <th>Email</th>
                             <th>Telefone</th>
-                            <th>Grupo A</th>
-                            <th>Grupo B</th>
-                            <th>Grupo C</th>
-                            <th>Grupo D</th>
-                            <th>Grupo E</th>
+                            <th>GP A</th>
+                            <th>GP B</th>
+                            <th>GP C</th>
+                            <th>GP D</th>
+                            <th>GP E</th>
+                            <th>Unisersidade</th>
                             <th>Data</th>
                         </tr>
                     </thead>
@@ -85,6 +86,7 @@
                                 <td>{{$dat->resultado->GPC}}</td>
                                 <td>{{$dat->resultado->GPD}}</td>
                                 <td>{{$dat->resultado->GPE}}</td>
+                                <td>{{$dat->unisersidade->nm_universidade}}</td>
                                 <td>{{$dat->created_at->format('d-m-Y')}}</td>
                             </tr>
                         @endforeach
@@ -147,35 +149,13 @@
                 },
                 dom: 'Bfrtip',
                 buttons: [
-                    {
-                        extend: 'pdfHtml5',
-                        text: '<i class="fas fa-file-pdf"></i> PDF',
-                        titleAttr: 'PDF',
-                        className: 'btn btn-primary',
-                        orientation: 'landscape',
-                    },
-                    {
-                        extend: 'print',
-                        text: '<i class="fas fa-print"></i> Print',
-                        titleAttr: 'Print',
-                        className: 'btn btn-primary',
-                        orientation: 'landscape',
-
-                    }
+                    'copyHtml5',
+                    'excelHtml5',
+                    'csvHtml5',
+                    'pdfHtml5',
+                    'print'
                 ],
                 responsive: true,
-
-                "columns": [
-                    null,
-                    null,
-                    { "width": "100px" },
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
-                    { "width": "70px" }
-                ]
             } );
 
             // Fix layout

@@ -4,6 +4,7 @@ namespace App\Models\Candidato;
 
 use App\Http\Services\CandidatoServices;
 use App\Models\Localidades\Cidade;
+use App\Models\Universidade\Universidade;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -23,6 +24,11 @@ class Candidato extends Model
     public function resultado()
     {
         return $this->hasOne(ResultadoCand::class, 'id');
+    }
+
+    public function unisersidade()
+    {
+        return $this->hasOne(Universidade::class, 'id', 'universidade_id');
     }
 
     public static function storeCandidato($dadosCand, $resultadoID)
