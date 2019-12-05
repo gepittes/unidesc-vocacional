@@ -53,6 +53,7 @@
             <form action="{{route('candidato.questoes')}}" method="post">
                 @csrf
 
+                <div class="mt-5" hidden id="space-mobile"></div>
                 <div id="smartwizard" style="display: none;">
                     <ul class="alinhar-mid-teste">
                         <li><a href="#step-1">Grupo A<br/>
@@ -381,6 +382,12 @@
             setTimeout(function () {
                 $('#avisoCand').modal('show');
             }, 1000);
+
+            // Em mobile remove os steps do Wizard
+            if(window.innerWidth <= 740) {
+                document.querySelector('.alinhar-mid-teste').remove();
+                document.querySelector('#space-mobile').hidden = false
+            }
 
         })
 

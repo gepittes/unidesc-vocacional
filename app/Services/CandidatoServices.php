@@ -5,9 +5,8 @@ namespace App\Http\Services;
 use App\Http\Requests\CandidatoFormRequest;
 use App\Models\Candidato\Candidato;
 use App\Models\Candidato\ResultadoCand;
-use App\Models\Cidade\Cidade;
-use App\Models\Ensino\EFundamental;
-use App\Models\Ensino\EMedio;
+use App\Models\Escolaridade\Escolaridade;
+use App\Models\Universidade\Universidade;
 use Illuminate\Http\Request;
 
 class CandidatoServices {
@@ -48,8 +47,9 @@ class CandidatoServices {
             'nome' => $dadosCand->nome,
             'telefone' => $dadosCand->telefone,
             'email' => $dadosCand->email,
-            'cidade' => $dadosCand->cidade,
-            'serie' => $dadosCand->serie,
+            'cidade_id' => $dadosCand->cidade,
+            'escolaridade_id' => $dadosCand->escolaridade,
+            'universidade_id' => $dadosCand->universidade,
             'visitor' => $dadosCand->visitor,
         ]);
     }
@@ -77,9 +77,8 @@ class CandidatoServices {
 
     public static function getDadosForm()
     {
-        $cidades = Cidade::all('nome');
-        $seriesFundamental = EFundamental::all('serie');
-        $seriesMedio = EMedio::all('serie');
-        return compact('cidades', 'seriesFundamental', 'seriesMedio');
+        $escolaridades = Escolaridade::all();
+        $universidades = Universidade::all();
+        return compact('cidades', 'escolaridades', 'universidades');
     }
 }

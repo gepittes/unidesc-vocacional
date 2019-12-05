@@ -414,6 +414,16 @@
     }
 }
 
+@media (max-device-width: 360px)  {
+    .row .col .d-flex .title{
+        width: 200px;
+        font-size: 20px;
+    }
+    .btn-rp-inicio{
+        margin-top: 25px !important;
+    }
+}
+
 /*Scroll Bar Custom*/
 
 ::-webkit-scrollbar {
