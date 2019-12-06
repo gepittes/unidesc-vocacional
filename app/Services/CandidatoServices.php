@@ -79,6 +79,6 @@ class CandidatoServices {
     {
         $escolaridades = Escolaridade::all();
         $universidades = Universidade::all();
-        return compact('cidades', 'escolaridades', 'universidades');
+        return compact('escolaridades', 'universidades');
     }
 }
