@@ -31,7 +31,7 @@
 
     {{-- Datatable --}}
     @hasSection('scripts_dashboard')
-        <link rel="stylesheet" href="{{asset('assets/datatable/DataTables-1.10.18/css/jquery.dataTables.css')}}">
-        <link rel="stylesheet" href="{{asset('assets/datatable/Buttons-1.5.6/css/buttons.dataTables.min.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/datatable/css/jquery.dataTables.min.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/datatable/css/buttons.dataTables.min.css')}}">
     @endif
 </head>

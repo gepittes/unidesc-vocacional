@@ -35,6 +35,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['auth']], function () {
     Route::get('/dashboard', 'DashboardAdmController@index')->name('admin.dashboard');
     Route::get('/profile', 'UserAdmController@index')->name('admin.profile');
     Route::post('/profile/update', 'UserAdmController@update')->name('admin.profileUpdate');
+    Route::post('/resultados', 'DashboardAdmController@showResults')->name('admin.resultados');
 });
 
 

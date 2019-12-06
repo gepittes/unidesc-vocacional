@@ -3,7 +3,7 @@
 @section('admin_conteudo')
 
     <header class="alinhar-bg-questoes">
-        <img src="{{asset("/assets/template/img/elemento-capa-2019.png")}}"  style="width: 800px">
+        <img src="{{asset("/assets/template/img/elemento-capa-2019.png")}}" style="width: 800px">
     </header>
 
     <nav class="navbar navbar-expand-lg bg-info mb-1">
@@ -14,21 +14,26 @@
                 <span class="navbar-toggler-bar bar2"></span>
                 <span class="navbar-toggler-bar bar3"></span>
             </button>
-            <a class="navbar-brand" href="{{route('home')}}"><b><i class="fas fa-home"></i> Home</b></a>
+            <a class="navbar-brand" href="{{route('home')}}"><b><i class="fas fa-question"></i> Teste Vocacional</b></a>
 
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item">
+                        <a class="nav-link" href="{{route('admin.dashboard')}}"><b><i class="fas fa-home"></i> Dashboard</b></a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#" id="bt_relatorio"><b><i class="fas fa-table"></i> Relatório</b></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" id="bt_grafico"><b><i class="fas fa-chart-line"></i> Gráfico</b></a>
+                        <a class="nav-link" href="#" id="bt_grafico"><b><i class="fas fa-chart-line"></i>
+                                Gráfico</b></a>
                     </li>
                 </ul>
                 <div class="form-inline ml-auto" data-background-color>
                     <div class="form-group has-white">
                         <div class="dropdown">
-                            <button class="btn btn-secondary btn-round dropdown-toggle m-0" type="button" data-toggle="dropdown"
+                            <button class="btn btn-secondary btn-round dropdown-toggle m-0" type="button"
+                                    data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-user-circle"></i> Olá, <b>{{Auth::user()->name}}</b>
                             </button>
@@ -41,7 +46,8 @@
                                     <span class="text-dark">Sair <i class="fas fa-door-open"></i></span>
                                 </a>
 
-                                <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                <form id="frm-logout" action="{{ route('logout') }}" method="POST"
+                                      style="display: none;">
                                     @csrf
                                 </form>
                             </div>
@@ -54,40 +60,64 @@
 
     <div class="ml-5 mr-5 ">
         <div class="d-flex justify-content-center pt-0">
-                <h3 class="title p-2 mb-2"><i class="fas fa-table"></i> Resultados</h3>
+            <h3 class="title p-2 mb-2"><i class="fas fa-table"></i> Resultados</h3>
         </div>
+        <form action="{{route('admin.resultados')}}" method="POST">
+            @csrf
+            <div class="d-flex justify-content-center pt-0">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row justify-content-center align-content-center">
+                            <div class="col-2">
+                                <h5>Data de Inicio:</h5>
+                                <input class="form-control" type="date" name="dt_inicio" id="dt_inicio">
+                            </div>
+                            <div class="col-2">
+                                <h5>Data de fim:</h5>
+                                <input class="form-control" type="date" name="dt_fim" id="dt_fim">
+                            </div>
+                            <div class="col-1">
+                                <button type="submit" class="btn btn-round btn-success mt-4"><b>Buscar!</b></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
 
         <div class="card" id="tabela" style="display: none">
             <div class="card-body">
 
                 <table id="relatorio" class="display" style="width:100%">
                     <thead>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Email</th>
-                            <th>Telefone</th>
-                            <th>Grupo A</th>
-                            <th>Grupo B</th>
-                            <th>Grupo C</th>
-                            <th>Grupo D</th>
-                            <th>Grupo E</th>
-                            <th>Data</th>
-                        </tr>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th>GP A</th>
+                        <th>GP B</th>
+                        <th>GP C</th>
+                        <th>GP D</th>
+                        <th>GP E</th>
+                        <th>Unisersidade</th>
+                        <th>Data</th>
+                    </tr>
                     </thead>
                     <tbody>
-                        @foreach($data_tabela as $dat)
-                            <tr>
-                                <td>{{$dat->nome}}</td>
-                                <td>{{$dat->email}}</td>
-                                <td>{{$dat->telefone}}</td>
-                                <td>{{$dat->resultado->GPA}}</td>
-                                <td>{{$dat->resultado->GPB}}</td>
-                                <td>{{$dat->resultado->GPC}}</td>
-                                <td>{{$dat->resultado->GPD}}</td>
-                                <td>{{$dat->resultado->GPE}}</td>
-                                <td>{{$dat->created_at->format('d-m-Y')}}</td>
-                            </tr>
-                        @endforeach
+                    @foreach($data_tabela as $dat)
+                        <tr>
+                            <td>{{$dat->nome}}</td>
+                            <td>{{$dat->email}}</td>
+                            <td>{{$dat->telefone}}</td>
+                            <td>{{$dat->resultado->GPA}}</td>
+                            <td>{{$dat->resultado->GPB}}</td>
+                            <td>{{$dat->resultado->GPC}}</td>
+                            <td>{{$dat->resultado->GPD}}</td>
+                            <td>{{$dat->resultado->GPE}}</td>
+                            <td>{{$dat->unisersidade->nm_universidade}}</td>
+                            <td>{{$dat->created_at->format('d-m-Y')}}</td>
+                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>
@@ -95,14 +125,14 @@
 
         <div class="card" id="grafico" style="display: none">
             <div class="card-body">
-            <div class="position-absolute mr-5 mt-1 ">
-                <button type="button"  class="btn btn-primary" onclick="generatePDF()" >PDF</button>
-            </div>
-            <div class="d-flex justify-content-center">
-                <div style="width: 1000px">
-                    <canvas id="graficoByGrupo"></canvas>
+                <div class="position-absolute mr-5 mt-1 ">
+                    <button type="button" class="btn btn-primary" onclick="generatePDF()">PDF</button>
                 </div>
-            </div>
+                <div class="d-flex justify-content-center">
+                    <div style="width: 1000px">
+                        <canvas id="graficoByGrupo"></canvas>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -114,7 +144,6 @@
 @section('scripts_dashboard')
     <script>
         // Cards
-
         $(document).ready(function () {
             $("#tabela").show();
         });
@@ -130,53 +159,31 @@
         });
 
         // Datatable
-        $(document).ready(function() {
+        $(document).ready(function () {
 
-            $('#relatorio').DataTable( {
+            $('#relatorio').DataTable({
                 "bJQueryUI": true,
                 "oLanguage": {
-                    "sProcessing":   "Processando...",
-                    "sZeroRecords":  "Não foram encontrados resultados",
+                    "sProcessing": "Processando...",
+                    "sZeroRecords": "Não foram encontrados resultados",
                     "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
                     "oPaginate": {
-                        "sFirst":    "Primeiro",
+                        "sFirst": "Primeiro",
                         "sPrevious": "Anterior",
-                        "sNext":     "Seguinte",
-                        "sLast":     "Último"
+                        "sNext": "Seguinte",
+                        "sLast": "Último"
                     }
                 },
                 dom: 'Bfrtip',
                 buttons: [
-                    {
-                        extend: 'pdfHtml5',
-                        text: '<i class="fas fa-file-pdf"></i> PDF',
-                        titleAttr: 'PDF',
-                        className: 'btn btn-primary',
-                        orientation: 'landscape',
-                    },
-                    {
-                        extend: 'print',
-                        text: '<i class="fas fa-print"></i> Print',
-                        titleAttr: 'Print',
-                        className: 'btn btn-primary',
-                        orientation: 'landscape',
-
-                    }
+                    'copyHtml5',
+                    'excelHtml5',
+                    'csvHtml5',
+                    'pdfHtml5',
+                    'print'
                 ],
                 responsive: true,
-
-                "columns": [
-                    null,
-                    null,
-                    { "width": "100px" },
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
-                    { "width": "70px" }
-                ]
-            } );
+            });
 
             // Fix layout
             document.querySelectorAll('input[type=search]')[0].className = 'form-control';
@@ -235,14 +242,14 @@
             }
         });
 
-       function generatePDF(){
-          const Canvas = document.getElementById("graficoByGrupo");
-          const Context = Canvas.getContext("2d");
+        function generatePDF() {
+            const Canvas = document.getElementById("graficoByGrupo");
+            const Context = Canvas.getContext("2d");
 
-           var imgData = Canvas.toDataURL('image/png');
-           var pdf = new jsPDF('landscape');
-           pdf.addImage(imgData, 'PNG', 15, 15,0, 0);
-           pdf.save('download.pdf');
+            var imgData = Canvas.toDataURL('image/png');
+            var pdf = new jsPDF('landscape');
+            pdf.addImage(imgData, 'PNG', 15, 15, 0, 0);
+            pdf.save('download.pdf');
         }
     </script>
 @endsection

@@ -31,99 +31,103 @@
                     @csrf
                     {{--NOME COMPLETO--}}
                     <div class="form-row">
-                        <div class="form-group col">
+                        <div class="form-group col-sm-12 col-md-4">
                             <label for="nome">Nome Completo</label>
                             <input type="text" class="form-control" id="nome" name="nome" placeholder="Insira seu nome"
-                                   value="{{old('nome')}}">
+                                   value="{{old('nome')}}" required>
                             @if($errors->has('nome'))
                                 <span class="badge badge-danger space-error-bg">{{ $errors->first('nome') }}</span>
                             @endif
                         </div>
                         {{--TELEFONE--}}
-                        <div class="form-group col">
+                        <div class="form-group col-sm-12 col-md-4">
                             <label for="telefone">Telefone Celular</label>
                             <input type="text" class="form-control phone_with_ddd" id="telefone" name="telefone"
-                                   placeholder="(DD) 00000-0000" value="{{old('telefone')}}">
+                                   placeholder="(DD) 00000-0000" value="{{old('telefone')}}" required>
                             @if($errors->has('telefone'))
                                 <span class="badge badge-danger space-error-bg">{{ $errors->first('telefone') }}</span>
                             @endif
                         </div>
                         {{--EMAIL--}}
-                        <div class="form-group col">
+                        <div class="form-group col-sm-12 col-md-4">
                             <label for="email">Email</label>
                             <input type="email" class="form-control" id="email" name="email"
-                                   placeholder="nome@gmail.com" value="{{old('email')}}">
+                                   placeholder="nome@gmail.com" value="{{old('email')}}" required>
                             @if($errors->has('email'))
                                 <span class="badge badge-danger space-error-bg">{{ $errors->first('email') }}</span>
                             @endif
                         </div>
                     </div>
-                    {{--CIDADE--}}
                     <div class="form-row">
-                        <div class="form-group col">
-                            <label for="cidade">Cidade</label>
-                            <select class="form-control" id="cidade" name="cidade">
-                                @if(old('cidade'))
-                                @else
-                                    <option value="" selected>Selecionar</option>
-                                @endif
-
-                                @foreach($cidades as $cidade)
-                                    @if($cidade->nome == old('cidade'))
-                                        <option value="{{old('cidade')}}" selected>{{old('cidade')}}</option>
-                                    @else
-                                        <option value="{{$cidade->nome}}">{{$cidade->nome}}</option>
-                                    @endif
-                                @endforeach
-
-                            </select>
-                            @if($errors->has('cidade'))
-                                <span class="badge badge-danger space-error-bg">{{ $errors->first('cidade') }}</span>
-                            @endif
+                        {{--LOCALIDADE--}}
+                        <div class="form-group col-sm-12 col-md-3">
+                            <div id="estados">
+                                <label for="opcaoEstados">Estados</label>
+                                <select class="form-control" id="opcaoEstados" required>
+                                    <option value="">Selecione seu estado</option>
+                                </select>
+                            </div>
                         </div>
-                        {{--SERIE--}}
-                        <div class="form-group col">
-                            <label for="serie">Serie</label>
-                            <select class="form-control" id="serie" name="serie">
-
-                                @if(old('serie'))
-                                @else
-                                    <option value="" selected>Selecionar</option>
-                                @endif
+                        <div class="form-group col-sm-12 col-md-3">
+                            <div id="cidades">
+                                <label for="opcaoCidades">Cidades</label>
+                                <select class="form-control" id="opcaoCidades" name="cidade">
+                                    <option value="">Selecione sua cidade</option>
+                                </select>
+                            </div>
+                        </div>
+                        {{--ESCOLARIDADES--}}
+                        <div class="form-group col-sm-12 col-md-3">
+                            <label for="escolaridade">Serie</label>
+                            <select class="form-control" id="escolaridade" name="escolaridade" required>
+                                <option value="">Selecione sua Série</option>
                                 <optgroup label="Ensino Fundamental">
-                                    @foreach($seriesFundamental as $ano)
-                                        @if($ano->serie == old('serie'))
-                                            <option value="{{old('serie')}}" selected>{{old('serie')}}º</option>
-                                        @else
-                                            <option value="{{$ano->serie}}">{{$ano->serie}}º</option>
+                                    @foreach($escolaridades as $esc)
+                                        @if ($esc->id <= 4)
+                                            @if($esc->id == old('escolaridade'))
+                                                <option value="{{old('escolaridade')}}" selected>{{$esc->ano}}</option>
+                                            @else
+                                                <option value="{{$esc->id}}">{{$esc->ano}}</option>
+                                            @endif
                                         @endif
                                     @endforeach
                                 </optgroup>
-
-                                <optgroup label="Ensino Medio">
-                                    @foreach($seriesMedio as $ano)
-                                        {{-- RECUPERACAO FORM --}}
-                                        @if($ano->serie == old('serie'))
-                                            <option value="{{old('serie')}}"
-                                                    selected>{{old('serie') == "concluido" ? 'Concluido' : $ano->serie."º"}}</option>
-                                        @else
-                                            {{--  EXIBICAO  --}}
-                                            @if($ano->serie == 'concluido')
-                                                <option value="{{$ano->serie}}">Concluido</option>
+                                <optgroup label="Ensino Médio">
+                                    @foreach($escolaridades as $esc)
+                                        @if ($esc->id >= 5)
+                                            @if($esc->id == old('escolaridade'))
+                                                <option value="{{old('escolaridade')}}" selected>{{$esc->ano}}</option>
                                             @else
-                                                <option value="{{$ano->serie}}">{{$ano->serie}}º</option>
+                                                <option value="{{$esc->id}}">{{$esc->ano}}</option>
                                             @endif
                                         @endif
                                     @endforeach
                                 </optgroup>
                             </select>
-                            @if($errors->has('serie'))
-                                <span class="badge badge-danger space-error-bg">{{ $errors->first('serie') }}</span>
+                            @if($errors->has('escolariade'))
+                                <span class="badge badge-danger space-error-bg">{{ $errors->first('escolariade') }}</span>
+                            @endif
+                        </div>
+                        {{--UNIVERSIDADES--}}
+                        <div class="form-group col-sm-12 col-md-3">
+                            <label for="universidade">Você está em qual Universidade?</label>
+                            <select class="form-control" id="universidade" name="universidade" required>
+                                <option value="">Selecione a Universidade</option>
+                                @foreach($universidades as $uni)
+                                    @if($uni->id == old('universidade'))
+                                        <option value="{{old('universidade')}}" selected>{{$uni->nm_universidade}}</option>
+                                    @else
+                                        <option value="{{$uni->id}}">{{$uni->nm_universidade}}</option>
+                                    @endif
+                                @endforeach
+                            </select>
+                            @if($errors->has('universidade'))
+                                <span class="badge badge-danger space-error-bg">{{ $errors->first('universidade') }}</span>
                             @endif
                         </div>
                         {{--IP Adress--}}
                         <input value="{{$_SERVER['REMOTE_ADDR']}}" name="visitor" type="hidden">
-                        <div class="form-group mt-3">
+                        <div class="form-group d-flex justify-content-end col-sm-12">
                             <button type="submit" class="btn btn-primary btn-rp-submit"><i
                                     class="fas fa-paper-plane"></i> Enviar
                             </button>
@@ -136,4 +140,55 @@
 
     @include('components.footer_simple')
 
+@endsection
+
+@section('scripts_cadastro_candidato')
+    <script src="{{asset('assets/js/axios.min.js')}}"></script>
+    <script type="text/javascript">
+        axios.get('{{route('api.get.estados')}}').then((resp) => {
+
+            let estados = document.querySelector('#opcaoEstados');
+            let cidades = document.querySelector('#opcaoCidades');
+
+            // Monta os estados
+            resp.data.forEach(({ id, nm_estado }) => {
+                let opt = document.createElement('option');
+                opt.value = id;
+                opt.innerHTML = nm_estado;
+                estados.appendChild(opt)
+            });
+
+            estados.addEventListener('change', () => {
+
+                let estado_id = estados.value;
+                rollbackLocalidades();
+
+                const BASE_URL = '{{$_SERVER['SERVER_NAME']}}';
+                const PORT = '{{$_SERVER['SERVER_PORT']}}';
+
+                axios.get(`http://${BASE_URL}:${PORT}/api/cidades/${estado_id}`).then(({data}) => {
+
+                    // Monta as cidades do estado
+                    data.forEach(({ cidade_id, nm_cidade }) => {
+                        let opt = document.createElement('option');
+                        opt.value = cidade_id;
+                        opt.innerHTML = nm_cidade;
+                        cidades.appendChild(opt)
+                    });
+
+                });
+            })
+        });
+
+        const rollbackLocalidades = () => $('#cidades').find('option').remove().end();
+
+        (() => {
+            $("#nome").keyup(function() {
+                let val = $(this).val();
+                $(this).val(val.toUpperCase())
+            })
+        })();
+
+
+    </script>
 @endsection

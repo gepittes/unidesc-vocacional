@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCandidatosTable extends Migration
+class CreateCidadesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,15 @@ class CreateCandidatosTable extends Migration
      */
     public function up()
     {
-        Schema::create('candidatos', function (Blueprint $table) {
+        Schema::create('cidades', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nome');
-            $table->string('telefone');
-            $table->string('email');
-            $table->ipAddress('visitor')->nullable();
-            $table->softDeletes();
+            $table->string('nm_cidade');
+
+            $table->unsignedInteger('estado_id');
+            $table->foreign('estado_id')
+                ->references('id')->on('estados')
+                ->onDelete('cascade');
+
             $table->timestamps();
         });
     }
@@ -31,6 +33,6 @@ class CreateCandidatosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('candidatos');
+        Schema::dropIfExists('cidades');
     }
 }

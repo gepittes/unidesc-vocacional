@@ -12,11 +12,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
          $this->call([
+             LocalidadesSeeder::class,
              UsersTableSeeder::class,
-             CidadesSeeder::class,
-             EMedioSeeder::class,
-             EFundamentalSeeder::class,
-             QuestaosSeeder::class
+             QuestaosSeeder::class,
+             EscolaridadesSeeder::class,
+             UniversidadesSeeder::class
          ]);
     }
 }
