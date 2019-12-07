@@ -14,14 +14,14 @@ class DashboardAdmController extends Controller
         $data_tabela = Candidato::getAllData();
         $data_grafico = ResultadoCand::getDataGraficoByGroup();
 
-        return view('admin.dashboard', compact('title', 'data_tabela', 'data_grafico'));
+        return view('admin.dashboard', compact('data_tabela', 'data_grafico'));
     }
 
     public function showResults(Request $request)
     {
         $data_tabela = Candidato::getByDate($request);
         $data_grafico = ResultadoCand::getDataGraficoByGroup();
-        return view('admin.dashboard', compact('title', 'data_tabela', 'data_grafico'));
+        return view('admin.dashboard', compact('data_tabela', 'data_grafico'));
     }
 
 }
