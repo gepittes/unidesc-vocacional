@@ -1,9 +1,5 @@
 describe('Frist Testing', function () {
-    it('Navigate', () => {
-
-        apresentation()
-
-    });
+    it('Navigate', () => apresentation());
 });
 
 const GLOBALOOP = 50;
@@ -18,16 +14,17 @@ export const apresentation = () => {
 };
 
 export const test2E2 = () => {
-    // cy.visit('http://165.227.34.129/');
     cy.visit('http://localhost:8000/');
 
     cy.contains('REALIZAR TESTE!').click();
 
-    cy.get('input[name=nome]').type('Teste de Carga Email');
+    cy.get('input[name=nome]').type('Ana Maria da Silva');
     cy.get('input[name=telefone]').type('61978545450');
     cy.get('input[name=email]').type('mekdek1@gmail.com');
-    cy.get('select[name=cidade]').select('Gama');
-    cy.get('select[name=serie]').select('Concluido');
+    cy.get('select[id=opcaoEstados]').select('Goiás');
+    cy.get('#opcaoCidades').select('Luziânia');
+    cy.get('select[name=escolaridade]').select('Concluído');
+    cy.get('#universidade').select('UNIDESC');
 
     cy.contains('Enviar').click();
 

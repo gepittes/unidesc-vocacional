@@ -1,9 +1,5 @@
-describe('Frist Testing', function () {
-    it('Navigate', () => {
-
-        apresentation()
-
-    });
+describe('End to end app test', function () {
+    it('Navigate', () => apresentation());
 });
 
 const GLOBALOOP = 100;
@@ -23,23 +19,18 @@ export const test2E2 = () => {
 
     cy.contains('REALIZAR TESTE!').click();
 
-    cy.get('input[name=nome]').type('Ana', {delay: 70});
+    cy.get('input[name=nome]').type('Ana Maria da Silva', {delay: 70});
     cy.get('input[name=telefone]').type('61978545450', {delay: 70});
     cy.get('input[name=email]').type('calouro2019@gmail.com', {delay: 70});
-    cy.get('select[name=cidade]').select('Gama');
-    cy.get('select[name=serie]').select('Concluido');
+    cy.get('select[id=opcaoEstados]').select('Goiás');
+    cy.get('#opcaoCidades').select('Luziânia');
+    cy.get('select[name=escolaridade]').select('Concluído');
+    cy.get('#universidade').select('UNIDESC');
 
-    cy.wait(1000);
-
-    cy.contains('Enviar').click();
-
-    cy.get('input[name=nome]').clear();
-    cy.get('input[name=nome]').type('Calouro UNIDESC 2019', {delay: 70});
     cy.wait(1000);
     cy.contains('Enviar').click();
 
     cy.wait(1500);
-
     cy.contains('OK!').click();
 
     cy.get('#GpAA4').click(); cy.wait(300);
