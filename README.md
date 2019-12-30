@@ -1,6 +1,6 @@
 
 <p align="center">
-   <img src="https://raw.githubusercontent.com/gepittes/docs-vocacional/master/teste-vocacional-logo.png" width="500">
+   <img src="https://raw.githubusercontent.com/gepittes/docs-vocacional/master/teste-vocacional-logo.png" width="300">
 </p>
 
 <p>
