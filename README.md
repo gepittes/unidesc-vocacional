@@ -16,9 +16,6 @@
 
 <img src="https://i.imgur.com/xUAYgma.jpg">
 
-***
-
-
 ## 🚀 Install
 
 ```
