@@ -56,7 +56,7 @@ Check app in http://localhost:8000/
 | Gabriel Roque  | Jadilson Guedes |
 | ------------- | ------------- |
 | <img src="https://avatars2.githubusercontent.com/u/32438220?s=460&v=4" width="110">  | <img src="https://avatars0.githubusercontent.com/u/36805474?s=460&v=4" width="110">   |
-| <a href="https://github.com/gabriel-roque">Github</a>  | <a href="https://github.com/gabriel-roque">Github</a>  |
+| <a href="https://github.com/gabriel-roque">Github</a>  | <a href="https://github.com/jadilson12">Github</a>  |
 | <a href="https://www.linkedin.com/in/gabriel-roque/">Linkedin</a> | <a href="https://www.linkedin.com/in/jadilson12/">Linkedin</a> |
 
 
