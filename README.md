@@ -9,11 +9,11 @@
 > Teste vocacional da Feira das profissões | UNIDESC
 
 <p align="center">
-    <a href="http://177.107.132.54/" target="_blank"><img src="https://i.imgur.com/TPSteG6.png" align="center"></a>
+    <a href="http://177.107.132.54/"><img src="https://i.imgur.com/TPSteG6.png" align="center"></a>
 </p>
 
 
-## Install
+## 🚀 Install
 
 ```
 $ git clone https://github.com/gepittes/unidesc-vocacional
@@ -21,7 +21,7 @@ $ cd unidesc-vocacional
 $ composer install
 ```
 
-## Usage
+## 🖱️ Usage
 
 ```
 $ cp .env.example .env
@@ -43,7 +43,7 @@ DB_PASSWORD=123456
 $ php artisan migrate --seed
 ```
 
-## Run app
+## 📈 Run app
 
 ```
 $ php artisan serve
@@ -51,7 +51,7 @@ $ php artisan serve
 
 Check app in http://localhost:8000/
 
-## Author
+## 👤 Authors
 
 | Gabriel Roque  | Jadilson Guedes |
 | ------------- | ------------- |
@@ -68,4 +68,3 @@ Contributions, issues and feature requests are welcome!<br />Feel free to check 
 
 Give a ⭐️ if this project helped you!
 
-***
