@@ -8,7 +8,10 @@
 
 > Teste vocacional da Feira das profissões | UNIDESC
 
-### 🏠 [Homepage](https://github.com/gepittes/unidesc-vocacional)
+<p align="center">
+    <img src="https://i.imgur.com/TPSteG6.png" align="center">
+</p>
+
 
 ## Install
 
