@@ -12,6 +12,12 @@
     <a href="http://177.107.132.54/"><img src="https://i.imgur.com/TPSteG6.png" align="center"></a>
 </p>
 
+## 🖼 Previews
+
+<img src="https://i.imgur.com/xUAYgma.jpg">
+
+***
+
 
 ## 🚀 Install
 
