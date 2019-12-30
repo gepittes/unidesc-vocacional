@@ -1,4 +1,8 @@
-<h1 align="center">Welcome to Teste Vocacional 👋</h1>
+
+<p align="center">
+   <img src="https://raw.githubusercontent.com/gepittes/docs-vocacional/master/teste-vocacional-logo.png" width="500">
+</p>
+
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-2.0.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://github.com/gepittes/docs-vocacional" target="_blank">
