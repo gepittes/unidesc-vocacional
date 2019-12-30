@@ -9,7 +9,7 @@
 > Teste vocacional da Feira das profissões | UNIDESC
 
 <p align="center">
-    <a href="http://177.107.132.54/"><img src="https://i.imgur.com/TPSteG6.png" align="center"></a>
+    <a href="http://177.107.132.54/" target="_blank"><img src="https://i.imgur.com/TPSteG6.png" align="center"></a>
 </p>
 
 
