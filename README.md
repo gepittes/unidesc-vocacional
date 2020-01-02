@@ -20,6 +20,22 @@
 
 <img src="https://i.imgur.com/xUAYgma.jpg">
 
+| Home          | Form          |
+| ------------- | ------------- |
+| <img src="https://i.imgur.com/Vm7DWZT.png">  | <img src="https://i.imgur.com/QICfgH0.png">  |
+
+| Questions     | Results       |
+| ------------- | ------------- |
+| <img src="https://i.imgur.com/ZpyNrel.png">  | <img src="https://i.imgur.com/eJFTiE3.png">  |
+
+| Results       | Results       |
+| ------------- | ------------- |
+| <img src="https://i.imgur.com/gZguMG5.png">  | <img src="https://i.imgur.com/CiRNet1.png">  |
+
+| Mail Result   |
+| ------------- |
+| <img src="https://i.imgur.com/jPLpIlR.png">  |
+
 ## 🚀 Install
 
 ```
