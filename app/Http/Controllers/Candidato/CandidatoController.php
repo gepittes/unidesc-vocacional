@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Candidato;
 
-use App\Http\Services\CandidatoServices;
-use App\Http\Services\EmailServices;
+use App\Services\CandidatoServices;
+use App\Services\EmailServices;
 use App\Http\Requests\CandidatoFormRequest;
 use App\Models\Candidato\Candidato;
 use App\Models\Candidato\ResultadoCand;

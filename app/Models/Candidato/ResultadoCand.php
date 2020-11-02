@@ -2,7 +2,7 @@
 
 namespace App\Models\Candidato;
 
-use App\Http\Services\CandidatoServices;
+use App\Services\CandidatoServices;
 use Illuminate\Database\Eloquent\Model;
 
 class ResultadoCand extends Model

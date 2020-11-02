@@ -2,7 +2,7 @@
 
 namespace App\Models\Candidato;
 
-use App\Http\Services\CandidatoServices;
+use App\Services\CandidatoServices;
 use App\Models\Localidades\Cidade;
 use App\Models\Universidade\Universidade;
 use Illuminate\Database\Eloquent\Model;
