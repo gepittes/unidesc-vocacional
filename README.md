@@ -38,6 +38,7 @@
 
 ## Dependencies
 - PHP 7.2
+- Composer
 - MySQL 8
 
 
