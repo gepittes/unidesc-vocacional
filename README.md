@@ -36,6 +36,11 @@
 | ------------- |
 | <img src="https://i.imgur.com/jPLpIlR.png">  |
 
+## Dependencies
+- PHP 7.2
+- MySQL 8
+
+
 ## 🚀 Install
 
 ```
