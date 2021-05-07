@@ -13,7 +13,7 @@
         "egulias/email-validator": "^2.1",
         "fideloper/proxy": "^4.0",
         "guzzlehttp/guzzle": "^6.3",
-        "laravel/framework": "5.7.*",
+        "laravel/framework": "6.18.*",
         "laravel/tinker": "^1.0"
     },
     "require-dev": {
