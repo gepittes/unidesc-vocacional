@@ -23,6 +23,6 @@
     "sass-loader": "^7.1.0"
   },
   "dependencies": {
-    "cypress": "^3.4.1"
+    "cypress": "^12.7.0"
   }
 }
